@@ -9680,12 +9680,6 @@ input[type="number"] {
 	align-items: center;
 }
 
-.modal-title::before {
-	content: "👤";
-	margin-right: 10px;
-	font-size: 20px;
-}
-
 .close-btn {
 	width: 40px;
 	height: 40px;
