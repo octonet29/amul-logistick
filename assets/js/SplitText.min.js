@@ -1,11 +1,4 @@
-/*!
- * SplitText 3.11.2
- * https://greensock.com
- * 
- * @license Copyright 2022, GreenSock. All rights reserved.
- * This plugin is a membership benefit of Club GreenSock and is only authorized for use in sites/apps/products developed by individuals/companies with an active Club GreenSock membership. See https://greensock.com/club
- * @author: Jack Doyle, jack@greensock.com
- */
+
 
 ! function(D, u) {
     "object" == typeof exports && "undefined" != typeof module ? u(exports) : "function" == typeof define && define.amd ? define(["exports"], u) : u((D = D || self).window = D.window || {})
