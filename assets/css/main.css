@@ -1594,6 +1594,9 @@ input:focus-visible {
 .text-neutral-1100 {
 	color: var(--neutral-1100);
 }
+.text--black {
+	color: hsl(var(--black));
+}
 
 .text--white {
 	color: hsl(var(--white));
@@ -8484,7 +8487,9 @@ input[type="number"] {
 /* Map Css End */
 
 /* Footer Css Start */
-
+.footer{
+	background-color:hsl(220deg 9.68% 93.92% / 60%)
+}
 .hover-arrow:hover {
 	padding-inline-start: 1.5rem;
 }
