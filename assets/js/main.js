@@ -129,7 +129,7 @@
 		// ========================== Add Attribute For Bg Image Js End =====================
 
 		// ============================ Banner Slider Js Start ===========================
-		var bannerMenu = ["Air Freight", "Ocean Freight", "Land Transport"]
+		var bannerMenu = ["Howa Arkaly", "Deňiz Arkaly", "Transport Arkaly"]
 		var bannerSwiper = new Swiper(".banner-slider", {
 			loop: true,
 			speed: 800,

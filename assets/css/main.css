@@ -8033,8 +8033,8 @@ input[type="number"] {
 /* Banner Start */
 
 .banner-item {
-	padding-top: 244px;
-	padding-bottom: 112px;
+	padding-top: 200px;
+	padding-bottom: 15px;
 }
 
 @media (max-width: 1199px) {
@@ -8049,6 +8049,12 @@ input[type="number"] {
 	}
 }
 
+/* .banner {
+	height: 100vh;
+}
+.banner-slider {
+	height: 100vh;
+} */
 /* Banner End */
 
 /* Features Css Start  */
@@ -8487,8 +8493,8 @@ input[type="number"] {
 /* Map Css End */
 
 /* Footer Css Start */
-.footer{
-	background-color:hsl(220deg 9.68% 93.92% / 60%)
+.footer {
+	background-color: hsl(220deg 9.68% 93.92% / 60%);
 }
 .hover-arrow:hover {
 	padding-inline-start: 1.5rem;
