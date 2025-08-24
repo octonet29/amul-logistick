@@ -10048,3 +10048,636 @@ input[type="number"] {
 .total-amount {
 	font-size: 18px;
 }
+
+.price-cargo {
+	margin-bottom: clamp(
+		30px,
+		30px + (50 - 30) * (100vw - 360px) / (1280 - 360),
+		50px
+	);
+}
+
+.price-cargo .col {
+	margin-bottom: 30px;
+}
+
+.price-cargo .col .card {
+	position: relative;
+	overflow: hidden;
+	background-color: #e4f2f2;
+	padding: clamp(20px, 20px + (30 - 20) * (100vw - 360px) / (1280 - 360), 30px);
+	border-radius: 20px;
+	height: 350px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	background-repeat: no-repeat;
+}
+
+.price-cargo .col .card h2 {
+	max-width: 210px;
+	font-size: clamp(
+		20px,
+		20px + (26 - 20) * (100vw - 360px) / (1280 - 360),
+		26px
+	);
+	line-height: normal;
+	margin-bottom: 15px;
+	position: relative;
+	z-index: 1;
+}
+
+.price-cargo .col .card p {
+	max-width: 210px;
+	position: relative;
+	z-index: 1;
+	margin-bottom: 20px;
+}
+
+.price-cargo .col .card .btn {
+	-ms-flex-item-align: start;
+	align-self: flex-start;
+	margin-top: auto;
+	padding: 10px 15px;
+	position: relative;
+	z-index: 1;
+}
+
+.price-cargo .col:nth-child(1) .card::after {
+	content: "";
+	background-image: url(../images/price/train.png);
+	width: clamp(
+		160px,
+		160px + (180 - 160) * (100vw - 1200px) / (1280 - 1200),
+		180px
+	);
+	height: clamp(
+		225px,
+		225px + (276 - 225) * (100vw - 1200px) / (1280 - 1200),
+		276px
+	);
+	position: absolute;
+	bottom: 0;
+	right: 0px;
+	background-size: cover;
+	overflow: hidden;
+}
+
+.price-cargo .col:nth-child(2) .card::after {
+	content: "";
+	background-image: url(../images/price/truck.png);
+	width: clamp(
+		180px,
+		180px + (220 - 180) * (100vw - 1200px) / (1280 - 1200),
+		220px
+	);
+	height: clamp(
+		225px,
+		225px + (276 - 225) * (100vw - 1200px) / (1280 - 1200),
+		276px
+	);
+	position: absolute;
+	bottom: 0;
+	right: 0px;
+	background-size: cover;
+	overflow: hidden;
+}
+
+.price-cargo .col:nth-child(3) .card::after {
+	content: "";
+	background-image: url(../images/price/ship.png);
+	width: clamp(
+		180px,
+		180px + (220 - 180) * (100vw - 1200px) / (1280 - 1200),
+		220px
+	);
+	height: clamp(
+		270px,
+		270px + (320 - 270) * (100vw - 1200px) / (1280 - 1200),
+		320px
+	);
+	position: absolute;
+	bottom: 0;
+	right: 0px;
+	background-size: cover;
+	overflow: hidden;
+}
+
+.section-price .section-header {
+	margin-bottom: 60px;
+}
+
+.section-price .section-header h2 {
+	margin-bottom: clamp(1.875rem, 1.802vw + 1.368rem, 3.125rem);
+}
+
+.section-price .section-header .section-description {
+	max-width: 575px;
+	margin-left: clamp(0rem, 9.009vw - 2.534rem, 6.25rem);
+}
+
+.page-tarif__wrapper {
+	position: relative;
+	margin-top: 0;
+	z-index: 2;
+	margin-bottom: 100px;
+}
+
+.page-tarif__wrapper .card {
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	max-width: 1300px;
+	padding-top: 40px;
+	padding-bottom: 30px;
+	padding-left: clamp(0.625rem, 5.272vw - 2.641rem, 2.5rem);
+	padding-right: clamp(0.625rem, 5.272vw - 2.641rem, 2.5rem);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 30px;
+}
+@media (min-width: 768px) {
+	.page-tarif .cargo-table thead tr {
+		position: sticky;
+		top: 100px;
+	}
+}
+
+table.cargo-table {
+	width: 100%;
+	text-align: center;
+	overflow-x: auto;
+}
+
+table.cargo-table td,
+table.cargo-table th {
+	border: none;
+	padding: 10px 15px 15px;
+	font-size: calc(14px + 1 * (100vw - 320px) / 1600);
+}
+
+table.cargo-table tbody td {
+	font-size: 15px;
+	font-size: calc(14px + 1 * (100vw - 320px) / 1600);
+	border-style: solid;
+	border-width: 1px;
+	border-color: #ffffff;
+	padding: 11px 15px 11px;
+	border: none;
+}
+
+table.cargo-table tr:nth-child(odd) {
+	border-color: #eff6f6;
+	-webkit-transition: 0.15s;
+	transition: 0.15s;
+	border-radius: 15px;
+}
+
+table.cargo-table tr:nth-child(odd) td {
+	background-color: #eff6f6;
+}
+
+table.cargo-table tr:nth-child(odd):hover td {
+	background-color: #e4f2f2;
+}
+
+table.cargo-table tr:nth-child(odd) td:first-child {
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+table.cargo-table tr:nth-child(odd) td:last-child {
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+table.cargo-table td:nth-child(2),
+table.cargo-table td:nth-child(3),
+table.cargo-table td:nth-child(4) {
+	width: 18%;
+}
+
+table.cargo-table td:nth-child(5) {
+	width: 20%;
+}
+
+table.cargo-table td:first-child {
+	text-align: left;
+	width: 26%;
+}
+
+table.cargo-table thead th {
+	font-size: 15px;
+	font-weight: 600;
+	background-color: white;
+	text-align: center;
+	font-size: calc(14px + 1 * (100vw - 320px) / 1600);
+}
+
+table.cargo-table.cargo-table-5 td:nth-child(2),
+table.cargo-table.cargo-table-5 td:nth-child(3),
+table.cargo-table.cargo-table-5 td:nth-child(4),
+table.cargo-table.cargo-table-5 td:nth-child(5) {
+	width: 15%;
+}
+
+table.cargo-table.cargo-table-5 td:nth-child(6) {
+	width: 19%;
+}
+
+table.cargo-table.cargo-table-5 td:first-child {
+	width: 21%;
+}
+
+table.cargo-table.cargo-table-5 td .btn {
+	padding: 9px 11px;
+	font-size: 15px;
+}
+
+table.cargo-table.cargo-table-null td,
+table.cargo-table.cargo-table-null th {
+	padding: 25px 15px 25px;
+	font-size: clamp(0.938rem, 0.18vw + 0.887rem, 1.063rem);
+}
+
+@media (max-width: 767px) {
+	table.cargo-table {
+		display: block;
+	}
+	table.cargo-table td,
+	table.cargo-table th {
+		padding: 12px 15px 12px;
+	}
+	table.cargo-table.cargo-table-5 {
+		display: table;
+		margin: auto;
+		max-width: 500px;
+		border-bottom: none;
+	}
+	table.cargo-table.cargo-table-5 thead {
+		display: none;
+	}
+	table.cargo-table.cargo-table-5 td:nth-child(2),
+	table.cargo-table.cargo-table-5 td:nth-child(3),
+	table.cargo-table.cargo-table-5 td:nth-child(4),
+	table.cargo-table.cargo-table-5 td:nth-child(5),
+	table.cargo-table.cargo-table-5 td:nth-child(6) {
+		width: 100%;
+	}
+	table.cargo-table.cargo-table-5 td:first-child {
+		width: 100%;
+	}
+	table.cargo-table.cargo-table-5 tr {
+		display: block;
+		border-radius: 8px;
+		margin-bottom: 20px;
+		padding: 10px 5px;
+	}
+	table.cargo-table.cargo-table-5 tr:nth-child(odd) {
+		background-color: #eff6f6;
+	}
+	table.cargo-table.cargo-table-5 tr:nth-child(even) {
+		border: 1px solid rgba(0, 0, 0, 0.1);
+	}
+	table.cargo-table.cargo-table-5 tr:nth-child(even):hover {
+		border-color: #ced4da;
+	}
+	table.cargo-table.cargo-table-5 td {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: clamp(0.625rem, 0.879vw + 0.081rem, 0.938rem);
+		padding-right: clamp(0.625rem, 0.879vw + 0.081rem, 0.938rem);
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		bottom: none;
+	}
+	table.cargo-table.cargo-table-5 td .btn {
+		padding: 9px 11px;
+		display: table;
+		margin: 10px auto 0;
+	}
+	table.cargo-table.cargo-table-5 td::before {
+		content: attr(data-label);
+		font-weight: 600;
+	}
+	table.cargo-table tr:nth-child(2n + 1) td {
+		background-color: none;
+	}
+	table.cargo-table tr:nth-child(2n + 1):hover td {
+		background-color: inherit;
+	}
+}
+
+.transportation {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	display: flex;
+	box-sizing: content-box;
+	gap: 20px;
+}
+
+/* price */
+racking-section {
+	background: rgba(255, 255, 255, 0.95);
+	border-radius: 20px;
+	padding: 40px;
+	margin-bottom: 60px;
+	color: #333;
+	text-align: center;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.tracking-title {
+	font-size: 28px;
+	font-weight: 600;
+	margin-bottom: 30px;
+	color: #1f2937;
+}
+
+.tracking-subtitle {
+	font-size: 16px;
+	color: #6b7280;
+	margin-bottom: 30px;
+}
+
+.tracking-form {
+	display: flex;
+	gap: 15px;
+	max-width: 600px;
+	margin: 0 auto;
+	align-items: flex-end;
+}
+
+.tracking-input-group {
+	flex: 1;
+	text-align: left;
+}
+
+.tracking-input-group label {
+	display: block;
+	margin-bottom: 8px;
+	color: #374151;
+	font-weight: 500;
+}
+
+.tracking-input {
+	width: 100%;
+	padding: 15px;
+	border: 2px solid #e5e7eb;
+	border-radius: 10px;
+	font-size: 16px;
+	transition: border-color 0.3s;
+	background: white;
+}
+
+.tracking-input:focus {
+	outline: none;
+	border-color: #8b5cf6;
+}
+
+.tracking-input::placeholder {
+	color: #9ca3af;
+}
+
+.track-btn {
+	background: #02a105;
+	color: white;
+	border: none;
+	padding: 15px 30px;
+	border-radius: 10px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: transform 0.2s, box-shadow 0.2s;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	white-space: nowrap;
+}
+
+.track-btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+}
+.main-container {
+	margin-top: 30px;
+	width: 100%;
+	/* max-width: 1200px; */
+	display: grid;
+	/* grid-template-columns: 1fr 500px 1fr; */
+	gap: 40px;
+	align-items: center;
+}
+
+.side-card {
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(10px);
+	border-radius: 20px;
+	padding: 40px;
+	text-align: center;
+	color: white;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.side-card .icon {
+	width: 60px;
+	height: 60px;
+	background: linear-gradient(45deg, #ff6b35, #f7931e);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto 20px;
+	font-size: 24px;
+}
+
+.side-card h3 {
+	font-size: 24px;
+	margin-bottom: 15px;
+}
+
+.calculator-modal {
+	background: white;
+	border-radius: 20px;
+	padding: 30px;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+	width: 100%;
+	position: relative;
+}
+
+.modal-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 30px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #eee;
+}
+
+.modal-title {
+	font-size: 20px;
+	font-weight: 600;
+	color: #333;
+}
+
+.close-btn {
+	background: none;
+	border: none;
+	font-size: 24px;
+	cursor: pointer;
+	color: #666;
+	padding: 5px;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+.form-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 15px;
+	margin-bottom: 20px;
+}
+
+label {
+	display: block;
+	margin-bottom: 8px;
+	color: #333;
+	font-weight: 500;
+	font-size: 14px;
+}
+
+.required {
+	color: #e74c3c;
+}
+
+select,
+input {
+	width: 100%;
+	padding: 12px 15px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	font-size: 14px;
+	background: white;
+	transition: border-color 0.3s;
+}
+
+select:focus,
+input:focus {
+	outline: none;
+	border-color: #667eea;
+}
+
+.dimensions-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 15px;
+	margin-bottom: 20px;
+}
+
+.dimension-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.dimension-input {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.dimension-input input {
+	flex: 1;
+}
+
+.unit {
+	color: #666;
+	font-size: 12px;
+	min-width: 25px;
+}
+
+.calculate-btn {
+	width: 100%;
+	background: #02a105;
+	color: white;
+	border: none;
+	padding: 15px;
+	border-radius: 10px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: transform 0.2s, box-shadow 0.2s;
+	margin-bottom: 20px;
+}
+
+.calculate-btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.result-section {
+	background: #f8f9fa;
+	border-radius: 10px;
+	padding: 20px;
+	text-align: center;
+}
+
+.result-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.result-label {
+	color: #666;
+	font-size: 14px;
+}
+
+.result-value {
+	font-weight: 600;
+	color: #333;
+}
+
+.total-cost {
+	font-size: 18px;
+	color: #667eea;
+	font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+	.main-container {
+		grid-template-columns: 1fr;
+		gap: 20px;
+		/* max-width: 500px; */
+	}
+
+	.side-card {
+		display: none;
+	}
+}
+
+@media (max-width: 640px) {
+	.form-row {
+		grid-template-columns: 1fr;
+	}
+
+	.dimensions-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.calculator-modal {
+		padding: 20px;
+		margin: 10px;
+	}
+}

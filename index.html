@@ -1,2056 +1,1632 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="description" content="  Amul Logistics" />
-      <meta name="keywords" content="  Amul Logistics" />
-      <meta name="robots" content="INDEX,FOLLOW" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <!-- Title -->
-      <title>Amul Logistics</title>
-      <!-- Favicon -->
-      <link rel="shortcut icon" href="assets/images/logo/favicon.ico" />
-      <!-- Bootstrap -->
-      <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-      <!-- Stoshi font -->
-      <link rel="stylesheet" href="assets/css/satoshi.css" />
-      <!-- swiper Slider -->
-      <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
-      <!-- AOS -->
-      <link rel="stylesheet" href="assets/css/aos.css" />
-      <!-- Circle Progress -->
-      <link rel="stylesheet" href="assets/css/animated-radial-progress.css" />
-      <!-- magnific -->
-      <link rel="stylesheet" href="assets/css/magnific-popup.css" />
-      <!-- Main css -->
-      <link rel="stylesheet" href="assets/css/main.css" />
-   </head>
-   <body>
-      <!--==================== Preloader Start ====================-->
-      <div
-         class="preloader bg-white tw-h-screen justify-content-center align-items-center tw-z-999 position-fixed top-0 tw-start-0 w-100 h-100"
-         >
-         <div class="car-road">
-            <div class="car">
-               <div class="car-top">
-                  <div class="window"></div>
-               </div>
-               <div class="car-base"></div>
-               <div class="wheel-left wheel">
-                  <div class="wheel-spike"></div>
-                  <div class="wheel-center"></div>
-               </div>
-               <div class="wheel-right wheel">
-                  <div class="wheel-spike"></div>
-                  <div class="wheel-center"></div>
-               </div>
-               <div class="head-light"></div>
-            </div>
-            <div class="road"></div>
-         </div>
-      </div>
-      <!--==================== Preloader End ====================-->
-      <!--==================== Overlay Start ====================-->
-      <div class="overlay"></div>
-      <!--==================== Overlay End ====================-->
-      <!--==================== Sidebar Overlay End ====================-->
-      <div class="side-overlay"></div>
-      <!--==================== Sidebar Overlay End ====================-->
-      <!-- ==================== Scroll to Top End Here ==================== -->
-      <div class="progress-wrap cursor-big">
-         <svg
-            class="progress-circle svg-content"
-            width="100%"
-            height="100%"
-            viewBox="-1 -1 102 102"
-            >
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-         </svg>
-      </div>
-      <!-- ==================== Scroll to Top End Here ==================== -->
-      <!-- Custom Cursor Start -->
-      <div class="cursor"></div>
-      <span class="dot"></span>
-      <!-- Custom Cursor End -->
-      <!-- Modal -->
-      <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-         <div class="modal-content" onclick="event.stopPropagation()">
-            <div class="modal-header">
-               <h3 class="modal-title">Profile Settings</h3>
-               <button class="close-btn" onclick="closeModal()" title="Close">✕</button>
-            </div>
-            <div class="success-message" id="successMessage">
-               Password updated successfully!
-            </div>
-            <form id="profileForm">
-               <div class="form-group">
-                  <label class="form-label" for="email">Email Address</label>
-                  <input
-                     type="email"
-                     id="email"
-                     class="form-input"
-                     value="user@example.com"
-                     disabled
-                     >
-                  <div class="disabled-notice">Email cannot be changed for security reasons</div>
-               </div>
-               <div class="form-group">
-                  <label class="form-label" for="currentPassword">Current Password</label>
-                  <div class="password-container">
-                     <input
-                        type="password"
-                        id="currentPassword"
-                        class="form-input"
-                        placeholder="Enter current password"
-                        required
-                        >
-                     <span class="password-toggle" onclick="togglePassword('currentPassword')">👁</span>
-                  </div>
-               </div>
-               <div class="form-group">
-                  <label class="form-label" for="newPassword">New Password</label>
-                  <div class="password-container">
-                     <input
-                        type="password"
-                        id="newPassword"
-                        class="form-input"
-                        placeholder="Enter new password"
-                        required
-                        >
-                     <span class="password-toggle" onclick="togglePassword('newPassword')">👁</span>
-                  </div>
-               </div>
-               <div class="form-group">
-                  <label class="form-label" for="confirmPassword">Confirm New Password</label>
-                  <div class="password-container">
-                     <input
-                        type="password"
-                        id="confirmPassword"
-                        class="form-input"
-                        placeholder="Confirm new password"
-                        required
-                        >
-                     <span class="password-toggle" onclick="togglePassword('confirmPassword')">👁</span>
-                  </div>
-               </div>
-               <div class="modal-actions">
-                  <button type="button" class="btn btn-secondary" onclick="closeModal()">
-                  Cancel
-                  </button>
-                  <button type="submit" class="btn btn-primary">
-                  Update Password
-                  </button>
-               </div>
-            </form>
-         </div>
-      </div>
-      <!-- ==================== Mobile Menu Start Here ==================== -->
-      <div
-         class="mobile-menu d-lg-none d-block scroll-sm position-fixed bg-white tw-w-300-px tw-h-screen overflow-y-auto tw-p-6 tw-z-999 tw--translate-x-full tw-pb-68"
-         >
-         <button
-            type="button"
-            class="close-button position-absolute tw-end-0 top-0 tw-me-2 tw-mt-2 tw-w-605 tw-h-605 rounded-circle d-flex justify-content-center align-items-center text-main-two-600 bg-neutral-200 hover-bg-main-two-600 hover-text-white"
-            >
-         <i class="ph ph-x"></i>
-         </button>
-         <div class="mobile-menu__inner">
-            <a href="index.html" class="mobile-menu__logo">
-            <img src="assets/images/logo/amulLogo.png" alt="Logo" />
-            </a>
-            <div class="mobile-menu__menu">
-               <!-- Nav menu Start -->
-               <ul
-                  class="nav-menu cursor-small d-lg-flex align-items-center nav-menu--mobile d-block tw-mt-8"
-                  >
-                  <li class="nav-menu__item position-relative activePage">
-                     <a
-                        href="index.html"
-                        class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100 tw-pe-4"
-                        >Baş sahypa</a
-                        >
-                  </li>
-                  <li class="nav-menu__item position-relative">
-                     <a
-                        href="about.html"
-                        class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100 tw-pe-4"
-                        >Biz barada</a
-                        >
-                  </li>
-                  <li class="nav-menu__item position-relative">
-                     <a
-                        href="service.html"
-                        class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100 tw-pe-4"
-                        >Hyzmatlarymyz</a
-                        >
-                  </li>
-                  <!-- <li class="nav-menu__item">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="  Amul Logistics" />
+		<meta name="keywords" content="  Amul Logistics" />
+		<meta name="robots" content="INDEX,FOLLOW" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Title -->
+		<title>Amul Logistics</title>
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="assets/images/logo/favicon.ico" />
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		<!-- Stoshi font -->
+		<link rel="stylesheet" href="assets/css/satoshi.css" />
+		<!-- swiper Slider -->
+		<link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+		<!-- AOS -->
+		<link rel="stylesheet" href="assets/css/aos.css" />
+		<!-- Circle Progress -->
+		<link rel="stylesheet" href="assets/css/animated-radial-progress.css" />
+		<!-- magnific -->
+		<link rel="stylesheet" href="assets/css/magnific-popup.css" />
+		<!-- Main css -->
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+		<!--==================== Preloader Start ====================-->
+		<div
+			class="preloader bg-white tw-h-screen justify-content-center align-items-center tw-z-999 position-fixed top-0 tw-start-0 w-100 h-100"
+		>
+			<div class="car-road">
+				<div class="car">
+					<div class="car-top">
+						<div class="window"></div>
+					</div>
+					<div class="car-base"></div>
+					<div class="wheel-left wheel">
+						<div class="wheel-spike"></div>
+						<div class="wheel-center"></div>
+					</div>
+					<div class="wheel-right wheel">
+						<div class="wheel-spike"></div>
+						<div class="wheel-center"></div>
+					</div>
+					<div class="head-light"></div>
+				</div>
+				<div class="road"></div>
+			</div>
+		</div>
+		<!--==================== Preloader End ====================-->
+		<!--==================== Overlay Start ====================-->
+		<div class="overlay"></div>
+		<!--==================== Overlay End ====================-->
+		<!--==================== Sidebar Overlay End ====================-->
+		<div class="side-overlay"></div>
+		<!--==================== Sidebar Overlay End ====================-->
+		<!-- ==================== Scroll to Top End Here ==================== -->
+		<div class="progress-wrap cursor-big">
+			<svg
+				class="progress-circle svg-content"
+				width="100%"
+				height="100%"
+				viewBox="-1 -1 102 102"
+			>
+				<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+			</svg>
+		</div>
+		<!-- ==================== Scroll to Top End Here ==================== -->
+		<!-- Custom Cursor Start -->
+		<div class="cursor"></div>
+		<span class="dot"></span>
+		<!-- Custom Cursor End -->
+		<!-- Modal -->
+		<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+			<div class="modal-content" onclick="event.stopPropagation()">
+				<div class="modal-header">
+					<h3 class="modal-title">Profile Settings</h3>
+					<button class="close-btn" onclick="closeModal()" title="Close">
+						✕
+					</button>
+				</div>
+				<div class="success-message" id="successMessage">
+					Password updated successfully!
+				</div>
+				<form id="profileForm">
+					<div class="form-group">
+						<label class="form-label" for="email">Email Address</label>
+						<input
+							type="email"
+							id="email"
+							class="form-input"
+							value="user@example.com"
+							disabled
+						/>
+						<div class="disabled-notice">
+							Email cannot be changed for security reasons
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="currentPassword"
+							>Current Password</label
+						>
+						<div class="password-container">
+							<input
+								type="password"
+								id="currentPassword"
+								class="form-input"
+								placeholder="Enter current password"
+								required
+							/>
+							<span
+								class="password-toggle"
+								onclick="togglePassword('currentPassword')"
+								>👁</span
+							>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="newPassword">New Password</label>
+						<div class="password-container">
+							<input
+								type="password"
+								id="newPassword"
+								class="form-input"
+								placeholder="Enter new password"
+								required
+							/>
+							<span
+								class="password-toggle"
+								onclick="togglePassword('newPassword')"
+								>👁</span
+							>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="confirmPassword"
+							>Confirm New Password</label
+						>
+						<div class="password-container">
+							<input
+								type="password"
+								id="confirmPassword"
+								class="form-input"
+								placeholder="Confirm new password"
+								required
+							/>
+							<span
+								class="password-toggle"
+								onclick="togglePassword('confirmPassword')"
+								>👁</span
+							>
+						</div>
+					</div>
+					<div class="modal-actions">
+						<button
+							type="button"
+							class="btn btn-secondary"
+							onclick="closeModal()"
+						>
+							Cancel
+						</button>
+						<button type="submit" class="btn btn-primary">
+							Update Password
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- ==================== Mobile Menu Start Here ==================== -->
+		<div
+			class="mobile-menu d-lg-none d-block scroll-sm position-fixed bg-white tw-w-300-px tw-h-screen overflow-y-auto tw-p-6 tw-z-999 tw--translate-x-full tw-pb-68"
+		>
+			<button
+				type="button"
+				class="close-button position-absolute tw-end-0 top-0 tw-me-2 tw-mt-2 tw-w-605 tw-h-605 rounded-circle d-flex justify-content-center align-items-center text-main-two-600 bg-neutral-200 hover-bg-main-two-600 hover-text-white"
+			>
+				<i class="ph ph-x"></i>
+			</button>
+			<div class="mobile-menu__inner">
+				<a href="index.html" class="mobile-menu__logo">
+					<img src="assets/images/logo/amulLogo.png" alt="Logo" />
+				</a>
+				<div class="mobile-menu__menu">
+					<!-- Nav menu Start -->
+					<ul
+						class="nav-menu cursor-small d-lg-flex align-items-center nav-menu--mobile d-block tw-mt-8"
+					>
+						<li class="nav-menu__item position-relative activePage">
+							<a
+								href="index.html"
+								class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100 tw-pe-4"
+								>Baş sahypa</a
+							>
+						</li>
+						<li class="nav-menu__item position-relative">
+							<a
+								href="about.html"
+								class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100 tw-pe-4"
+								>Biz barada</a
+							>
+						</li>
+						<li class="nav-menu__item position-relative">
+							<a
+								href="service.html"
+								class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100 tw-pe-4"
+								>Hyzmatlarymyz</a
+							>
+						</li>
+						<!-- <li class="nav-menu__item">
                      <a
                      	href="about.html"
                      	class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
                      	>Amul logistics nähili işleýär</a
                      >
                      </li> -->
-                  <li class="nav-menu__item position-relative">
-                     <a
-                        href="ourClient.html"
-                        class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100 tw-pe-4"
-                        >Hyzmatdaşlarymyz</a
-                        >
-                  </li>
-                  <li class="nav-menu__item">
-                     <a
-                        href="contact.html"
-                        class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
-                        >Habarlaşmak</a
-                        >
-                  </li>
-               </ul>
-               <!-- Nav menu End  -->
-            </div>
-         </div>
-      </div>
-      <!-- ==================== Mobile Menu End Here ==================== -->
-      <!-- ============================ Header Top Start ==================================== -->
-      <div
-         class="bg-neutral-50 position-relative z-1 d-sm-block d-none header-top-bg"
-         >
-         <div class="container tw-container-1554-px">
-            <div class="d-flex align-items-center justify-content-between tw-gap-6">
-               <div class="d-flex align-items-center tw-gap-6">
-                  <div
-                     class="cursor-small d-flex align-items-center tw-gap-2 tw-py-205"
-                     >
-                     <span class="text-main-600 d-flex"
-                        ><i class="ph-bold ph-phone"></i
-                        ></span>
-                     <span class="text-black xl-tw-text-sm tw-text-xs fw-medium"
-                        >+99362702242</span
-                        >
-                  </div>
-                  <div
-                     class="cursor-small d-flex align-items-center tw-gap-2 tw-py-205"
-                     >
-                     <span class="text-main-600 d-flex"
-                        ><i class="ph-bold ph-phone"></i
-                        ></span>
-                     <a
-                        href="phone:+99363306161"
-                        class="text-black xl-tw-text-sm tw-text-xs fw-medium hover--translate-x-05 hover-text-main-600 tw-transition-all"
-                        >+99363306161</a
-                        >
-                  </div>
-               </div>
-               <div class="d-md-flex d-none align-items-center tw-gap-6">
-                  <div
-                     class="cursor-small d-flex align-items-center tw-gap-2 tw-py-205"
-                     >
-                     <span class="text-main-600 d-flex"
-                        ><i class="ph-bold ph-envelope"></i
-                        ></span>
-                     <a
-                        href="mailto:contact@gmail.com"
-                        class="text-black xl-tw-text-sm tw-text-xs fw-medium hover--translate-x-05 hover-text-main-600 tw-transition-all"
-                        >contact@gmail.com</a
-                        >
-                  </div>
-                  <div
-                     class="cursor-small d-lg-flex d-none align-items-center tw-py-205 tw-gap-6 tw-ps-10 clip-path position-relative"
-                     >
-                     <span class="text-white d-flex"
-                        ><i class="ph-bold ph-map-trifold"></i
-                        ></span>
-                     <span class="text-white xl-tw-text-sm tw-text-xs fw-medium"
-                        >Ashgabat Parahat 7/1 office
-                     </span>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- ============================ Header Top End ==================================== -->
-      <!-- ==================== Header Start Here ==================== -->
-      <header class="header bg-white transition-all">
-         <div class="tw-container-1742-px tw-ps-4 pe-lg-0 pe-3 tw-ms-auto">
-            <nav class="header-inner bg-white d-flex justify-content-between">
-               <div class="d-flex align-items-center">
-                  <!-- Logo Start -->
-                  <div
-                     class="logo-mask-bg cursor-big position-relative d-lg-flex d-none z-1 tw-w-156-px d-flex justify-content-center align-items-center"
-                     >
-                     <a href="index.html">
-                     <img
-                        src="assets/images/logo/amulLogo.png"
-                        alt="Logo"
-                        class="max-w-82-px"
-                        />
-                     </a>
-                  </div>
-                  <div class="position-relative d-lg-none d-inline-block z-1">
-                     <a href="index.html" class="cursor-big">
-                     <img
-                        src="assets/images/logo/amulLogo.png"
-                        alt="Logo"
-                        class="max-w-82-px"
-                        />
-                     </a>
-                  </div>
-                  <!-- Logo End  -->
-                  <!-- Menu Start  -->
-                  <div class="header-menu d-lg-block d-none ps-108-px">
-                     <!-- Nav menu Start -->
-                     <ul
-                        class="nav-menu cursor-small d-lg-flex align-items-center xl-tw-gap-12 tw-gap-2"
-                        >
-                        <li class="nav-menu__item position-relative activePage">
-                           <a
-                              href="index.html"
-                              class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100 tw-pe-4"
-                              >Baş sahypa</a
-                              >
-                        </li>
-                        <li class="nav-menu__item position-relative">
-                           <a
-                              href="about.html"
-                              class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100 tw-pe-4"
-                              >Biz barada</a
-                              >
-                        </li>
-                        <li class="nav-menu__item position-relative">
-                           <a
-                              href="service.html"
-                              class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100 tw-pe-4"
-                              >Hyzmatlarymyz</a
-                              >
-                        </li>
-                        <!-- <li class="nav-menu__item">
+						<li class="nav-menu__item position-relative">
+							<a
+								href="ourClient.html"
+								class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100 tw-pe-4"
+								>Hyzmatdaşlarymyz</a
+							>
+						</li>
+						<li class="nav-menu__item">
+							<a
+								href="contact.html"
+								class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
+								>Habarlaşmak</a
+							>
+						</li>
+					</ul>
+					<!-- Nav menu End  -->
+				</div>
+			</div>
+		</div>
+		<!-- ==================== Mobile Menu End Here ==================== -->
+		<!-- ============================ Header Top Start ==================================== -->
+		<div
+			class="bg-neutral-50 position-relative z-1 d-sm-block d-none header-top-bg"
+		>
+			<div class="container tw-container-1554-px">
+				<div class="d-flex align-items-center justify-content-between tw-gap-6">
+					<div class="d-flex align-items-center tw-gap-6">
+						<div
+							class="cursor-small d-flex align-items-center tw-gap-2 tw-py-205"
+						>
+							<span class="text-main-600 d-flex"
+								><i class="ph-bold ph-phone"></i
+							></span>
+							<span class="text-black xl-tw-text-sm tw-text-xs fw-medium"
+								>+99362702242</span
+							>
+						</div>
+						<div
+							class="cursor-small d-flex align-items-center tw-gap-2 tw-py-205"
+						>
+							<span class="text-main-600 d-flex"
+								><i class="ph-bold ph-phone"></i
+							></span>
+							<a
+								href="phone:+99363306161"
+								class="text-black xl-tw-text-sm tw-text-xs fw-medium hover--translate-x-05 hover-text-main-600 tw-transition-all"
+								>+99363306161</a
+							>
+						</div>
+					</div>
+					<div class="d-md-flex d-none align-items-center tw-gap-6">
+						<div
+							class="cursor-small d-flex align-items-center tw-gap-2 tw-py-205"
+						>
+							<span class="text-main-600 d-flex"
+								><i class="ph-bold ph-envelope"></i
+							></span>
+							<a
+								href="mailto:contact@gmail.com"
+								class="text-black xl-tw-text-sm tw-text-xs fw-medium hover--translate-x-05 hover-text-main-600 tw-transition-all"
+								>contact@gmail.com</a
+							>
+						</div>
+						<div
+							class="cursor-small d-lg-flex d-none align-items-center tw-py-205 tw-gap-6 tw-ps-10 clip-path position-relative"
+						>
+							<span class="text-white d-flex"
+								><i class="ph-bold ph-map-trifold"></i
+							></span>
+							<span class="text-white xl-tw-text-sm tw-text-xs fw-medium"
+								>Ashgabat Parahat 7/1 office
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ============================ Header Top End ==================================== -->
+		<!-- ==================== Header Start Here ==================== -->
+		<header class="header bg-white transition-all">
+			<div class="tw-container-1742-px tw-ps-4 pe-lg-0 pe-3 tw-ms-auto">
+				<nav class="header-inner bg-white d-flex justify-content-between">
+					<div class="d-flex align-items-center">
+						<!-- Logo Start -->
+						<div
+							class="logo-mask-bg cursor-big position-relative d-lg-flex d-none z-1 tw-w-156-px d-flex justify-content-center align-items-center"
+						>
+							<a href="index.html">
+								<img
+									src="assets/images/logo/amulLogo.png"
+									alt="Logo"
+									class="max-w-82-px"
+								/>
+							</a>
+						</div>
+						<div class="position-relative d-lg-none d-inline-block z-1">
+							<a href="index.html" class="cursor-big">
+								<img
+									src="assets/images/logo/amulLogo.png"
+									alt="Logo"
+									class="max-w-82-px"
+								/>
+							</a>
+						</div>
+						<!-- Logo End  -->
+						<!-- Menu Start  -->
+						<div class="header-menu d-lg-block d-none ps-108-px">
+							<!-- Nav menu Start -->
+							<ul
+								class="nav-menu cursor-small d-lg-flex align-items-center xl-tw-gap-12 tw-gap-2"
+							>
+								<li class="nav-menu__item position-relative activePage">
+									<a
+										href="index.html"
+										class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100 tw-pe-4"
+										>Baş sahypa</a
+									>
+								</li>
+								<li class="nav-menu__item position-relative">
+									<a
+										href="about.html"
+										class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100 tw-pe-4"
+										>Biz barada</a
+									>
+								</li>
+								<li class="nav-menu__item position-relative">
+									<a
+										href="service.html"
+										class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100 tw-pe-4"
+										>Hyzmatlarymyz</a
+									>
+								</li>
+								<!-- <li class="nav-menu__item">
                            <a
                            	href="about.html"
                            	class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
                            	>Amul logistics nähili işleýär</a
                            >
                            </li> -->
-                        <li class="nav-menu__item position-relative">
-                           <a
-                              href="ourClient.html"
-                              class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100 tw-pe-4"
-                              >Hyzmatdaşlarymyz</a
-                              >
-                        </li>
-                        <li class="nav-menu__item">
-                           <a
-                              href="contact.html"
-                              class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
-                              >Habarlaşmak</a
-                              >
-                        </li>
-                     </ul>
-                     <!-- Nav menu End  -->
-                  </div>
-                  <!-- Menu End  -->
-               </div>
-               <!-- Header Right start -->
-               <div class="header-four-right d-flex gap-xxl-5 gap-3">
-                  <div
-                     class="d-flex align-items-center xl-tw-gap-7 tw-gap-5 flex-shrink-0"
-                     >
-                     <!-- Language Start -->
-                     <div
-                        class="cursor-small position-relative group-item hover-mt-0 xxsm-d-block d-none"
-                        >
-                        <div class="d-flex align-items-center tw-gap-2">
-                           <a
-                              href="javascript:void(0)"
-                              class="selected-text text-black py-lg-4 d-flex align-items-center gap-2"
-                              >
-                           <span
-                              class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle common-shadow d-flex justify-content-center align-items-center"
-                              >
-                           <img
-                              src="assets/images/thumbs/flag1.png"
-                              alt=""
-                              class="w-100 h-100 object-fit-cover rounded-circle"
-                              />
-                           </span>
-                           English
-                           </a>
-                           <span class="text-neutral-700">
-                           <i class="ph-bold ph-caret-down"></i>
-                           </span>
-                        </div>
-                        <ul
-                           class="lang-dropdown tw-max-h-300-px overflow-y-auto scroll-sm bg-white common-shadow tw-px-4 tw-py-3 position-absolute tw-end-0 top-100 min-w-max tw-rounded-lg d-flex flex-column tw-gap-3 tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1 tw-duration-200 group-hover-item-mt-0 tw-mt-4 tw-z-99"
-                           >
-                           <li>
-                              <a
-                                 href="javascript:void(0)"
-                                 class="text-black d-flex align-items-center gap-2 hover-text-main-600 active--translate-y-1 tw-duration-150"
-                                 >
-                              <span
-                                 class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle d-flex justify-content-center align-items-center"
-                                 >
-                              <img
-                                 src="assets/images/thumbs/flag1.png"
-                                 alt=""
-                                 class="w-100 h-100 object-fit-cover rounded-circle"
-                                 />
-                              </span>
-                              English
-                              </a>
-                           </li>
-                           <li>
-                              <a
-                                 href="javascript:void(0)"
-                                 class="text-black d-flex align-items-center gap-2 hover-text-main-600 active--translate-y-1 tw-duration-150"
-                                 >
-                              <span
-                                 class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle d-flex justify-content-center align-items-center"
-                                 >
-                              <img
-                                 src="assets/images/thumbs/flag2.png"
-                                 alt=""
-                                 class="w-100 h-100 object-fit-cover rounded-circle"
-                                 />
-                              </span>
-                              Turkmen
-                              </a>
-                           </li>
-                           <li>
-                              <a
-                                 href="javascript:void(0)"
-                                 class="text-black d-flex align-items-center gap-2 hover-text-main-600 active--translate-y-1 tw-duration-150"
-                                 >
-                              <span
-                                 class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle d-flex justify-content-center align-items-center"
-                                 >
-                              <img
-                                 src="assets/images/thumbs/flag3.png"
-                                 alt=""
-                                 class="w-100 h-100 object-fit-cover rounded-circle"
-                                 />
-                              </span>
-                              Russia
-                              </a>
-                           </li>
-                        </ul>
-                     </div>
-                     <!-- Language End -->
-                     <!-- Line Start -->
-                     <span class="line h-100"></span>
-                     <div class="d-flex align-items-center tw-gap-2 user">
-                        <div class="action selected-text text-black py-lg-4 d-flex align-items-center gap-2">
-                           <div class="profile tw-w-30-px tw-h-30-px border border-white border-2 rounded-circle common-shadow d-flex justify-content-center align-items-center">
-                              <i  class="ph ph-user w-100 h-100 d-flex justify-content-center align-items-center"></i>
-                           </div>
-                           <div class="menu common-shadow">
-                              <!-- <h3>Someone Famous<br/><span>Website Designer</span></h3> -->
-                              <ul>
-                                 <li>
-                                    <i class="ph ph-user"></i>
-                                    <a onclick="openModal()">My Profile</a>
-                                 </li>
-                                 <li>
-                                    <i class="ph ph-sign-in"></i>
-                                    <a  href="login.html">Login</a>
-                                 </li>
-                                 <li>
-                                    <i class="ph ph-sign-out"></i>
-                                    <a href="#">Logout</a>
-                                 </li>
-                              </ul>
-                           </div>
-                        </div>
-                     </div>
-                     <button
-                        type="button"
-                        class="toggle-mobileMenu leading-none d-lg-none text-main-two-600 tw-text-9"
-                        >
-                     <i class="ph ph-list"></i>
-                     </button>
-                  </div>
-               </div>
-               <!-- Header Right End  -->
-            </nav>
-         </div>
-      </header>
-      <!-- ==================== Header End Here ==================== -->
-      <!-- ============================ Banner section start ======================================= -->
-      <section class="banner position-relative overflow-hidden">
-         <img
-            src="assets/images/shapes/plane-small.png"
-            alt=""
-            class="planeSmall cursor-big position-absolute top-0 tw-start-0 tw-mt-134-px z-2 d-xxl-block d-none"
-            />
-         <img
-            src="assets/images/shapes/triangle-shape.png"
-            alt=""
-            class="position-absolute bottom-0 tw-start-0 z-2 d-lg-block d-none"
-            />
-         <div class="banner-slider">
-            <div class="swiper-wrapper">
-               <div class="swiper-slide">
-                  <img
-                     src="assets/images/thumbs/banner-img1.png"
-                     alt=""
-                     class="scale-bg position-absolute top-0 tw-start-0 z-n1 w-100 h-100 object-fit-cover"
-                     />
-                  <div class="banner-item z-2 position-relative">
-                     <div class="tw-container-1540-px mx-auto tw-px-4">
-                        <div class="position-relative">
-                           <div class="container">
-                              <div class="row">
-                                 <div class="col-lg-7">
+								<li class="nav-menu__item position-relative">
+									<a
+										href="ourClient.html"
+										class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100 tw-pe-4"
+										>Hyzmatdaşlarymyz</a
+									>
+								</li>
+								<li class="nav-menu__item">
+									<a
+										href="contact.html"
+										class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
+										>Habarlaşmak</a
+									>
+								</li>
+							</ul>
+							<!-- Nav menu End  -->
+						</div>
+						<!-- Menu End  -->
+					</div>
+					<!-- Header Right start -->
+					<div class="header-four-right d-flex gap-xxl-5 gap-3">
+						<div
+							class="d-flex align-items-center xl-tw-gap-7 tw-gap-5 flex-shrink-0"
+						>
+							<!-- Language Start -->
+							<div
+								class="cursor-small position-relative group-item hover-mt-0 xxsm-d-block d-none"
+							>
+								<div class="d-flex align-items-center tw-gap-2">
+									<a
+										href="javascript:void(0)"
+										class="selected-text text-black py-lg-4 d-flex align-items-center gap-2"
+									>
+										<span
+											class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle common-shadow d-flex justify-content-center align-items-center"
+										>
+											<img
+												src="assets/images/thumbs/flag1.png"
+												alt=""
+												class="w-100 h-100 object-fit-cover rounded-circle"
+											/>
+										</span>
+										English
+									</a>
+									<span class="text-neutral-700">
+										<i class="ph-bold ph-caret-down"></i>
+									</span>
+								</div>
+								<ul
+									class="lang-dropdown tw-max-h-300-px overflow-y-auto scroll-sm bg-white common-shadow tw-px-4 tw-py-3 position-absolute tw-end-0 top-100 min-w-max tw-rounded-lg d-flex flex-column tw-gap-3 tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1 tw-duration-200 group-hover-item-mt-0 tw-mt-4 tw-z-99"
+								>
+									<li>
+										<a
+											href="javascript:void(0)"
+											class="text-black d-flex align-items-center gap-2 hover-text-main-600 active--translate-y-1 tw-duration-150"
+										>
+											<span
+												class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle d-flex justify-content-center align-items-center"
+											>
+												<img
+													src="assets/images/thumbs/flag1.png"
+													alt=""
+													class="w-100 h-100 object-fit-cover rounded-circle"
+												/>
+											</span>
+											English
+										</a>
+									</li>
+									<li>
+										<a
+											href="javascript:void(0)"
+											class="text-black d-flex align-items-center gap-2 hover-text-main-600 active--translate-y-1 tw-duration-150"
+										>
+											<span
+												class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle d-flex justify-content-center align-items-center"
+											>
+												<img
+													src="assets/images/thumbs/flag2.png"
+													alt=""
+													class="w-100 h-100 object-fit-cover rounded-circle"
+												/>
+											</span>
+											Turkmen
+										</a>
+									</li>
+									<li>
+										<a
+											href="javascript:void(0)"
+											class="text-black d-flex align-items-center gap-2 hover-text-main-600 active--translate-y-1 tw-duration-150"
+										>
+											<span
+												class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle d-flex justify-content-center align-items-center"
+											>
+												<img
+													src="assets/images/thumbs/flag3.png"
+													alt=""
+													class="w-100 h-100 object-fit-cover rounded-circle"
+												/>
+											</span>
+											Russia
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- Language End -->
+							<!-- Line Start -->
+							<span class="line h-100"></span>
+							<div class="d-flex align-items-center tw-gap-2 user">
+								<div
+									class="action selected-text text-black py-lg-4 d-flex align-items-center gap-2"
+								>
+									<div
+										class="profile tw-w-30-px tw-h-30-px border border-white border-2 rounded-circle common-shadow d-flex justify-content-center align-items-center"
+									>
+										<i
+											class="ph ph-user w-100 h-100 d-flex justify-content-center align-items-center"
+										></i>
+									</div>
+									<div class="menu common-shadow">
+										<!-- <h3>Someone Famous<br/><span>Website Designer</span></h3> -->
+										<ul>
+											<li>
+												<i class="ph ph-user"></i>
+												<a onclick="openModal()">My Profile</a>
+											</li>
+											<li>
+												<i class="ph ph-sign-in"></i>
+												<a href="login.html">Login</a>
+											</li>
+											<li>
+												<i class="ph ph-sign-out"></i>
+												<a href="#">Logout</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<button
+								type="button"
+								class="toggle-mobileMenu leading-none d-lg-none text-main-two-600 tw-text-9"
+							>
+								<i class="ph ph-list"></i>
+							</button>
+						</div>
+					</div>
+					<!-- Header Right End  -->
+				</nav>
+			</div>
+		</header>
+		<!-- ==================== Header End Here ==================== -->
+		<!-- ============================ Banner section start ======================================= -->
+		<section class="banner position-relative overflow-hidden">
+			<img
+				src="assets/images/shapes/plane-small.png"
+				alt=""
+				class="planeSmall cursor-big position-absolute top-0 tw-start-0 tw-mt-134-px z-2 d-xxl-block d-none"
+			/>
+			<img
+				src="assets/images/shapes/triangle-shape.png"
+				alt=""
+				class="position-absolute bottom-0 tw-start-0 z-2 d-lg-block d-none"
+			/>
+			<div class="banner-slider">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img
+							src="assets/images/thumbs/banner-img1.png"
+							alt=""
+							class="scale-bg position-absolute top-0 tw-start-0 z-n1 w-100 h-100 object-fit-cover"
+						/>
+						<div class="banner-item z-2 position-relative">
+							<div class="tw-container-1540-px mx-auto tw-px-4">
+								<div class="position-relative">
+									<div class="container">
+										<div class="row">
+											<div class="col-lg-7">
+												<h1
+													class="splitTextStyleOne cursor-big text-white tw-text-60-px"
+												>
+													Howa arkaly ýük eltip bermek (Hytaýdan) – 6–10 gün
+												</h1>
+												<div class="d-flex tw-gap-11 tw-mt-13 flex-wrap">
+													<a
+														href="service.html"
+														class="cursor-small btn btn-main hover-style-two button--stroke tw-py-405 d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2"
+														data-block="button"
+													>
+														<span class="button__flair"></span>
+														<span class="button__label">Hyzmatlarymyz</span>
+														<span
+															class="tw-w-7 tw-h-7 bg-white text-main-600 tw-text-sm tw-rounded d-flex justify-content-center align-items-center position-relative group-hover-bg-main-600 group-hover-text-white tw-duration-500"
+														>
+															<i class="ph-bold ph-check"></i>
+														</span>
+													</a>
+													<a
+														href="about.html"
+														class="cursor-small d-inline-flex align-items-center tw-gap-2 text-white fw-semibold hover-text-main-600 group active--translate-y-2"
+														data-aos="fade-up"
+														data-aos-duration="1000"
+														data-aos-delay="400"
+													>
+														Biz barada
+														<span
+															class="text-main-600 d-flex group-hover-text-white tw-duration-200 tw-text-base"
+														>
+															<i class="ph-fill ph-caret-circle-right"></i>
+														</span>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div
+										class="cursor-big bg-blur-one tw-rounded-lg max-w-520-px px-xxl-5 px-lg-4 px-3 py-lg-5 py-4 tw-ms-auto tw-mt-3"
+									>
+										<span
+											class="triangle-shape tw-w-10 tw-h-10 bg-main-600 position-absolute tw-start-0 bottom-0"
+										></span>
+										<p class="text-white tw-text-lg line-clamp-3">
+											Tizlik we ynamlylyk: Howa üsti bilen eltip bermeler
+											ýükleriňizi gysga wagtda ýetirmegi üpjün edýär, bu bolsa
+											aýratyn-da gyssagly ýükler üçin möhümdir. Biz müşderileriň
+											her biriniň islegine laýyk bolmak üçin hem yzygiderli,
+											hem-de çarter gatnawlaryny hödürleýäris.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<img
+							src="assets/images/thumbs/banner-two-bg-1.png"
+							alt=""
+							class="scale-bg position-absolute top-0 tw-start-0 z-n1 w-100 h-100 object-fit-cover"
+						/>
+						<div class="banner-item z-2 position-relative">
+							<div class="tw-container-1540-px mx-auto tw-px-4">
+								<div class="position-relative">
+									<div class="container">
+										<div class="row">
+											<div class="col-lg-7">
+												<h1
+													class="splitTextStyleOne cursor-big text-white tw-text-60-px"
+												>
+													Hytaýdan Türkmenistana deňiz üsti bilen ýük daşama
+												</h1>
+												<div class="d-flex tw-gap-11 tw-mt-13 flex-wrap">
+													<a
+														href="service.html"
+														class="cursor-small btn btn-main hover-style-two button--stroke tw-py-405 d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2"
+														data-block="button"
+													>
+														<span class="button__flair"></span>
+														<span class="button__label">Hyzmatlarymyz</span>
+														<span
+															class="tw-w-7 tw-h-7 bg-white text-main-600 tw-text-sm tw-rounded d-flex justify-content-center align-items-center position-relative group-hover-bg-main-600 group-hover-text-white tw-duration-500"
+														>
+															<i class="ph-bold ph-check"></i>
+														</span>
+													</a>
+													<a
+														href="about.html"
+														class="cursor-small d-inline-flex align-items-center tw-gap-2 text-white fw-semibold hover-text-main-600 group active--translate-y-2"
+														data-aos="fade-up"
+														data-aos-duration="1000"
+														data-aos-delay="400"
+													>
+														Biz barada
+														<span
+															class="text-main-600 d-flex group-hover-text-white tw-duration-200 tw-text-base"
+														>
+															<i class="ph-fill ph-caret-circle-right"></i>
+														</span>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div
+										class="cursor-big bg-blur-one tw-rounded-lg max-w-520-px px-xxl-5 px-lg-4 px-3 py-lg-5 py-4 tw-ms-auto tw-mt-3"
+									>
+										<span
+											class="triangle-shape tw-w-10 tw-h-10 bg-main-600 position-absolute tw-start-0 bottom-0"
+										></span>
+										<p class="text-white tw-text-lg line-clamp-3">
+											Biz senagat we söwda ugurlarynyň aýratynlyklaryny göz
+											öňünde tutup ýükleri eltip berýäris. Deňiz üsti bilen
+											daşama – eksport we tranzit ugurlary üçin tygşytly görnüş
+											bolup, aýratyn-da birnäçe tonnadan ýokary üpjünçilik
+											möçberlerinde amatlydyr.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<img
+							src="assets/images/thumbs/banner-img3.png"
+							alt=""
+							class="scale-bg position-absolute top-0 tw-start-0 z-n1 w-100 h-100 object-fit-cover"
+						/>
+						<div class="banner-item z-2 position-relative">
+							<div class="tw-container-1540-px mx-auto tw-px-4">
+								<div class="position-relative">
+									<div class="container">
+										<div class="row">
+											<div class="col-lg-7">
+												<h1
+													class="splitTextStyleOne cursor-big text-white tw-text-60-px"
+												>
+													Awtodaşama – 13-17 gün
+												</h1>
+												<div class="d-flex tw-gap-11 tw-mt-13 flex-wrap">
+													<a
+														href="service.html"
+														class="cursor-small btn btn-main hover-style-two button--stroke tw-py-405 d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2"
+														data-block="button"
+													>
+														<span class="button__flair"></span>
+														<span class="button__label">Hyzmatlarymyz</span>
+														<span
+															class="tw-w-7 tw-h-7 bg-white text-main-600 tw-text-sm tw-rounded d-flex justify-content-center align-items-center position-relative group-hover-bg-main-600 group-hover-text-white tw-duration-500"
+														>
+															<i class="ph-bold ph-check"></i>
+														</span>
+													</a>
+													<a
+														href="about.html"
+														class="cursor-small d-inline-flex align-items-center tw-gap-2 text-white fw-semibold hover-text-main-600 group active--translate-y-2"
+														data-aos="fade-up"
+														data-aos-duration="1000"
+														data-aos-delay="400"
+													>
+														Biz barada
+														<span
+															class="text-main-600 d-flex group-hover-text-white tw-duration-200 tw-text-base"
+														>
+															<i class="ph-fill ph-caret-circle-right"></i>
+														</span>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div
+										class="cursor-big bg-blur-one tw-rounded-lg max-w-520-px px-xxl-5 px-lg-4 px-3 py-lg-5 py-4 tw-ms-auto tw-mt-3"
+									>
+										<span
+											class="triangle-shape tw-w-10 tw-h-10 bg-main-600 position-absolute tw-start-0 bottom-0"
+										></span>
+										<p class="text-white tw-text-lg line-clamp-3">
+											Awtodaşamalaryň artykmaçlygy – logistikanyň çalt amala
+											aşyrylmagy hem-de gysga we uzak aralyklar üçin amatly
+											bolmagydyr. Şeýle hem bu hyzmatlar daşama wagtynda
+											temperatura gözegçiligini talap edýän önümleriň importy we
+											eksporty üçin laýykdyr: meselem, derman serişdeleri,
+											şeýle-de ululygy we agramy boýunça köp möçberdäki ýükler.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container w-0">
+					<div class="position-relative w-0">
+						<div
+							class="pagination-style-one text-start swiper-pagination banner-pagination cursor-big"
+						></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- ============================ Banner section End ======================================= -->
+		<!-- ======================================== Brand section start ===================================== -->
+		<div class="brand-three-slider-wrapper tw-mt-13 tw-mb-13">
+			<div class="container">
+				<div class="brand-three-slider swiper">
+					<div class="swiper-wrapper align-items-center">
+						<div
+							class="swiper-slide me-0"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="100"
+						>
+							<div class="text-center cursor-big">
+								<img
+									src="assets/images/thumbs/brand-three-img1.png"
+									alt=""
+									class="max-w-175-px"
+								/>
+							</div>
+						</div>
+						<div
+							class="swiper-slide me-0"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="200"
+						>
+							<div class="text-center cursor-big">
+								<img
+									src="assets/images/thumbs/brand-three-img2.png"
+									alt=""
+									class="max-w-175-px"
+								/>
+							</div>
+						</div>
+						<div
+							class="swiper-slide me-0"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="300"
+						>
+							<div class="text-center cursor-big">
+								<img
+									src="assets/images/thumbs/brand-three-img3.png"
+									alt=""
+									class="max-w-175-px"
+								/>
+							</div>
+						</div>
+						<div
+							class="swiper-slide me-0"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="400"
+						>
+							<div class="text-center cursor-big">
+								<img
+									src="assets/images/thumbs/brand-three-img4.png"
+									alt=""
+									class="max-w-175-px"
+								/>
+							</div>
+						</div>
+						<div
+							class="swiper-slide me-0"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="500"
+						>
+							<div class="text-center cursor-big">
+								<img
+									src="assets/images/thumbs/brand-three-img5.png"
+									alt=""
+									class="max-w-175-px"
+								/>
+							</div>
+						</div>
+						<div
+							class="swiper-slide me-0"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="600"
+						>
+							<div class="text-center cursor-big">
+								<img
+									src="assets/images/thumbs/brand-two-img6.png"
+									alt=""
+									class="max-w-175-px"
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ======================================== Brand section End ===================================== -->
+		<!-- ======================================== request-quote-area section start ===================================== -->
+		<section
+			class="py-60 bg-img"
+			data-background-image="assets/images/shapes/pricing-bg.png"
+		>
+			<div class="container">
+				<div class="d-flex justify-content-center tw-mb-7">
+					<ul
+						class="common-tab nav nav-pills mb-0 bg-white rounded-pill common-shadow-four d-inline-flex tw-p-105"
+						id="pills-tab"
+						role="tablist"
+					>
+						<li class="nav-item" role="presentation">
+							<button
+								class="nav-link rounded-pill cursor-small text-neutral-950 hover-text-main-600 fw-semibold active"
+								id="pills-monthly-tab"
+								data-bs-toggle="pill"
+								data-bs-target="#pills-monthly"
+								type="button"
+								role="tab"
+								aria-controls="pills-monthly"
+								aria-selected="true"
+							>
+								Ýüki yzarlamak
+							</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button
+								class="nav-link rounded-pill cursor-small text-neutral-950 hover-text-main-600 fw-semibold"
+								id="pills-yearly-tab"
+								data-bs-toggle="pill"
+								data-bs-target="#pills-yearly"
+								type="button"
+								role="tab"
+								aria-controls="pills-yearly"
+								aria-selected="false"
+							>
+								Bahasyny hasapla
+							</button>
+						</li>
+					</ul>
+				</div>
 
-                                    <h1
-                                       class="splitTextStyleOne cursor-big text-white tw-text-60-px"
-                                       >
-                                       Howa arkaly ýük eltip bermek (Hytaýdan) – 6–10 gün
-                                    </h1>
-                                    <div class="d-flex tw-gap-11 tw-mt-13 flex-wrap">
-                                       <a
-                                          href="service.html"
-                                          class="cursor-small btn btn-main hover-style-two button--stroke tw-py-405 d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2"
-                                          data-block="button"
-                                          >
-                                       <span class="button__flair"></span>
-                                       <span class="button__label">Hyzmatlarymyz</span>
-                                       <span
-                                          class="tw-w-7 tw-h-7 bg-white text-main-600 tw-text-sm tw-rounded d-flex justify-content-center align-items-center position-relative group-hover-bg-main-600 group-hover-text-white tw-duration-500"
-                                          >
-                                       <i class="ph-bold ph-check"></i>
-                                       </span>
-                                       </a>
-                                       <a
-                                          href="about.html"
-                                          class="cursor-small d-inline-flex align-items-center tw-gap-2 text-white fw-semibold hover-text-main-600 group active--translate-y-2"
-                                          data-aos="fade-up"
-                                          data-aos-duration="1000"
-                                          data-aos-delay="400"
-                                          >
-                                       Biz barada
-                                       <span
-                                          class="text-main-600 d-flex group-hover-text-white tw-duration-200 tw-text-base"
-                                          >
-                                       <i class="ph-fill ph-caret-circle-right"></i>
-                                       </span>
-                                       </a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div
-                              class="cursor-big bg-blur-one tw-rounded-lg max-w-520-px px-xxl-5 px-lg-4 px-3 py-lg-5 py-4 tw-ms-auto tw-mt-3"
-                              >
-                              <span
-                                 class="triangle-shape tw-w-10 tw-h-10 bg-main-600 position-absolute tw-start-0 bottom-0"
-                                 ></span>
-                              <p class="text-white tw-text-lg line-clamp-3">
-                                 Tizlik we ynamlylyk: Howa üsti bilen eltip bermeler ýükleriňizi gysga wagtda ýetirmegi üpjün edýär, bu bolsa aýratyn-da gyssagly ýükler üçin möhümdir. Biz müşderileriň her biriniň islegine laýyk bolmak üçin hem yzygiderli, hem-de çarter gatnawlaryny hödürleýäris.
-                              </p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="swiper-slide">
-                  <img
-                     src="assets/images/thumbs/banner-two-bg-1.png"
-                     alt=""
-                     class="scale-bg position-absolute top-0 tw-start-0 z-n1 w-100 h-100 object-fit-cover"
-                     />
-                  <div class="banner-item z-2 position-relative">
-                     <div class="tw-container-1540-px mx-auto tw-px-4">
-                        <div class="position-relative">
-                           <div class="container">
-                              <div class="row">
-                                 <div class="col-lg-7">
-                                    <h1
-                                       class="splitTextStyleOne cursor-big text-white tw-text-60-px"
-                                       >
-                                       Hytaýdan Türkmenistana deňiz üsti bilen ýük daşama
-                                    </h1>
-                                    <div class="d-flex tw-gap-11 tw-mt-13 flex-wrap">
-                                       <a
-                                          href="service.html"
-                                          class="cursor-small btn btn-main hover-style-two button--stroke tw-py-405 d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2"
-                                          data-block="button"
-                                          >
-                                       <span class="button__flair"></span>
-                                       <span class="button__label">Hyzmatlarymyz</span>
-                                       <span
-                                          class="tw-w-7 tw-h-7 bg-white text-main-600 tw-text-sm tw-rounded d-flex justify-content-center align-items-center position-relative group-hover-bg-main-600 group-hover-text-white tw-duration-500"
-                                          >
-                                       <i class="ph-bold ph-check"></i>
-                                       </span>
-                                       </a>
-                                       <a
-                                          href="about.html"
-                                          class="cursor-small d-inline-flex align-items-center tw-gap-2 text-white fw-semibold hover-text-main-600 group active--translate-y-2"
-                                          data-aos="fade-up"
-                                          data-aos-duration="1000"
-                                          data-aos-delay="400"
-                                          >
-                                       Biz barada
-                                       <span
-                                          class="text-main-600 d-flex group-hover-text-white tw-duration-200 tw-text-base"
-                                          >
-                                       <i class="ph-fill ph-caret-circle-right"></i>
-                                       </span>
-                                       </a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div
-                              class="cursor-big bg-blur-one tw-rounded-lg max-w-520-px px-xxl-5 px-lg-4 px-3 py-lg-5 py-4 tw-ms-auto tw-mt-3"
-                              >
-                              <span
-                                 class="triangle-shape tw-w-10 tw-h-10 bg-main-600 position-absolute tw-start-0 bottom-0"
-                                 ></span>
-                              <p class="text-white tw-text-lg line-clamp-3">
-                                 Biz senagat we söwda ugurlarynyň aýratynlyklaryny göz öňünde tutup ýükleri eltip berýäris. Deňiz üsti bilen daşama – eksport we tranzit ugurlary üçin tygşytly görnüş bolup, aýratyn-da birnäçe tonnadan ýokary üpjünçilik möçberlerinde amatlydyr.
-                              </p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="swiper-slide">
-                  <img
-                     src="assets/images/thumbs/banner-img3.png"
-                     alt=""
-                     class="scale-bg position-absolute top-0 tw-start-0 z-n1 w-100 h-100 object-fit-cover"
-                     />
-                  <div class="banner-item z-2 position-relative">
-                     <div class="tw-container-1540-px mx-auto tw-px-4">
-                        <div class="position-relative">
-                           <div class="container">
-                              <div class="row">
-                                 <div class="col-lg-7">
-                                    <h1
-                                       class="splitTextStyleOne cursor-big text-white tw-text-60-px"
-                                       >
-                                       Awtodaşama – 13-17 gün
-                                    </h1>
-                                    <div class="d-flex tw-gap-11 tw-mt-13 flex-wrap">
-                                       <a
-                                          href="service.html"
-                                          class="cursor-small btn btn-main hover-style-two button--stroke tw-py-405 d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2"
-                                          data-block="button"
-                                          >
-                                       <span class="button__flair"></span>
-                                       <span class="button__label">Hyzmatlarymyz</span>
-                                       <span
-                                          class="tw-w-7 tw-h-7 bg-white text-main-600 tw-text-sm tw-rounded d-flex justify-content-center align-items-center position-relative group-hover-bg-main-600 group-hover-text-white tw-duration-500"
-                                          >
-                                       <i class="ph-bold ph-check"></i>
-                                       </span>
-                                       </a>
-                                       <a
-                                          href="about.html"
-                                          class="cursor-small d-inline-flex align-items-center tw-gap-2 text-white fw-semibold hover-text-main-600 group active--translate-y-2"
-                                          data-aos="fade-up"
-                                          data-aos-duration="1000"
-                                          data-aos-delay="400"
-                                          >
-                                       Biz barada
-                                       <span
-                                          class="text-main-600 d-flex group-hover-text-white tw-duration-200 tw-text-base"
-                                          >
-                                       <i class="ph-fill ph-caret-circle-right"></i>
-                                       </span>
-                                       </a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div
-                              class="cursor-big bg-blur-one tw-rounded-lg max-w-520-px px-xxl-5 px-lg-4 px-3 py-lg-5 py-4 tw-ms-auto tw-mt-3"
-                              >
-                              <span
-                                 class="triangle-shape tw-w-10 tw-h-10 bg-main-600 position-absolute tw-start-0 bottom-0"
-                                 ></span>
-                              <p class="text-white tw-text-lg line-clamp-3">
-                                 Awtodaşamalaryň artykmaçlygy – logistikanyň çalt amala aşyrylmagy hem-de gysga we uzak aralyklar üçin amatly bolmagydyr. Şeýle hem bu hyzmatlar daşama wagtynda temperatura gözegçiligini talap edýän önümleriň importy we eksporty üçin laýykdyr: meselem, derman serişdeleri, şeýle-de ululygy we agramy boýunça köp möçberdäki ýükler.
-                              </p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="container w-0">
-               <div class="position-relative w-0">
-                  <div
-                     class="pagination-style-one text-start swiper-pagination banner-pagination cursor-big"
-                     ></div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- ============================ Banner section End ======================================= -->
-      <!-- ======================================== Brand section start ===================================== -->
-      <div class="brand-three-slider-wrapper tw-mt-13 tw-mb-13">
-         <div class="container">
-            <div class="brand-three-slider swiper">
-               <div class="swiper-wrapper align-items-center">
-                  <div class="swiper-slide me-0" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                     <div class="text-center cursor-big">
-                        <img src="assets/images/thumbs/brand-three-img1.png" alt="" class="max-w-175-px">
-                     </div>
-                  </div>
-                  <div class="swiper-slide me-0" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                     <div class="text-center cursor-big">
-                        <img src="assets/images/thumbs/brand-three-img2.png" alt="" class="max-w-175-px">
-                     </div>
-                  </div>
-                  <div class="swiper-slide me-0" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                     <div class="text-center cursor-big">
-                        <img src="assets/images/thumbs/brand-three-img3.png" alt="" class="max-w-175-px">
-                     </div>
-                  </div>
-                  <div class="swiper-slide me-0" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                     <div class="text-center cursor-big">
-                        <img src="assets/images/thumbs/brand-three-img4.png" alt="" class="max-w-175-px">
-                     </div>
-                  </div>
-                  <div class="swiper-slide me-0" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                     <div class="text-center cursor-big">
-                        <img src="assets/images/thumbs/brand-three-img5.png" alt="" class="max-w-175-px">
-                     </div>
-                  </div>
-                  <div class="swiper-slide me-0" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
-                     <div class="text-center cursor-big">
-                        <img src="assets/images/thumbs/brand-two-img6.png" alt="" class="max-w-175-px">
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- ======================================== Brand section End ===================================== -->
-      <!-- ======================================== request-quote-area section start ===================================== -->
-      <div
-         class="request-quote-area pb-120"
-         data-aos="fade-up"
-         data-aos-duration="1000"
-         data-aos-delay="100"
-         >
-         <div class="container">
-            <div class="max-w-856-px mx-auto text-center tw-pb-16 tw-mb-6">
-               <span
-                  class="splitTextStyleTwo cursor-small tw-text-xl fw-bold fst-italic text-decoration-underline text-main-600 tw-mb-305"
-                  >Safe Transportation & Logistics</span
-                  >
-               <h1 class="splitTextStyleOne cursor-big">
-                  Fastest & Secured Logistics Solution & services
-               </h1>
-            </div>
-            <div
-               class="request-quote-inner bg-white common-shadow-eleven position-relative"
-               >
-               <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                  <li class="nav-item" role="presentation">
-                     <button
-                        class="nav-link text-white active"
-                        id="pills-home-tab"
-                        data-bs-toggle="pill"
-                        data-bs-target="#pills-home"
-                        type="button"
-                        role="tab"
-                        aria-controls="pills-home"
-                        aria-selected="true"
-                        >
-                     <img
-                        class="tw-me-4"
-                        src="assets/images/shapes/request-five-icon1.png"
-                        alt="icon"
-                        />REQUEST A QUOTE
-                     </button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                     <button
-                        class="nav-link text-white"
-                        id="pills-profile-tab"
-                        data-bs-toggle="pill"
-                        data-bs-target="#pills-profile"
-                        type="button"
-                        role="tab"
-                        aria-controls="pills-profile"
-                        aria-selected="false"
-                        >
-                     <img
-                        class="tw-me-4"
-                        src="assets/images/shapes/request-five-icon2.png"
-                        alt="icon"
-                        />
-                     TRACK & TRACE
-                     </button>
-                  </li>
-               </ul>
-               <div class="tab-content" id="pills-tabContent">
-                  <div
-                     class="tab-pane fade show active"
-                     id="pills-home"
-                     role="tabpanel"
-                     aria-labelledby="pills-home-tab"
-                     >
-                     <div class="row">
-                        <div class="col-lg-8">
-                           <h6 class="tw-text-base tw-mb-4">
-                              Shipment Information :
-                           </h6>
-                           <div class="row">
-                              <div class="col-lg-4 col-md-6">
-                                 <div class="tw-mb-5">
-                                    <select
-                                       class="nice-select single-select cursor-big tw-px-5 bg-transparent tw-py-3 tw-placeholder-text-main-two-600 tw-border-100 focus-outline-0 w-100 tw-placeholder-transition-2 focus-tw-placeholder-text-hidden rounded-0 shadow-none"
-                                       >
-                                       <option>Freight Type</option>
-                                       <option value="1">Some option</option>
-                                       <option value="2">Another option</option>
-                                    </select>
-                                 </div>
-                              </div>
-                              <div class="col-lg-4 col-md-6">
-                                 <div class="tw-mb-5">
-                                    <input
-                                       class="cursor-big tw-px-5 tw-py-3 tw-placeholder-text-main-two-600 tw-border-100 focus-outline-0 w-100 tw-placeholder-transition-2 focus-tw-placeholder-text-hidden rounded-0 shadow-none"
-                                       type="text"
-                                       placeholder="City of Departure"
-                                       />
-                                 </div>
-                              </div>
-                              <div class="col-lg-4 col-md-6">
-                                 <div class="tw-mb-5">
-                                    <input
-                                       class="cursor-big tw-px-5 tw-py-3 tw-placeholder-text-main-two-600 tw-border-100 focus-outline-0 w-100 tw-placeholder-transition-2 focus-tw-placeholder-text-hidden rounded-0 shadow-none"
-                                       type="text"
-                                       placeholder="Delivery City"
-                                       />
-                                 </div>
-                              </div>
-                              <div class="col-lg-4">
-                                 <div class="tw-mb-5">
-                                    <select
-                                       class="nice-select single-select cursor-big tw-px-5 bg-transparent tw-py-3 tw-placeholder-text-main-two-600 tw-border-100 focus-outline-0 w-100 tw-placeholder-transition-2 focus-tw-placeholder-text-hidden rounded-0 shadow-none"
-                                       >
-                                       <option>Incotems</option>
-                                       <option value="1">Some option</option>
-                                       <option value="2">Another option</option>
-                                    </select>
-                                 </div>
-                              </div>
-                              <div class="col-xl-4 col-lg-8">
-                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                       <div class="mb-md-3">
-                                          <input
-                                             class="cursor-big tw-px-5 tw-py-3 tw-placeholder-text-main-two-600 tw-border-100 focus-outline-0 w-100 tw-placeholder-transition-2 focus-tw-placeholder-text-hidden rounded-0 shadow-none"
-                                             type="text"
-                                             placeholder="Weight"
-                                             />
-                                       </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                       <div class="">
-                                          <input
-                                             class="cursor-big tw-px-5 tw-py-3 tw-placeholder-text-main-two-600 tw-border-100 focus-outline-0 w-100 tw-placeholder-transition-2 focus-tw-placeholder-text-hidden rounded-0 shadow-none"
-                                             type="text"
-                                             placeholder="Height"
-                                             />
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="col-xl-4 col-lg-12">
-                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                       <div class="mb-md-3">
-                                          <input
-                                             class="cursor-big tw-px-5 tw-py-3 tw-placeholder-text-main-two-600 tw-border-100 focus-outline-0 w-100 tw-placeholder-transition-2 focus-tw-placeholder-text-hidden rounded-0 shadow-none"
-                                             type="text"
-                                             placeholder="Weight"
-                                             />
-                                       </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                       <div class="mb-md-3">
-                                          <input
-                                             class="cursor-big tw-px-5 tw-py-3 tw-placeholder-text-main-two-600 tw-border-100 focus-outline-0 w-100 tw-placeholder-transition-2 focus-tw-placeholder-text-hidden rounded-0 shadow-none"
-                                             type="text"
-                                             placeholder="Height"
-                                             />
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <ul class="single-check-list">
-                              <li>
-                                 <div class="form-check single-check-wrap">
-                                    <input
-                                       class="form-check-input"
-                                       type="checkbox"
-                                       value=""
-                                       id="flexCheckDefault"
-                                       />
-                                    <label
-                                       class="form-check-label text-black"
-                                       for="flexCheckDefault"
-                                       >
-                                    Freight
-                                    </label>
-                                 </div>
-                              </li>
-                              <li>
-                                 <div class="form-check single-check-wrap">
-                                    <input
-                                       class="form-check-input"
-                                       type="checkbox"
-                                       value=""
-                                       id="flexCheckDefault1"
-                                       />
-                                    <label
-                                       class="form-check-label text-black"
-                                       for="flexCheckDefault1"
-                                       >
-                                    Packaging
-                                    </label>
-                                 </div>
-                              </li>
-                              <li>
-                                 <div class="form-check single-check-wrap">
-                                    <input
-                                       class="form-check-input"
-                                       type="checkbox"
-                                       value=""
-                                       id="flexCheckDefault2"
-                                       />
-                                    <label
-                                       class="form-check-label text-black"
-                                       for="flexCheckDefault2"
-                                       >
-                                    Express Delivery
-                                    </label>
-                                 </div>
-                              </li>
-                              <li>
-                                 <div class="form-check single-check-wrap">
-                                    <input
-                                       class="form-check-input"
-                                       type="checkbox"
-                                       value=""
-                                       id="flexCheckDefault3"
-                                       />
-                                    <label
-                                       class="form-check-label text-black"
-                                       for="flexCheckDefault3"
-                                       >
-                                    Transport arkaly
-                                    </label>
-                                 </div>
-                              </li>
-                              <li>
-                                 <div class="form-check single-check-wrap">
-                                    <input
-                                       class="form-check-input"
-                                       type="checkbox"
-                                       value=""
-                                       id="flexCheckDefault4"
-                                       />
-                                    <label
-                                       class="form-check-label text-black"
-                                       for="flexCheckDefault4"
-                                       >
-                                    Howa Arkalt
-                                    </label>
-                                 </div>
-                              </li>
-                           </ul>
-                           <a
-                              href="service.html"
-                              class="cursor-small btn btn-main hover-style-one button--stroke tw-py-405 w-100 d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2"
-                              data-block="button"
-                              >
-                           <span class="button__flair"></span>
-                           <span class="button__label"> Request A Quote </span>
-                           <span
-                              class="tw-w-7 tw-h-7 bg-white text-main-600 tw-text-sm tw-rounded d-flex justify-content-center align-items-center position-relative group-hover-bg-main-600 group-hover-text-white tw-duration-500"
-                              >
-                           <i class="ph-bold ph-check"></i>
-                           </span>
-                           </a>
-                        </div>
-                        <div class="col-lg-4 align-self-center">
-                           <div class="cost-container">
-                              <div class="cost-item">
-                                 <p>Pick up</p>
-                                 <p>+ 0 TMT</p>
-                              </div>
-                              <div class="cost-item">
-                                 <p>Deliver</p>
-                                 <p>+ 20 TMT</p>
-                              </div>
-                              <div class="cost-item">
-                                 <p>Extra Service</p>
-                                 <p>+ 20 TMT</p>
-                              </div>
-                              <div class="cost-total">
-                                 <p>Total cost:</p>
-                                 <p class="total-amount" id="totalCost">40.00 TMT</p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div
-                     class="tab-pane fade"
-                     id="pills-profile"
-                     role="tabpanel"
-                     aria-labelledby="pills-profile-tab"
-                     >
-                     <div class="row">
-                        <div class="col-lg-12">
-                           <h6 class="tw-text-base tw-mb-4">
-                              Track your shipment :
-                           </h6>
-                           <div class="col-lg-12 col-md-12">
-                              <div class="tw-mb-5">
-                                 <input type="text" class="cursor-big tw-px-7 tw-border-100 tw-py-505 bg-white tw-placeholder-text-main-two-600  focus-outline-0 w-100 tw-placeholder-transition-2 focus-tw-placeholder-text-hidden tw-rounded-md shadow-none " placeholder="Enter your tracking id"
-                                    id="track">
-                              </div>
-                           </div>
-                        </div>
-                        <a
-                           href="service.html"
-                           class="cursor-small btn btn-main hover-style-one w-100 button--stroke tw-py-405 d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2"
-                           data-block="button"
-                           >
-                        <span class="button__flair"></span>
-                        <span class="button__label"> Request A Quote </span>
-                        <span
-                           class="tw-w-7 tw-h-7 bg-white text-main-600 tw-text-sm tw-rounded d-flex justify-content-center align-items-center position-relative group-hover-bg-main-600 group-hover-text-white tw-duration-500"
-                           >
-                        <i class="ph-bold ph-check"></i>
-                        </span>
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      </div>
-      <!-- ======================================== request-quote-area section end ===================================== -->
-      <!-- ============================== service Section Start ================================= -->
-      <section class="service pb-140 position-relative half-bg-white bg-neutral">
-         <img
-            src="assets/images/shapes/pattern-bg.png"
-            alt=""
-            class="position-absolute bottom-0 tw-start-0 w-100 h-50"
-            />
-         <div class="container">
-            <div class="max-w-856-px mx-auto text-center tw-pb-16 tw-mb-6">
-               <span
-                  class="splitTextStyleTwo cursor-small tw-text-xl fw-bold fst-italic text-decoration-underline text-main-600 tw-mb-305"
-                  >Safe Transportation & Logistics</span
-                  >
-               <h1 class="splitTextStyleOne cursor-big">
-                  Fastest & Secured Logistics Solution & services
-               </h1>
-            </div>
-         </div>
-         <div class="tw-container-1540-px mx-auto tw-px-4">
-            <div class="bg-main-two-600 tw-rounded-2xl position-relative z-1">
-               <img
-                  src="assets/images/thumbs/service-bg-img.png"
-                  alt=""
-                  class="position-absolute tw-end-0 bottom-0 z-n1"
-                  />
-               <div class="container">
-                  <div class="row gy-4 align-items-center">
-                     <div
-                        class="col-xl-5"
-                        data-aos="zoom-in"
-                        data-aos-duration="1000"
-                        data-aos-delay="200"
-                        >
-                        <div >
-                           <div
-                              class="bg-neutral-50 px-lg-5 tw-px-6 tw-pt-76-px tw-pb-15 rectangle-shape"
-                              >
-                              <ul
-                                 class="common-tab nav nav-pills d-flex flex-column tw-gap-8"
-                                 id="pills-tab"
-                                 role="tablist"
-                                 >
-                                 <li class="nav-item" role="presentation">
-                                    <button
-                                       class="nav-link cursor-big tw-text-xl animation-item text-main-two-600 hover-text-main-600 active-scale-094 tw-duration-300 fw-semibold tw-px-8 tw-py-4 tw-rounded-lg bg-white w-100 active"
-                                       id="pills-air-transportation-tab"
-                                       data-bs-toggle="pill"
-                                       data-bs-target="#pills-air-transportation"
-                                       type="button"
-                                       role="tab"
-                                       aria-controls="pills-air-transportation"
-                                       aria-selected="true"
-                                       >
-                                    <span
-                                       class="d-flex align-items-center gap-xxl-5 tw-gap-6 text-start"
-                                       >
-                                    <img
-                                       src="assets/images/icons/service-icon1.svg"
-                                       alt=""
-                                       class="d-sm-flex d-none animate__swing"
-                                       />
-                                    <span>Deňiz gatnawy</span>
-                                    </span>
-                                    </button>
-                                 </li>
-                                 <li class="nav-item" role="presentation">
-                                    <button
-                                       class="nav-link cursor-big tw-text-xl animation-item text-main-two-600 hover-text-main-600 active-scale-094 tw-duration-300 fw-semibold tw-px-8 tw-py-4 tw-rounded-lg bg-white w-100"
-                                       id="pills-traini-transport-tab"
-                                       data-bs-toggle="pill"
-                                       data-bs-target="#pills-traini-transport"
-                                       type="button"
-                                       role="tab"
-                                       aria-controls="pills-traini-transport"
-                                       aria-selected="false"
-                                       >
-                                    <span
-                                       class="d-flex align-items-center gap-xxl-5 tw-gap-6 text-start"
-                                       >
-                                    <img
-                                       src="assets/images/icons/service-icon5.svg"
-                                       alt=""
-                                       class="d-sm-flex d-none animate__swing"
-                                       />
-                                    <span>Awtoulag gatnawy</span>
-                                    </span>
-                                    </button>
-                                 </li>
-                                 <li class="nav-item" role="presentation">
-                                    <button
-                                       class="nav-link cursor-big tw-text-xl animation-item text-main-two-600 hover-text-main-600 active-scale-094 tw-duration-300 fw-semibold tw-px-8 tw-py-4 tw-rounded-lg bg-white w-100"
-                                       id="pills-cargoShipFrieght-tab"
-                                       data-bs-toggle="pill"
-                                       data-bs-target="#pills-cargoShipFrieght"
-                                       type="button"
-                                       role="tab"
-                                       aria-controls="pills-cargoShipFrieght"
-                                       aria-selected="false"
-                                       >
-                                    <span
-                                       class="d-flex align-items-center gap-xxl-5 tw-gap-6 text-start"
-                                       >
-                                    <img
-                                       src="assets/images/icons/service-icon3.svg"
-                                       alt=""
-                                       class="d-sm-flex d-none animate__swing"
-                                       />
-                                    <span>Howa gatnawy</span>
-                                    </span>
-                                    </button>
-                                 </li>
+				<div class="tab-content" id="pills-tabContent">
+					<div
+						class="tab-pane fade show active"
+						id="pills-monthly"
+						role="tabpanel"
+						aria-labelledby="pills-monthly-tab"
+						tabindex="0"
+					>
+						<div class="row justify-content-center">
+							<div class="col-xxl-11">
+								<div
+									class=""
+									data-aos="fade-up"
+									data-aos-duration="1000"
+									data-aos-delay="100"
+								>
+									<div class="main-container">
+										<div class="calculator-modal">
+											<div
+												class="display-grid justify-content-center text-center tw-mb-10"
+											>
+												<h3
+													class="cursor-big tw-mb-2 tw-duration-500 group-hover-text-white"
+												>
+													Ýüki yzarlamak
+												</h3>
+												<span
+													class="cursor-small text-neutral-1000 tw-mb-1 tw-duration-500 group-hover-text-white"
+													>Yzrlaýan ýüküňiziň kodyny ýazyň</span
+												>
+											</div>
 
-                              </ul>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-xl-7 ps-xl-5">
-                        <div class="tab-content py-120" id="pills-tabContent">
-                           <div
-                              class="tab-pane fade show active"
-                              id="pills-air-transportation"
-                              role="tabpanel"
-                              aria-labelledby="pills-air-transportation-tab"
-                              tabindex="0"
-                              >
-                              <div class="">
-                                 <p
-                                    class="bg-main-two-900 tw-py-8 tw-pe-8 tw-ps-14 tw-text-lg text-white fw-semibold border-start border-main-600 border-5 tw-mb-11 cursor-small"
-                                    data-aos="fade-up"
-                                    data-aos-duration="1000"
-                                    data-aos-delay="200"
-                                    >
-                                    Deňiz ulaglary bilen islendik ugurdan eksport-import ýükleriniň halkara gatnawyny guramak üçin hyzmatlary edýäris
-                                 </p>
-                                 <div
-                                    class="d-flex align-items-center position-relative max-w-620-px"
-                                    data-aos="fade-up"
-                                    data-aos-duration="1000"
-                                    data-aos-delay="300"
-                                    >
-                                    <span
-                                       class="tw-w-90-px tw-h-90-px bg-white rounded-circle d-flex justify-content-center align-items-center position-absolute top-50 tw--translate-y-50 z-2 tw-start-48"
-                                       >
-                                    <img
-                                       src="assets/images/icons/service-icon1.svg"
-                                       alt=""
-                                       />
-                                    </span>
-                                    <div
-                                       class="tw--me-32-px d-sm-flex d-none position-relative"
-                                       >
-                                       <img
-                                          src="assets/images/thumbs/service-img.png"
-                                          alt=""
-                                          />
-                                    </div>
-                                    <div
-                                       class="bg-main-600 tw-h-280-px d-flex justify-content-center align-items-center tw-pe-6 tw-ps-8 position-relative z-1 rectangle-shape-two max-w-286-px w-100"
-                                       >
-                                       <ul class="cursor-small d-flex flex-column tw-gap-2">
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="200"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium"
-                                                >Amatly Baha</span
-                                                >
-                                          </li>
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="400"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium">Ygtybarly</span>
-                                          </li>
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="600"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium"
-                                                >Giň eltiş mümkinçilikleri</span
-                                                >
-                                          </li>
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="800"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium">Köptaraplylygy</span>
-                                          </li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div
-                              class="tab-pane fade"
-                              id="pills-traini-transport"
-                              role="tabpanel"
-                              aria-labelledby="pills-traini-transport-tab"
-                              tabindex="0"
-                              >
-                              <div class="">
-                                 <p
-                                    class="bg-main-two-900 tw-py-8 tw-pe-8 tw-ps-14 tw-text-lg text-white fw-semibold border-start border-main-600 border-5 tw-mb-11 cursor-small"
-                                    data-aos="fade-up"
-                                    data-aos-duration="1000"
-                                    data-aos-delay="200"
-                                    >
-                                    Awtoulag gatnawy, harytlary eltmegiň iň çalt, ygtybarly we arzan usulydyr. Köp kompaniýalar üçin awtoulag daşamak iň amatly wariantydyr.
-                                 </p>
-                                 <div
-                                    class="d-flex align-items-center position-relative max-w-620-px"
-                                    data-aos="fade-up"
-                                    data-aos-duration="1000"
-                                    data-aos-delay="300"
-                                    >
-                                    <span
-                                       class="tw-w-90-px tw-h-90-px bg-white rounded-circle d-flex justify-content-center align-items-center position-absolute top-50 tw--translate-y-50 z-2 tw-start-48"
-                                       >
-                                    <img
-                                       src="assets/images/icons/service-icon5.svg"
-                                       alt=""
-                                       />
-                                    </span>
-                                    <div class="tw--me-32-px position-relative">
-                                       <img
-                                          src="assets/images/thumbs/service-img.png"
-                                          alt=""
-                                          />
-                                    </div>
-                                    <div
-                                       class="bg-main-600 tw-h-280-px d-flex justify-content-center align-items-center tw-pe-6 tw-ps-8 position-relative z-1 rectangle-shape-two max-w-286-px w-100"
-                                       >
+											<form class="tracking-form" id="trackingForm">
+												<div class="tracking-input-group">
+													<input
+														type="text"
+														class="tracking-input"
+														placeholder="Meselem: TEYEWR415366"
+														id="trackingCode"
+													/>
+												</div>
+												<button type="submit" class="track-btn">
+													Ýüki yzarlamak
+												</button>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div
+						class="tab-pane fade"
+						id="pills-yearly"
+						role="tabpanel"
+						aria-labelledby="pills-yearly-tab"
+						tabindex="0"
+					>
+						<div class="row justify-content-center">
+							<div class="col-xxl-11">
+								<div class="main-container">
+									<div class="calculator-modal">
+										<form id="calculatorForm">
+											<div class="form-row">
+												<div class="form-group">
+													<label
+														><span class="required">*</span> A nokady</label
+													>
+													<select id="pointA" required>
+														<option value="">Türkmenbaşy etrap | Balkan</option>
+														<option value="turkmen">
+															Türkmenbaşy etrap | Balkan
+														</option>
+														<option value="ashgabat">Aşgabat | Aşgabat</option>
+														<option value="turkmenbashi">
+															Türkmenbaşy şäheri | Türkmenbaşy
+														</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label
+														><span class="required">*</span> B nokady</label
+													>
+													<select id="pointB" required>
+														<option value="">Serdar etrap | Balkan</option>
+														<option value="serdar">
+															Serdar etrap | Balkan
+														</option>
+														<option value="balkanabat">
+															Balkanabat | Balkanabat
+														</option>
+														<option value="bereket">Bereket | Bereket</option>
+													</select>
+												</div>
+											</div>
 
-                                       <ul class="cursor-small d-flex flex-column tw-gap-2">
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="200"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium"
-                                                >Amatly Baha</span
-                                                >
-                                          </li>
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="400"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium">Giň eltiş mümkinçilikleri</span>
-                                          </li>
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="600"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium"
-                                                >Howpsuz</span
-                                                >
-                                          </li>
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="800"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium">Ygtybarly</span>
-                                          </li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div
-                              class="tab-pane fade"
-                              id="pills-cargoShipFrieght"
-                              role="tabpanel"
-                              aria-labelledby="pills-cargoShipFrieght-tab"
-                              tabindex="0"
-                              >
-                              <div class="">
-                                 <p
-                                    class="bg-main-two-900 tw-py-8 tw-pe-8 tw-ps-14 tw-text-lg text-white fw-semibold border-start border-main-600 border-5 tw-mb-11 cursor-small"
-                                    data-aos="fade-up"
-                                    data-aos-duration="1000"
-                                    data-aos-delay="200"
-                                    >
-                                    Iş ugurlarymyzyň biri howa arkaly ýük daşamak. Howa ýük daşamak, halkara ýük daşamagyň bar bolan usullaryndan iň çaltdyr.
-                                 </p>
-                                 <div
-                                    class="d-flex align-items-center position-relative max-w-620-px"
-                                    data-aos="fade-up"
-                                    data-aos-duration="1000"
-                                    data-aos-delay="300"
-                                    >
-                                    <span
-                                       class="tw-w-90-px tw-h-90-px bg-white rounded-circle d-flex justify-content-center align-items-center position-absolute top-50 tw--translate-y-50 z-2 tw-start-48"
-                                       >
-                                    <img
-                                       src="assets/images/icons/service-icon3.svg"
-                                       alt=""
-                                       />
-                                    </span>
-                                    <div class="tw--me-32-px position-relative">
-                                       <img
-                                          src="assets/images/thumbs/service-img.png"
-                                          alt=""
-                                          />
-                                    </div>
-                                    <div
-                                       class="bg-main-600 tw-h-280-px d-flex justify-content-center align-items-center tw-pe-6 tw-ps-8 position-relative z-1 rectangle-shape-two max-w-286-px w-100"
-                                       >
-                                       <ul class="cursor-small d-flex flex-column tw-gap-2">
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="200"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium"
-                                                >Amatly Baha</span
-                                                >
-                                          </li>
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="400"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium">Giň eltiş mümkinçilikleri</span>
-                                          </li>
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="600"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium"
-                                                >Howpsuz</span
-                                                >
-                                          </li>
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="800"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium">Ygtybarly</span>
-                                          </li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div
-                              class="tab-pane fade"
-                              id="pills-Maritime-transportation"
-                              role="tabpanel"
-                              aria-labelledby="pills-Maritime-transportation-tab"
-                              tabindex="0"
-                              >
-                              <div class="">
-                                 <p
-                                    class="bg-main-two-900 tw-py-8 tw-pe-8 tw-ps-14 tw-text-lg text-white fw-semibold border-start border-main-600 border-5 tw-mb-11 cursor-small"
-                                    data-aos="fade-up"
-                                    data-aos-duration="1000"
-                                    data-aos-delay="200"
-                                    >
-                                    For each project we establish relationships with
-                                    partners who we know will help us create added value for
-                                 </p>
-                                 <div
-                                    class="d-flex align-items-center position-relative max-w-620-px"
-                                    data-aos="fade-up"
-                                    data-aos-duration="1000"
-                                    data-aos-delay="300"
-                                    >
-                                    <span
-                                       class="tw-w-90-px tw-h-90-px bg-white rounded-circle d-flex justify-content-center align-items-center position-absolute top-50 tw--translate-y-50 z-2 tw-start-48"
-                                       >
-                                    <img
-                                       src="assets/images/icons/service-icon4.svg"
-                                       alt=""
-                                       />
-                                    </span>
-                                    <div class="tw--me-32-px position-relative">
-                                       <img
-                                          src="assets/images/thumbs/service-img.png"
-                                          alt=""
-                                          />
-                                    </div>
-                                    <div
-                                       class="bg-main-600 tw-h-280-px d-flex justify-content-center align-items-center tw-pe-6 tw-ps-8 position-relative z-1 rectangle-shape-two max-w-286-px w-100"
-                                       >
-                                       <ul class="cursor-small d-flex flex-column tw-gap-2">
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="200"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium"
-                                                >Fast Delivery</span
-                                                >
-                                          </li>
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="400"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium">Safety</span>
-                                          </li>
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="600"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium"
-                                                >Good Package</span
-                                                >
-                                          </li>
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="800"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium">Privacy</span>
-                                          </li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                                 <ul
-                                    class="cursor-small d-flex flex-row flex-wrap tw-gap-8 tw-mt-14"
-                                    >
-                                    <li
-                                       class="d-flex align-items-center tw-gap-4 aos-init"
-                                       data-aos="fade-up"
-                                       data-aos-duration="1000"
-                                       data-aos-delay="200"
-                                       >
-                                       <span class="text-main-600 d-flex"
-                                          ><i class="ph-bold ph-check"></i
-                                          ></span>
-                                       <span class="text-white fw-medium"
-                                          >Dedicated Transport wise</span
-                                          >
-                                    </li>
-                                    <li
-                                       class="d-flex align-items-center tw-gap-4 aos-init"
-                                       data-aos="fade-up"
-                                       data-aos-duration="1000"
-                                       data-aos-delay="400"
-                                       >
-                                       <span class="text-main-600 d-flex"
-                                          ><i class="ph-bold ph-check"></i
-                                          ></span>
-                                       <span class="text-white fw-medium"
-                                          >Domestics & Logistics</span
-                                          >
-                                    </li>
-                                 </ul>
-                              </div>
-                           </div>
-                           <div
-                              class="tab-pane fade"
-                              id="pills-flightTrans"
-                              role="tabpanel"
-                              aria-labelledby="pills-flightTrans-tab"
-                              tabindex="0"
-                              >
-                              <div class="">
-                                 <p
-                                    class="bg-main-two-900 tw-py-8 tw-pe-8 tw-ps-14 tw-text-lg text-white fw-semibold border-start border-main-600 border-5 tw-mb-11 cursor-small"
-                                    data-aos="fade-up"
-                                    data-aos-duration="1000"
-                                    data-aos-delay="200"
-                                    >
-                                    For each project we establish relationships with
-                                    partners who we know will help us create added value for
-                                 </p>
-                                 <div
-                                    class="d-flex align-items-center position-relative max-w-620-px"
-                                    data-aos="fade-up"
-                                    data-aos-duration="1000"
-                                    data-aos-delay="300"
-                                    >
-                                    <span
-                                       class="tw-w-90-px tw-h-90-px bg-white rounded-circle d-flex justify-content-center align-items-center position-absolute top-50 tw--translate-y-50 z-2 tw-start-48"
-                                       >
-                                    <img
-                                       src="assets/images/icons/service-icon5.svg"
-                                       alt=""
-                                       />
-                                    </span>
-                                    <div class="tw--me-32-px position-relative">
-                                       <img
-                                          src="assets/images/thumbs/service-img.png"
-                                          alt=""
-                                          />
-                                    </div>
-                                    <div
-                                       class="bg-main-600 tw-h-280-px d-flex justify-content-center align-items-center tw-pe-6 tw-ps-8 position-relative z-1 rectangle-shape-two max-w-286-px w-100"
-                                       >
-                                       <ul class="cursor-small d-flex flex-column tw-gap-2">
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="200"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium"
-                                                >Fast Delivery</span
-                                                >
-                                          </li>
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="400"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium">Safety</span>
-                                          </li>
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="600"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium"
-                                                >Good Package</span
-                                                >
-                                          </li>
-                                          <li
-                                             class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-                                             data-aos="fade-up"
-                                             data-aos-duration="1000"
-                                             data-aos-delay="800"
-                                             >
-                                             <span class="text-white d-flex"
-                                                ><i class="ph-bold ph-check"></i
-                                                ></span>
-                                             <span class="text-white fw-medium">Privacy</span>
-                                          </li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                                 <ul
-                                    class="cursor-small d-flex flex-row flex-wrap tw-gap-8 tw-mt-14"
-                                    >
-                                    <li
-                                       class="d-flex align-items-center tw-gap-4 aos-init"
-                                       data-aos="fade-up"
-                                       data-aos-duration="1000"
-                                       data-aos-delay="200"
-                                       >
-                                       <span class="text-main-600 d-flex"
-                                          ><i class="ph-bold ph-check"></i
-                                          ></span>
-                                       <span class="text-white fw-medium"
-                                          >Dedicated Transport wise</span
-                                          >
-                                    </li>
-                                    <li
-                                       class="d-flex align-items-center tw-gap-4 aos-init"
-                                       data-aos="fade-up"
-                                       data-aos-duration="1000"
-                                       data-aos-delay="400"
-                                       >
-                                       <span class="text-main-600 d-flex"
-                                          ><i class="ph-bold ph-check"></i
-                                          ></span>
-                                       <span class="text-white fw-medium"
-                                          >Domestics & Logistics</span
-                                          >
-                                    </li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- ============================== service Section End ================================= -->
-      <!-- ============================== Key Features section Start ================================== -->
-      <section class="key-features py-140 position-relative">
-         <img
-            src="assets/images/thumbs/ship.png"
-            alt=""
-            class="curve-animation position-absolute top-0 tw-mt-16 tw-end-0 tw-me-14"
-            />
-         <img
-            src="assets/images/shapes/key-features-dotted.png"
-            alt=""
-            class="position-absolute bottom-0 tw-end-0"
-            />
-         <div class="position-relative z-1">
-            <img
-               src="assets/images/shapes/key-features-shape.png"
-               alt=""
-               class="position-absolute bottom-0 tw-start-0 w-100 z-n1"
-               />
-            <div class="container">
-               <div class="max-w-840-px mx-auto text-center tw-mb-15">
-                  <h1 class="splitTextStyleOne cursor-big tw-mb-8">
-                     Biziň beýlekilerden tapawutly tarabymyz
-                  </h1>
-               </div>
-               <div class="row">
-                  <div class="col-lg-3 col-sm-6 col-xs-6">
-                     <div class="d-flex flex-column tw-gap-56-px">
-                        <div
-                           class="animation-item"
-                           data-aos="fade-up"
-                           data-aos-duration="1000"
-                           data-aos-delay="100"
-                           >
-                           <span class="tw-mb-6 cursor-small animate__flipInY">
-                           <img
-                              src="assets/images/icons/key-features-icon1.svg"
-                              alt=""
-                              />
-                           </span>
-                           <h5 class="splitTextStyleTwo tw-mb-5 cursor-big">
-                              Merkezleşdirilmedik söwda
-                           </h5>
-                           <p class="text-neutral-1000 cursor-small fw-medium">
-                              Açyk we ygtybarly söwda ulgamy arkaly müşderiler bilen hyzmatdaşlygyň ýeňilleşdirilmegi.
-                           </p>
-                        </div>
-                        <div
-                           class="animation-item"
-                           data-aos="fade-up"
-                           data-aos-duration="1000"
-                           data-aos-delay="300"
-                           >
-                           <span class="tw-mb-6 cursor-small animate__flipInY">
-                           <img
-                              src="assets/images/icons/key-features-icon2.svg"
-                              alt=""
-                              />
-                           </span>
-                           <h5 class="splitTextStyleTwo tw-mb-5 cursor-big">
-                              Göni transport hyzmaty
-                           </h5>
-                           <p class="text-neutral-1000 cursor-small fw-medium">
-                              Ýükleriňizi aralyk araçylarsyz, gönüden-göni tiz we amatly ugratmak mümkinçiligi.
-                           </p>
-                        </div>
-                        <div
-                           class="animation-item"
-                           data-aos="fade-up"
-                           data-aos-duration="1000"
-                           data-aos-delay="500"
-                           >
-                           <span class="tw-mb-6 cursor-small animate__flipInY">
-                           <img
-                              src="assets/images/icons/key-features-icon3.svg"
-                              alt=""
-                              />
-                           </span>
-                           <h5 class="splitTextStyleTwo tw-mb-5 cursor-big">
-                              Hil taýdan berk gaplama
+											<div class="form-row">
+												<div class="form-group">
+													<label
+														><span class="required">*</span> Ýük görnüşi</label
+													>
+													<select id="cargoType" required>
+														<option value="">Saýlaň</option>
+														<option value="documents">Resminamalar</option>
+														<option value="electronics">Elektronika</option>
+														<option value="clothing">Egin-eşik</option>
+														<option value="food">Azyk önümleri</option>
+														<option value="other">Beýlekiler</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>Ýüki görkezmek görnüşi</label>
+													<select id="cargoDisplay">
+														<option value="box">Gutular</option>
+														<option value="bag">Torba</option>
+														<option value="pallet">Pallet</option>
+														<option value="container">Konteýner</option>
+													</select>
+												</div>
+											</div>
 
-                           </h5>
-                           <p class="text-neutral-1000 cursor-small fw-medium">
-                              Ýükleriň howpsuzlygyny üpjün edýän halkara ülňülere laýyk gaplama hyzmatlary.
-                           </p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-6 d-lg-block d-none">
-                     <div
-                        class="bg-neutral-50 tw-py-8 tw-px-3 border tw-border-dashed border-neutral-200 tw-rounded-3xl position-relative h-100"
-                        >
-                        <img
-                           src="assets/images/thumbs/kay-features-img.png"
-                           alt=""
-                           data-aos="zoom-in"
-                           data-aos-duration="1000"
-                           data-aos-delay="200"
-                           />
-                        <div
-                           class="bg-blur-two tw-py-10 px-lg-5 tw-px-6 position-absolute bottom-0 tw-start-50 translate-50-rotate-10 tw-rounded-32-px min-w-max tw-mb-14"
-                           >
-                           <h1 class="cursor-big">
-                               <span class="text-main-600 ">2024</span>
-                                Bäri
-                           </h1>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-3 col-sm-6 col-xs-6 ps-xxl-5">
-                     <div class="d-flex flex-column tw-gap-56-px">
-                        <div
-                           class="animation-item"
-                           data-aos="fade-up"
-                           data-aos-duration="1000"
-                           data-aos-delay="200"
-                           >
-                           <span class="tw-mb-6 cursor-small animate__flipInY">
-                           <img
-                              src="assets/images/icons/key-features-icon4.svg"
-                              alt=""
-                              />
-                           </span>
-                           <h5 class="splitTextStyleTwo tw-mb-5 cursor-big">
-                              Ýokary uýgunlaşma
+											<div class="form-row">
+												<div class="form-group">
+													<label>Kurýer alyp gider</label>
+													<select id="pickupCourier">
+														<option value="no">Ýok</option>
+														<option value="yes">Hawa</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label>Kurýer eltip berer</label>
+													<select id="deliveryCourier">
+														<option value="no">Ýok</option>
+														<option value="yes">Hawa</option>
+													</select>
+												</div>
+											</div>
 
-                           </h5>
-                           <p class="text-neutral-1000 cursor-small fw-medium">
-                              Müşderiniň talaplaryna görä dürli görnüşli logistika çözgütlerini hödürleýäris.
-                           </p>
-                        </div>
-                        <div
-                           class="animation-item"
-                           data-aos="fade-up"
-                           data-aos-duration="1000"
-                           data-aos-delay="400"
-                           >
-                           <span class="tw-mb-6 cursor-small animate__flipInY">
-                           <img
-                              src="assets/images/icons/key-features-icon5.svg"
-                              alt=""
-                              />
-                           </span>
-                           <h5 class="splitTextStyleTwo tw-mb-5 cursor-big">
-                              Howpsuz eltip bermek
-                           </h5>
-                           <p class="text-neutral-1000 cursor-small fw-medium">
-                              Ýükleriňizi bellenilen nokada wagtynda we doly howpsuzlykda eltip berýäris.
-                           </p>
-                        </div>
-                        <div
-                           class="animation-item"
-                           data-aos="fade-up"
-                           data-aos-duration="1000"
-                           data-aos-delay="600"
-                           >
-                           <span class="tw-mb-6 cursor-small animate__flipInY">
-                           <img
-                              src="assets/images/icons/key-features-icon6.svg"
-                              alt=""
-                              />
-                           </span>
-                           <h5 class="splitTextStyleTwo tw-mb-5 cursor-big">
-                              Howa ýük daşama hyzmatlary
+											<div class="dimensions-grid">
+												<div class="dimension-group">
+													<label><span class="required">*</span> Agramy</label>
+													<div class="dimension-input">
+														<input
+															type="number"
+															id="weight"
+															placeholder="5"
+															min="0"
+															step="0.1"
+															required
+														/>
+														<span class="unit">kg</span>
+													</div>
+												</div>
+												<div class="dimension-group">
+													<label
+														><span class="required">*</span> Uzynlygy</label
+													>
+													<div class="dimension-input">
+														<input
+															type="number"
+															id="length"
+															placeholder="12"
+															min="0"
+															step="0.1"
+															required
+														/>
+														<span class="unit">sm</span>
+													</div>
+												</div>
+												<div class="dimension-group">
+													<label><span class="required">*</span> Ini</label>
+													<div class="dimension-input">
+														<input
+															type="number"
+															id="width"
+															placeholder="32"
+															min="0"
+															step="0.1"
+															required
+														/>
+														<span class="unit">sm</span>
+													</div>
+												</div>
+												<div class="dimension-group">
+													<label
+														><span class="required">*</span> Beýikligi</label
+													>
+													<div class="dimension-input">
+														<input
+															type="number"
+															id="height"
+															placeholder="123"
+															min="0"
+															step="0.1"
+															required
+														/>
+														<span class="unit">sm</span>
+													</div>
+												</div>
+											</div>
 
-                           </h5>
-                           <p class="text-neutral-1000 cursor-small fw-medium">
-                              Tiz we netijeli halkara howa gatnawlary arkaly çalt eltip bermek mümkinçiligi.
-                           </p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- ============================== Key Features section End ================================== -->
-      <!-- ================================= Projects section start ===================================== -->
-      <section
-         class="project half-bg-w-50 py-140 position-relative z-1 overflow-hidden"
-         >
-         <img
-            src="assets/images/thumbs/projects-shape-img.png"
-            alt=""
-            class="project-shape-img position-absolute tw-start-0 top-0 z-n1"
-            />
-         <div class="container">
-            <div
-               class="d-flex align-items-center flex-wrap tw-gap-6 justify-content-between tw-mb-15"
-               >
-               <div class="max-w-632-px text-start">
-                  <h1 class="splitTextStyleOne cursor-big tw-mb-8">
-                     Biziň ýüklerimiz
-                  </h1>
-                  <p class="text-main-two-600 cursor-small fw-medium">Harytlaryňyzyň iň amatly ýagdaýda we iň gysga wagtda size ýetmegi üçin logistikanyň her bir tapgyryny üns bilen gözegçilik edýäris. Biziň tejribämiz we hünärmenligimiz her gowşuryşyň howpsuzlygyny we netijeliligini kepillendirýär.</p>
-               </div>
-            </div>
-         </div>
-         <div class="container">
-            <div class="view-w-100 position-relative z-1">
-               <div class="project-slider swiper">
-                  <div class="swiper-wrapper">
-                     <div
-                        class="swiper-slide"
-                        data-aos="fade-up"
-                        data-aos-duration="1000"
-                        data-aos-delay="100"
-                        >
-                        <div class="group-item">
-                           <div class="position-relative tw-h-400-px hover-overlay">
-                              <img
-                                 src="assets/images/product/prod1.jpg"
-                                 alt=""
-                                 class="w-100 h-100 object-fit-cover"
-                                 />
-                           </div>
-                        </div>
-                     </div>
-                     <div
-                        class="swiper-slide"
-                        data-aos="fade-up"
-                        data-aos-duration="1000"
-                        data-aos-delay="100"
-                        >
-                        <div class="group-item">
-                           <div class="position-relative tw-h-400-px hover-overlay">
-                              <img
-                                 src="assets/images/product/prod2.jpg"
-                                 alt=""
-                                 class="w-100 h-100 object-fit-cover"
-                                 />
-                           </div>
-                        </div>
-                     </div>
-                     <div
-                        class="swiper-slide"
-                        data-aos="fade-up"
-                        data-aos-duration="1000"
-                        data-aos-delay="100"
-                        >
-                        <div class="group-item">
-                           <div class="position-relative tw-h-400-px hover-overlay">
-                              <img
-                                 src="assets/images/product/prod3.jpg"
-                                 alt=""
-                                 class="w-100 h-100 object-fit-cover"
-                                 />
-                           </div>
-                        </div>
-                     </div>
-                     <div
-                        class="swiper-slide"
-                        data-aos="fade-up"
-                        data-aos-duration="1000"
-                        data-aos-delay="100"
-                        >
-                        <div class="group-item">
-                           <div class="position-relative tw-h-400-px hover-overlay">
-                              <img
-                                 src="assets/images/product/prod4.jpg"
-                                 alt=""
-                                 class="w-100 h-100 object-fit-cover"
-                                 />
-                           </div>
-                        </div>
-                     </div>
-                     <div
-                        class="swiper-slide"
-                        data-aos="fade-up"
-                        data-aos-duration="1000"
-                        data-aos-delay="100"
-                        >
-                        <div class="group-item">
-                           <div class="position-relative tw-h-400-px hover-overlay">
-                              <img
-                                 src="assets/images/product/prod7.jpg"
-                                 alt=""
-                                 class="w-100 h-100 object-fit-cover"
-                                 />
-                           </div>
-                        </div>
-                     </div>
-                     <div
-                        class="swiper-slide"
-                        data-aos="fade-up"
-                        data-aos-duration="1000"
-                        data-aos-delay="100"
-                        >
-                        <div class="group-item">
-                           <div class="position-relative tw-h-400-px hover-overlay">
-                              <img
-                                 src="assets/images/product/prod6.jpg"
-                                 alt=""
-                                 class="w-100 h-100 object-fit-cover"
-                                 />
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- ================================= Projects section end ===================================== -->
-      <!-- ============================ Get in touch section start =============================== -->
-      <section class="get-in-touch py-140 position-relative overflow-hidden">
-         <div class="container">
-            <div class="row gy-4">
-               <div class="col-lg-6">
-                  <div class="">
-                     <h1 class="splitTextStyleOne cursor-big tw-mb-8">Hytaýdan ýük eltip bermek</h1>
-                     <p
-                        class="cursor-small text-neutral-900 tw-ps-205 border-start border-main-600 border-3"
-                        >
-                        Size Hytaý halk respublikasyndan Türkmenistan döwletimize kiçi we uly göwrümli ýükleriňizi çalt we amatly bahadan  logistic hyzmatyny hödürleýär.
-                     </p>
-                     <div class="tw-mt-10 tw-mb-13">
-                        <span class="text-main-two-600 fw-bold cursor-small"
-                           >Ashgabat Parahat 7/1 office number:</span
-                           >
-                        <h2 class="tw-mt-3 cursor-big">
-                           <a
-                              href="tel:+1718-904-4450"
-                              class="text-main-600 hover--translate-y-1 tw-duration-200 font-body"
-                              >+8613186081573</a
-                              >
-                        </h2>
+											<button type="submit" class="calculate-btn">
+												Bahany hasapla
+											</button>
 
-                        <h2 class="tw-mt-3 cursor-big">
-                           <a
-                              href="tel:+1718-904-4450"
-                              class="text-main-600 hover--translate-y-1 tw-duration-200 font-body"
-                              >+99363306161</a
-                              >
-                        </h2>
+											<div
+												class="result-section"
+												id="resultSection"
+												style="display: none"
+											>
+												<div class="result-row">
+													<span class="result-label">Ýük görnüşi:</span>
+													<span class="result-value" id="resultCargoType"
+														>-</span
+													>
+												</div>
+												<div class="result-row">
+													<span class="result-label">Goşmaça hyzmat:</span>
+													<span class="result-value" id="resultService"
+														>+ 50 TMT</span
+													>
+												</div>
+												<div class="result-row">
+													<span class="result-label">Jemi baha:</span>
+													<span class="result-value total-cost" id="totalCost"
+														>50.00 TMT</span
+													>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- ======================================== request-quote-area section end ===================================== -->
+		<!-- ============================== service Section Start ================================= -->
 
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-6">
-                  <div class="location">
-                     <div class="">
-                        <img src="assets/images/banner/banner-map.svg" alt="" />
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- ============================ Get in touch section end =============================== -->
-      <!-- ==================== Footer Start Here ==================== -->
-      <footer class="footer position-relative z-1 mt-auto">
+		<section class="section-cargo-delivery">
+			<div class="container justify-content-center">
+				<div class="max-w-856-px mx-auto text-center tw-pb-16 tw-mb-6">
+					<h1 class="splitTextStyleOne cursor-big">Ýük eltmegiň görnüşleri</h1>
+				</div>
+
+				<div class="row g-4">
+					<div
+						class="col-xl-4 col-lg-4 col-sm-6"
+						data-aos="fade-up"
+						data-aos-duration="1000"
+						data-aos-delay="300"
+					>
+						<div class="team-item group group-item">
+							<div
+								class="position-relative tw-rounded-32-px tw-rounded-bl-0 overflow-hidden hover-overlay"
+							>
+								<a href="avioCargo.html" class="w-100 tw-h-400-px">
+									<img
+										src="assets/images/thumbs/avia-6-10-dnej-575.jpg"
+										alt=""
+										class="w-100 h-100 object-fit-cover"
+									/>
+								</a>
+
+								<h5
+									class="tw-mb-1 cursor-big position-absolute tw-py-10 tw-bg-white tw-bg-opacity-80 tw-px-6 bottom-0 text-white"
+								>
+									<a
+										href="avioCargo.html"
+										class="hover-text-main-600 line-clamp-1"
+										>Howa bilen eltme</a
+									>
+								</h5>
+							</div>
+						</div>
+					</div>
+					<div
+						class="col-xl-4 col-lg-4 col-sm-6"
+						data-aos="fade-up"
+						data-aos-duration="1000"
+						data-aos-delay="300"
+					>
+						<div class="team-item group group-item">
+							<div
+								class="position-relative tw-rounded-32-px tw-rounded-bl-0 overflow-hidden hover-overlay"
+							>
+								<h5
+									class="tw-mb-1 cursor-big position-absolute tw-py-10 tw-bg-white tw-bg-opacity-80 tw-px-6 bottom-0 text-white"
+								>
+									<a
+										href="transportCargo.html"
+										class="hover-text-main-600 line-clamp-1"
+										>Transportyn usti bilen eltme</a
+									>
+								</h5>
+								<a href="transportCargo.html" class="w-100 tw-h-400-px">
+									<img
+										src="assets/images/thumbs/avtodostavka-10-15-dnej-575.jpg"
+										alt=""
+										class="w-100 h-100 object-fit-cover"
+									/>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div
+						class="col-xl-4 col-lg-4 col-sm-6"
+						data-aos="fade-up"
+						data-aos-duration="1000"
+						data-aos-delay="300"
+					>
+						<div class="team-item group group-item">
+							<div
+								class="position-relative tw-rounded-32-px tw-rounded-bl-0 overflow-hidden hover-overlay"
+							>
+								<h5
+									class="tw-mb-1 cursor-big position-absolute tw-py-10 tw-bg-white tw-bg-opacity-80 tw-px-6 bottom-0 text-white"
+								>
+									<a
+										href="portCargo.html"
+										class="hover-text-main-600 line-clamp-1"
+										>Hytaýdan port bilen eltme</a
+									>
+								</h5>
+								<a href="portCargo.html" class="w-100 tw-h-400-px">
+									<img
+										src="assets/images/thumbs/morskie-perevozki-575.jpg"
+										alt=""
+										class="w-100 h-100 object-fit-cover"
+									/>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============================== service Section End ================================= -->
+		<!-- ============================== Key Features section Start ================================== -->
+		<section class="key-features py-140 position-relative">
+			<img
+				src="assets/images/thumbs/ship.png"
+				alt=""
+				class="curve-animation position-absolute top-0 tw-mt-16 tw-end-0 tw-me-14"
+			/>
+			<img
+				src="assets/images/shapes/key-features-dotted.png"
+				alt=""
+				class="position-absolute bottom-0 tw-end-0"
+			/>
+			<div class="position-relative z-1">
+				<img
+					src="assets/images/shapes/key-features-shape.png"
+					alt=""
+					class="position-absolute bottom-0 tw-start-0 w-100 z-n1"
+				/>
+				<div class="container">
+					<div class="max-w-840-px mx-auto text-center tw-mb-15">
+						<h1 class="splitTextStyleOne cursor-big tw-mb-8">
+							Biziň beýlekilerden tapawutly tarabymyz
+						</h1>
+					</div>
+					<div class="row">
+						<div class="col-lg-3 col-sm-6 col-xs-6">
+							<div class="d-flex flex-column tw-gap-56-px">
+								<div
+									class="animation-item"
+									data-aos="fade-up"
+									data-aos-duration="1000"
+									data-aos-delay="100"
+								>
+									<span class="tw-mb-6 cursor-small animate__flipInY">
+										<img
+											src="assets/images/icons/key-features-icon1.svg"
+											alt=""
+										/>
+									</span>
+									<h5 class="splitTextStyleTwo tw-mb-5 cursor-big">
+										Merkezleşdirilmedik söwda
+									</h5>
+									<p class="text-neutral-1000 cursor-small fw-medium">
+										Açyk we ygtybarly söwda ulgamy arkaly müşderiler bilen
+										hyzmatdaşlygyň ýeňilleşdirilmegi.
+									</p>
+								</div>
+								<div
+									class="animation-item"
+									data-aos="fade-up"
+									data-aos-duration="1000"
+									data-aos-delay="300"
+								>
+									<span class="tw-mb-6 cursor-small animate__flipInY">
+										<img
+											src="assets/images/icons/key-features-icon2.svg"
+											alt=""
+										/>
+									</span>
+									<h5 class="splitTextStyleTwo tw-mb-5 cursor-big">
+										Göni transport hyzmaty
+									</h5>
+									<p class="text-neutral-1000 cursor-small fw-medium">
+										Ýükleriňizi aralyk araçylarsyz, gönüden-göni tiz we amatly
+										ugratmak mümkinçiligi.
+									</p>
+								</div>
+								<div
+									class="animation-item"
+									data-aos="fade-up"
+									data-aos-duration="1000"
+									data-aos-delay="500"
+								>
+									<span class="tw-mb-6 cursor-small animate__flipInY">
+										<img
+											src="assets/images/icons/key-features-icon3.svg"
+											alt=""
+										/>
+									</span>
+									<h5 class="splitTextStyleTwo tw-mb-5 cursor-big">
+										Hil taýdan berk gaplama
+									</h5>
+									<p class="text-neutral-1000 cursor-small fw-medium">
+										Ýükleriň howpsuzlygyny üpjün edýän halkara ülňülere laýyk
+										gaplama hyzmatlary.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6 d-lg-block d-none">
+							<div
+								class="bg-neutral-50 tw-py-8 tw-px-3 border tw-border-dashed border-neutral-200 tw-rounded-3xl position-relative h-100"
+							>
+								<img
+									src="assets/images/thumbs/kay-features-img.png"
+									alt=""
+									data-aos="zoom-in"
+									data-aos-duration="1000"
+									data-aos-delay="200"
+								/>
+								<div
+									class="bg-blur-two tw-py-10 px-lg-5 tw-px-6 position-absolute bottom-0 tw-start-50 translate-50-rotate-10 tw-rounded-32-px min-w-max tw-mb-14"
+								>
+									<h1 class="cursor-big">
+										<span class="text-main-600">2024</span>
+										Bäri
+									</h1>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-sm-6 col-xs-6 ps-xxl-5">
+							<div class="d-flex flex-column tw-gap-56-px">
+								<div
+									class="animation-item"
+									data-aos="fade-up"
+									data-aos-duration="1000"
+									data-aos-delay="200"
+								>
+									<span class="tw-mb-6 cursor-small animate__flipInY">
+										<img
+											src="assets/images/icons/key-features-icon4.svg"
+											alt=""
+										/>
+									</span>
+									<h5 class="splitTextStyleTwo tw-mb-5 cursor-big">
+										Ýokary uýgunlaşma
+									</h5>
+									<p class="text-neutral-1000 cursor-small fw-medium">
+										Müşderiniň talaplaryna görä dürli görnüşli logistika
+										çözgütlerini hödürleýäris.
+									</p>
+								</div>
+								<div
+									class="animation-item"
+									data-aos="fade-up"
+									data-aos-duration="1000"
+									data-aos-delay="400"
+								>
+									<span class="tw-mb-6 cursor-small animate__flipInY">
+										<img
+											src="assets/images/icons/key-features-icon5.svg"
+											alt=""
+										/>
+									</span>
+									<h5 class="splitTextStyleTwo tw-mb-5 cursor-big">
+										Howpsuz eltip bermek
+									</h5>
+									<p class="text-neutral-1000 cursor-small fw-medium">
+										Ýükleriňizi bellenilen nokada wagtynda we doly howpsuzlykda
+										eltip berýäris.
+									</p>
+								</div>
+								<div
+									class="animation-item"
+									data-aos="fade-up"
+									data-aos-duration="1000"
+									data-aos-delay="600"
+								>
+									<span class="tw-mb-6 cursor-small animate__flipInY">
+										<img
+											src="assets/images/icons/key-features-icon6.svg"
+											alt=""
+										/>
+									</span>
+									<h5 class="splitTextStyleTwo tw-mb-5 cursor-big">
+										Howa ýük daşama hyzmatlary
+									</h5>
+									<p class="text-neutral-1000 cursor-small fw-medium">
+										Tiz we netijeli halkara howa gatnawlary arkaly çalt eltip
+										bermek mümkinçiligi.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- ============================== Key Features section End ================================== -->
+
+		<section class="section-price price-cargo">
+			<div class="container">
+				<div class="max-w-840-px mx-auto text-center tw-mb-15">
+					<h1 class="splitTextStyleOne cursor-big tw-mb-8">
+						Transportlaryň bahalary
+					</h1>
+				</div>
+				<div class="row">
+					<div class="col col-sm-6 col-md-6 col-lg-4 col-xl-4">
+						<div class="card">
+							<h2>
+								Demirýol<br />
+								gatnawlary
+							</h2>
+							<p>Hytaýdan demirýol gatnawlary üçin täzeleşdirilen bahalar</p>
+							<a
+								target="_blank"
+								href="price-detail.html"
+								class="cursor-small btn btn-main hover-style-one button--stroke d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2 tw-rounded-3xl tw-px-6 tw-py-505"
+								>Doly maglumat</a
+							>
+						</div>
+					</div>
+					<div class="col col-sm-6 col-md-6 col-lg-4 col-xl-4">
+						<div class="card">
+							<h2>Awtoulag gatnawlary</h2>
+							<p>Hytaýdan awtoulag gatnawlary üçin täzeleşdirilen bahalar</p>
+							<a
+								target="_blank"
+								href="price-detail.html"
+								class="cursor-small btn btn-main hover-style-one button--stroke d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2 tw-rounded-3xl tw-px-6 tw-py-505"
+								>Doly maglumat</a
+							>
+						</div>
+					</div>
+					<div class="col col-sm-6 col-md-6 col-lg-4 col-xl-4">
+						<div class="card">
+							<h2>
+								Deňiz<br />
+								gatnawy
+							</h2>
+							<p>Hytaýdan deňiz gatnawlary üçin täzeleşdirilen bahalar</p>
+							<a
+								target="_blank"
+								href="price-detail.html"
+								class="cursor-small btn btn-main hover-style-one button--stroke d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2 tw-rounded-3xl tw-px-6 tw-py-505"
+								>Doly maglumat</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- ================================= Projects section start ===================================== -->
+		<section
+			class="project half-bg-w-50 py-140 position-relative z-1 overflow-hidden"
+		>
+			<img
+				src="assets/images/thumbs/projects-shape-img.png"
+				alt=""
+				class="project-shape-img position-absolute tw-start-0 top-0 z-n1"
+			/>
+			<div class="container">
+				<div
+					class="d-flex align-items-center flex-wrap tw-gap-6 justify-content-between tw-mb-15"
+				>
+					<div class="max-w-632-px text-start">
+						<h1 class="splitTextStyleOne cursor-big tw-mb-8">
+							Biziň ýüklerimiz
+						</h1>
+						<p class="text-main-two-600 cursor-small fw-medium">
+							Harytlaryňyzyň iň amatly ýagdaýda we iň gysga wagtda size ýetmegi
+							üçin logistikanyň her bir tapgyryny üns bilen gözegçilik edýäris.
+							Biziň tejribämiz we hünärmenligimiz her gowşuryşyň howpsuzlygyny
+							we netijeliligini kepillendirýär.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="view-w-100 position-relative z-1">
+					<div class="project-slider swiper">
+						<div class="swiper-wrapper">
+							<div
+								class="swiper-slide"
+								data-aos="fade-up"
+								data-aos-duration="1000"
+								data-aos-delay="100"
+							>
+								<div class="group-item">
+									<div class="position-relative tw-h-400-px hover-overlay">
+										<img
+											src="assets/images/product/prod1.jpg"
+											alt=""
+											class="w-100 h-100 object-fit-cover"
+										/>
+									</div>
+								</div>
+							</div>
+							<div
+								class="swiper-slide"
+								data-aos="fade-up"
+								data-aos-duration="1000"
+								data-aos-delay="100"
+							>
+								<div class="group-item">
+									<div class="position-relative tw-h-400-px hover-overlay">
+										<img
+											src="assets/images/product/prod2.jpg"
+											alt=""
+											class="w-100 h-100 object-fit-cover"
+										/>
+									</div>
+								</div>
+							</div>
+							<div
+								class="swiper-slide"
+								data-aos="fade-up"
+								data-aos-duration="1000"
+								data-aos-delay="100"
+							>
+								<div class="group-item">
+									<div class="position-relative tw-h-400-px hover-overlay">
+										<img
+											src="assets/images/product/prod3.jpg"
+											alt=""
+											class="w-100 h-100 object-fit-cover"
+										/>
+									</div>
+								</div>
+							</div>
+							<div
+								class="swiper-slide"
+								data-aos="fade-up"
+								data-aos-duration="1000"
+								data-aos-delay="100"
+							>
+								<div class="group-item">
+									<div class="position-relative tw-h-400-px hover-overlay">
+										<img
+											src="assets/images/product/prod4.jpg"
+											alt=""
+											class="w-100 h-100 object-fit-cover"
+										/>
+									</div>
+								</div>
+							</div>
+							<div
+								class="swiper-slide"
+								data-aos="fade-up"
+								data-aos-duration="1000"
+								data-aos-delay="100"
+							>
+								<div class="group-item">
+									<div class="position-relative tw-h-400-px hover-overlay">
+										<img
+											src="assets/images/product/prod7.jpg"
+											alt=""
+											class="w-100 h-100 object-fit-cover"
+										/>
+									</div>
+								</div>
+							</div>
+							<div
+								class="swiper-slide"
+								data-aos="fade-up"
+								data-aos-duration="1000"
+								data-aos-delay="100"
+							>
+								<div class="group-item">
+									<div class="position-relative tw-h-400-px hover-overlay">
+										<img
+											src="assets/images/product/prod6.jpg"
+											alt=""
+											class="w-100 h-100 object-fit-cover"
+										/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- ================================= Projects section end ===================================== -->
+
+		<!-- ============================ Get in touch section start =============================== -->
+		<section class="get-in-touch py-140 position-relative overflow-hidden">
+			<div class="container">
+				<div class="row gy-4">
+					<div class="col-lg-6">
+						<div class="">
+							<h1 class="splitTextStyleOne cursor-big tw-mb-8">
+								Hytaýdan ýük eltip bermek
+							</h1>
+							<p
+								class="cursor-small text-neutral-900 tw-ps-205 border-start border-main-600 border-3"
+							>
+								Size Hytaý halk respublikasyndan Türkmenistan döwletimize kiçi
+								we uly göwrümli ýükleriňizi çalt we amatly bahadan logistic
+								hyzmatyny hödürleýär.
+							</p>
+							<div class="tw-mt-10 tw-mb-13">
+								<span class="text-main-two-600 fw-bold cursor-small"
+									>Ashgabat Parahat 7/1 office number:</span
+								>
+								<h2 class="tw-mt-3 cursor-big">
+									<a
+										href="tel:+1718-904-4450"
+										class="text-main-600 hover--translate-y-1 tw-duration-200 font-body"
+										>+8613186081573</a
+									>
+								</h2>
+
+								<h2 class="tw-mt-3 cursor-big">
+									<a
+										href="tel:+1718-904-4450"
+										class="text-main-600 hover--translate-y-1 tw-duration-200 font-body"
+										>+99363306161</a
+									>
+								</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="location">
+							<div class="">
+								<img src="assets/images/banner/banner-map.svg" alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- ============================ Get in touch section end =============================== -->
+		<!-- ==================== Footer Start Here ==================== -->
+		<footer class="footer position-relative z-1 mt-auto">
 			<div class="container">
 				<!-- bottom Footer -->
 				<div
@@ -2099,35 +1675,35 @@
 				</div>
 			</div>
 		</footer>
-      <!-- ==================== Footer End Here ==================== -->
-      <!-- Jquery js -->
-      <script src="assets/js/jquery-3.7.1.min.js"></script>
-      <!-- phosphor Js -->
-      <script src="assets/js/phosphor-icon.js"></script>
-      <!-- Bootstrap Bundle Js -->
-      <script src="assets/js/boostrap.bundle.min.js"></script>
-      <!-- swiper slider Js -->
-      <script src="assets/js/swiper-bundle.min.js"></script>
-      <!-- Split Text -->
-      <script src="assets/js/SplitText.min.js"></script>
-      <!-- Scroll Trigger -->
-      <script src="assets/js/ScrollTrigger.min.js"></script>
-      <!-- Gsap js -->
-      <script src="assets/js/gsap.min.js"></script>
-      <!-- custom gsap -->
-      <script src="assets/js/custom-gsap.js"></script>
-      <!-- aos -->
-      <script src="assets/js/aos.js"></script>
-      <!-- Circle Progress bar -->
-      <script src="assets/js/animated-radial-progress.js"></script>
-      <!-- counter up -->
-      <script src="assets/js/counterup.min.js"></script>
-      <!-- magnific popup -->
-      <script src="assets/js/magnific-popup.min.js"></script>
-      <!-- marquee -->
-      <script src="assets/js/jquery.marquee.min.js"></script>
-      <script src="assets/js/modal.js"></script>
-      <!-- main js -->
-      <script src="assets/js/main.js"></script>
-   </body>
+		<!-- ==================== Footer End Here ==================== -->
+		<!-- Jquery js -->
+		<script src="assets/js/jquery-3.7.1.min.js"></script>
+		<!-- phosphor Js -->
+		<script src="assets/js/phosphor-icon.js"></script>
+		<!-- Bootstrap Bundle Js -->
+		<script src="assets/js/boostrap.bundle.min.js"></script>
+		<!-- swiper slider Js -->
+		<script src="assets/js/swiper-bundle.min.js"></script>
+		<!-- Split Text -->
+		<script src="assets/js/SplitText.min.js"></script>
+		<!-- Scroll Trigger -->
+		<script src="assets/js/ScrollTrigger.min.js"></script>
+		<!-- Gsap js -->
+		<script src="assets/js/gsap.min.js"></script>
+		<!-- custom gsap -->
+		<script src="assets/js/custom-gsap.js"></script>
+		<!-- aos -->
+		<script src="assets/js/aos.js"></script>
+		<!-- Circle Progress bar -->
+		<script src="assets/js/animated-radial-progress.js"></script>
+		<!-- counter up -->
+		<script src="assets/js/counterup.min.js"></script>
+		<!-- magnific popup -->
+		<script src="assets/js/magnific-popup.min.js"></script>
+		<!-- marquee -->
+		<script src="assets/js/jquery.marquee.min.js"></script>
+		<script src="assets/js/modal.js"></script>
+		<!-- main js -->
+		<script src="assets/js/main.js"></script>
+	</body>
 </html>

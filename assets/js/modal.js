@@ -120,3 +120,109 @@ tap.addEventListener("click", function () {
 	const toggleMenu = document.querySelector(".menu")
 	toggleMenu.classList.toggle("active")
 })
+
+document.addEventListener("DOMContentLoaded", function () {
+	const form = document.getElementById("calculatorForm")
+	const button = document.querySelector(".calculate-btn")
+
+	// Add click event to button
+	button.addEventListener("click", function (e) {
+		e.preventDefault()
+		console.log("Button clicked!") // Debug log
+		calculateCost()
+	})
+
+	// Also add submit event to form
+	form.addEventListener("submit", function (e) {
+		e.preventDefault()
+		console.log("Form submitted!") // Debug log
+		calculateCost()
+	})
+})
+
+function calculateCost() {
+	console.log("calculateCost function called") // Debug log
+
+	try {
+		// Get form values
+		const weight = parseFloat(document.getElementById("weight").value) || 5
+		const length = parseFloat(document.getElementById("length").value) || 12
+		const width = parseFloat(document.getElementById("width").value) || 32
+		const height = parseFloat(document.getElementById("height").value) || 123
+		const cargoType = document.getElementById("cargoType").value
+		const pickupCourier = document.getElementById("pickupCourier").value
+		const deliveryCourier = document.getElementById("deliveryCourier").value
+
+		console.log("Values:", { weight, length, width, height, cargoType }) // Debug log
+
+		// Calculate volume in cubic centimeters, then convert
+		const volumeCm3 = length * width * height
+		const volumeM3 = volumeCm3 / 1000000 // convert cm³ to m³
+
+		// Base price calculation - simplified
+		let baseCost = 30 // Base cost
+		baseCost += weight * 3 // Add cost per kg
+		baseCost += volumeM3 * 500 // Add cost per cubic meter
+
+		// Cargo type multiplier
+		const cargoMultipliers = {
+			documents: 1.0,
+			electronics: 1.5,
+			clothing: 1.2,
+			food: 1.3,
+			other: 1.1,
+		}
+
+		if (cargoType && cargoMultipliers[cargoType]) {
+			baseCost *= cargoMultipliers[cargoType]
+		}
+
+		// Additional services
+		let additionalCost = 0
+		if (pickupCourier === "yes") {
+			additionalCost += 25
+		}
+		if (deliveryCourier === "yes") {
+			additionalCost += 25
+		}
+
+		const totalCost = baseCost + additionalCost
+
+		console.log("Calculated cost:", totalCost) // Debug log
+
+		// Update result display
+		document.getElementById("resultCargoType").textContent = cargoType || "null"
+		document.getElementById("resultService").textContent =
+			additionalCost > 0 ? `+ ${additionalCost} TMT` : "+ 0 TMT"
+		document.getElementById("totalCost").textContent = `${totalCost.toFixed(
+			2
+		)} TMT`
+
+		// Show results
+		const resultSection = document.getElementById("resultSection")
+		resultSection.style.display = "block"
+
+		// Smooth scroll to results
+		resultSection.scrollIntoView({
+			behavior: "smooth",
+			block: "nearest",
+		})
+
+		console.log("Results displayed") // Debug log
+	} catch (error) {
+		console.error("Error in calculateCost:", error)
+		alert("Произошла ошибка при расчете стоимости")
+	}
+}
+
+function closeModal() {
+	// In a real implementation, this might close the modal
+	// For this demo, we'll just hide the results
+	document.getElementById("resultSection").style.display = "none"
+}
+
+function closeModal() {
+	// In a real implementation, this might close the modal
+	// For this demo, we'll just hide the results
+	document.getElementById("resultSection").style.display = "none"
+}
