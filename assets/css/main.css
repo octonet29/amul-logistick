@@ -347,6 +347,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	/* cursor: none; */
 }
 
 html {
@@ -7031,200 +7032,38 @@ input[type="number"] {
 	display: flex;
 }
 
-.car-road {
-	width: 110px;
-	overflow: hidden;
-	z-index: 9999;
+.svg-calLoader {
+	width: 230px;
+	height: 230px;
+	transform-origin: 115px 115px;
+	animation: 1.4s linear infinite loader-spin;
 }
 
-.car {
-	width: 110px;
-	position: relative;
+.cal-loader__plane {
+	fill: #02a200;
 }
 
-@-webkit-keyframes rotateWheel {
-	from {
-		transform: rotate(0deg);
-	}
+.cal-loader__path {
+	stroke: #02a200;
+	animation: 1.4s ease-in-out infinite loader-path;
+}
+
+@keyframes loader-spin {
 	to {
 		transform: rotate(360deg);
 	}
 }
-
-/* Standard syntax */
-
-@keyframes rotateWheel {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-
-.car-base {
-	background: var(--main-600);
-	width: 100%;
-	height: 22px;
-	border-radius: 2px 5px 10px 10px;
-}
-
-.car-top {
-	height: 36px;
-	width: 66px;
-	background: var(--main-600);
-	margin-bottom: -18px;
-	border-radius: 100px/60px;
-	margin-left: 15px;
-	position: relative;
-}
-
-.car-top::before {
-	width: 0;
-	height: 0;
-	border-top: 18px solid transparent;
-	border-bottom: 12px solid transparent;
-	border-right: 43px solid var(--main-600);
-	position: absolute;
-	left: -10px;
-	content: "";
-}
-
-.car-top::after {
-	position: absolute;
-	right: -29px;
-	content: "";
-	top: 14px;
-	border-radius: 50% 50% 0 0;
-	width: 60px;
-	height: 8px;
-	background: var(--main-600);
-}
-
-.window {
-	position: absolute;
-	background: white;
-	width: 42px;
-	height: 11px;
-	top: 3px;
-	border-radius: 50% 50% 0 0;
-	left: 12px;
-}
-
-.window::before {
-	content: "";
-	position: absolute;
-	left: 20px;
-	background: var(--main-600);
-	height: 100%;
-	width: 5px;
-}
-
-.wheel {
-	width: 22px;
-	height: 22px;
-	border-radius: 50%;
-	background: #4a4a4a;
-	position: absolute;
-	border: 2px solid white;
-	-webkit-animation: rotateWheel 0.7s infinite linear;
-	animation: rotateWheel 0.7s infinite linear;
-}
-
-.wheel::before {
-	content: "";
-	width: 14px;
-	height: 14px;
-	top: 2px;
-	left: 2px;
-	border-radius: 50%;
-	background: white;
-	position: absolute;
-}
-
-.wheel:after {
-	content: "";
-	position: absolute;
-	top: 4px;
-	bottom: 4px;
-	width: 3px;
-	left: 50%;
-	transform: translateX(-50%);
-	background: #4a4a4a;
-}
-
-.wheel-left {
-	left: 12px;
-	bottom: -10px;
-}
-
-.wheel-right {
-	right: 12px;
-	bottom: -10px;
-}
-
-.wheel-spike {
-	position: absolute;
-	top: 50%;
-	bottom: 4px;
-	width: calc(100% - 8px);
-	left: 4px;
-	height: 3px;
-	transform: translateY(-50%);
-	background: #4a4a4a;
-}
-
-.wheel-center {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 5px;
-	height: 5px;
-	border-radius: 50%;
-	background: white;
-	z-index: 2;
-	transform: translate(-50%, -50%);
-}
-
-.head-light {
-	position: absolute;
-	background: #e2dfcb;
-	right: 1px;
-	top: 19px;
-	border-radius: 50% 15px 15px 50%;
-	width: 10px;
-	height: 4px;
-}
-
-.road {
-	position: relative;
-	width: 100%;
-	margin-top: 8px;
-	animation: border-dance 0.5s infinite linear;
-	height: 3px;
-	background-image: linear-gradient(
-		to left,
-		#ccc 0%,
-		#ccc 20%,
-		#fff 20%,
-		#fff 40%,
-		#ccc 40%,
-		#ccc 60%,
-		#fff 60%,
-		#fff 80%,
-		#ccc 80%
-	);
-}
-
-@keyframes border-dance {
+@keyframes loader-path {
 	0% {
-		left: 40px;
+		stroke-dasharray: 0, 580, 0, 0, 0, 0, 0, 0, 0;
+	}
+	50% {
+		stroke-dasharray: 0, 450, 10, 30, 10, 30, 10, 30, 10;
 	}
 	100% {
-		left: 0px;
+		stroke-dasharray: 0, 580, 0, 0, 0, 0, 0, 0, 0;
 	}
 }
-
 /* ================================= preload Css End ===========================  */
 
 /* ============= Header Start Here ======================= */
@@ -10680,4 +10519,33 @@ input:focus {
 		padding: 20px;
 		margin: 10px;
 	}
+}
+
+.airplane-cursor {
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	pointer-events: none;
+	z-index: 9999;
+	transform: translate(-50%, -50%);
+	visibility: hidden;
+}
+
+.airplane {
+	width: 100%;
+	height: 100%;
+	fill: #ffffff;
+	filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+	transition: fill 0.3s ease;
+}
+
+.cursor-small {
+	display: inline-block;
+	transition: all 0.3s ease;
+}
+
+.cursor-small:hover,
+.cursor-big:hover {
+	background: rgba(255, 255, 255, 0.4);
+	transform: translateY(-5px);
 }

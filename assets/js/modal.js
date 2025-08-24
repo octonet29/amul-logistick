@@ -226,3 +226,176 @@ function closeModal() {
 	// For this demo, we'll just hide the results
 	document.getElementById("resultSection").style.display = "none"
 }
+var body = document.body
+var cursor = document.querySelector(".airplane-cursor")
+var airplane = document.querySelector(".airplane")
+var trails = document.querySelectorAll(".airplane-trail")
+var cursorSmalls = document.querySelectorAll(".cursor-small")
+var cursorBigs = document.querySelectorAll(".cursor-big")
+
+let mouseX = 0
+let mouseY = 0
+let prevX = 0
+let prevY = 0
+
+// Main cursor movement
+body.addEventListener("mousemove", function (event) {
+	mouseX = event.clientX
+	mouseY = event.clientY
+
+	// Calculate rotation based on movement direction
+	const deltaX = mouseX - prevX
+	const deltaY = mouseY - prevY
+	const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI)
+
+	gsap.to(cursor, {
+		x: mouseX,
+		y: mouseY,
+		duration: 0.3,
+		visibility: "visible",
+		ease: "power2.out",
+		rotation: angle + 90, // +90 because airplane points up by default
+	})
+
+	prevX = mouseX
+	prevY = mouseY
+})
+
+// Trail effect
+let trailPositions = []
+body.addEventListener("mousemove", function (event) {
+	trailPositions.unshift({ x: event.clientX, y: event.clientY })
+	if (trailPositions.length > trails.length) {
+		trailPositions.pop()
+	}
+
+	trails.forEach((trail, index) => {
+		if (trailPositions[index]) {
+			gsap.to(trail, {
+				x: trailPositions[index].x,
+				y: trailPositions[index].y,
+				duration: 0.3 + index * 0.1,
+				visibility: "visible",
+				opacity: 1 - index * 0.2,
+				scale: 1 - index * 0.1,
+				ease: "power2.out",
+			})
+		}
+	})
+})
+
+// Small Cursor Effects
+cursorSmalls.forEach((cursorSmall) => {
+	cursorSmall.addEventListener("mouseenter", function () {
+		gsap.to(cursor, {
+			scale: 1.5,
+			duration: 0.3,
+			ease: "power2.out",
+		})
+		gsap.to(airplane, {
+			fill: "#4facfe",
+			duration: 0.3,
+		})
+
+		// Enhanced trail effect
+		trails.forEach((trail, index) => {
+			gsap.to(trail, {
+				scale: 1.5,
+				backgroundColor: "#4facfe",
+				duration: 0.3,
+			})
+		})
+	})
+
+	cursorSmall.addEventListener("mouseleave", function () {
+		gsap.to(cursor, {
+			scale: 1,
+			duration: 0.3,
+			ease: "power2.out",
+		})
+		gsap.to(airplane, {
+			fill: "#ffffff",
+			duration: 0.3,
+		})
+
+		trails.forEach((trail, index) => {
+			gsap.to(trail, {
+				scale: 1,
+				backgroundColor: "rgba(255, 255, 255, 0.6)",
+				duration: 0.3,
+			})
+		})
+	})
+})
+
+// Big Cursor Effects
+cursorBigs.forEach((cursorBig) => {
+	cursorBig.addEventListener("mouseenter", function () {
+		gsap.to(cursor, {
+			scale: 2,
+			duration: 0.3,
+			ease: "power2.out",
+		})
+		gsap.to(airplane, {
+			fill: "#ff6b6b",
+			duration: 0.3,
+		})
+
+		// Enhanced trail effect
+		trails.forEach((trail, index) => {
+			gsap.to(trail, {
+				scale: 2,
+				backgroundColor: "#ff6b6b",
+				duration: 0.3,
+			})
+		})
+	})
+
+	cursorBig.addEventListener("mouseleave", function () {
+		gsap.to(cursor, {
+			scale: 1,
+			duration: 0.3,
+			ease: "power2.out",
+		})
+		gsap.to(airplane, {
+			fill: "#ffffff",
+			duration: 0.3,
+		})
+
+		trails.forEach((trail, index) => {
+			gsap.to(trail, {
+				scale: 1,
+				backgroundColor: "rgba(255, 255, 255, 0.6)",
+				duration: 0.3,
+			})
+		})
+	})
+})
+
+// Hide cursor when mouse leaves window
+document.addEventListener("mouseleave", function () {
+	gsap.to(cursor, {
+		visibility: "hidden",
+		duration: 0.3,
+	})
+	trails.forEach((trail) => {
+		gsap.to(trail, {
+			visibility: "hidden",
+			duration: 0.3,
+		})
+	})
+})
+
+// Show cursor when mouse enters window
+document.addEventListener("mouseenter", function () {
+	gsap.to(cursor, {
+		visibility: "visible",
+		duration: 0.3,
+	})
+	trails.forEach((trail) => {
+		gsap.to(trail, {
+			visibility: "visible",
+			duration: 0.3,
+		})
+	})
+})
