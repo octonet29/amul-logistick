@@ -9948,12 +9948,8 @@ input[type="number"] {
 
 .price-cargo .col:nth-child(1) .card::after {
 	content: "";
-	background-image: url(../images/price/train.png);
-	width: clamp(
-		160px,
-		160px + (180 - 160) * (100vw - 1200px) / (1280 - 1200),
-		180px
-	);
+	background-image: url(../images/price/biman-blue.png);
+	width: 100%;
 	height: clamp(
 		225px,
 		225px + (276 - 225) * (100vw - 1200px) / (1280 - 1200),
@@ -9962,6 +9958,7 @@ input[type="number"] {
 	position: absolute;
 	bottom: 0;
 	right: 0px;
+	left:0;
 	background-size: cover;
 	overflow: hidden;
 }
@@ -10519,33 +10516,4 @@ input:focus {
 		padding: 20px;
 		margin: 10px;
 	}
-}
-
-.airplane-cursor {
-	position: fixed;
-	width: 40px;
-	height: 40px;
-	pointer-events: none;
-	z-index: 9999;
-	transform: translate(-50%, -50%);
-	visibility: hidden;
-}
-
-.airplane {
-	width: 100%;
-	height: 100%;
-	fill: #ffffff;
-	filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
-	transition: fill 0.3s ease;
-}
-
-.cursor-small {
-	display: inline-block;
-	transition: all 0.3s ease;
-}
-
-.cursor-small:hover,
-.cursor-big:hover {
-	background: rgba(255, 255, 255, 0.4);
-	transform: translateY(-5px);
 }
