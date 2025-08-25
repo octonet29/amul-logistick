@@ -142,7 +142,7 @@
 				disableOnInteraction: false,
 			},
 			pagination: {
-				el: ".banner-pagination",
+				el: ".banner-pagination ",
 				clickable: true,
 				renderBullet: function (index, className) {
 					return (
@@ -433,25 +433,25 @@
 		// ================================= Brand Two slider End =========================
 
 		// ========================= Blog item hover Js Start ===================
-		$(".blog-item").on("mouseenter", function () {
-			$(".blog-item")
-				.find(".blog-date")
-				.addClass("bg-main-600")
-				.removeClass("bg-main-two-600")
-			$(".blog-item")
-				.find(".blog-tag")
-				.addClass("bg-main-two-600")
-				.removeClass("bg-main-600")
+		// $(".blog-item").on("mouseenter", function () {
+		// 	$(".blog-item")
+		// 		.find(".blog-date")
+		// 		.addClass("bg-main-600")
+		// 		.removeClass("bg-main-two-600")
+		// 	$(".blog-item")
+		// 		.find(".blog-tag")
+		// 		.addClass("bg-main-two-600")
+		// 		.removeClass("bg-main-600")
 
-			$(this)
-				.find(".blog-date")
-				.removeClass("bg-main-600")
-				.addClass("bg-main-two-600")
-			$(this)
-				.find(".blog-tag")
-				.removeClass("bg-main-two-600")
-				.addClass("bg-main-600")
-		})
+		// 	$(this)
+		// 		.find(".blog-date")
+		// 		.removeClass("bg-main-600")
+		// 		.addClass("bg-main-two-600")
+		// 	$(this)
+		// 		.find(".blog-tag")
+		// 		.removeClass("bg-main-two-600")
+		// 		.addClass("bg-main-600")
+		// })
 		// ========================= Blog item hover Js End ===================
 
 		// ========================= Transport Way Js Start ===================
