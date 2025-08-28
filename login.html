@@ -87,6 +87,12 @@
 		<!-- ==================== Breadcrumb Start Here ==================== -->
 		<div class="scheme-preview scheme3">
 			<div class="login-form">
+				<a
+					href="index.html"
+					class="cursor-small border rounded-circle text-neutral-1000 left-0 position-absolute"
+				>
+					<i class="ph ph-arrow-left"></i>
+				</a>
 				<div class="loginLogo">
 					<a href="index.html">
 						<img
@@ -97,36 +103,32 @@
 					</a>
 				</div>
 				<div class="form-group">
-					<label class="form-label" for="email">Email Address</label>
+					<label class="form-label" for="username">Username</label>
 					<input
-						type="email"
-						id="email"
+						type="text"
+						id="username"
 						class="form-input"
-						value="user@example.com"
+						placeholder="Username"
 					/>
 				</div>
 				<div class="form-group">
-					<label class="form-label" for="currentPassword"
-						>Current Password</label
-					>
+					<label class="form-label" for="Password">Password</label>
 					<div class="password-container">
 						<input
 							type="password"
-							id="currentPassword"
+							id="Password"
 							class="form-input"
-							placeholder="Enter current password"
+							placeholder="Enter  password"
 							required
 						/>
-						<span
-							class="password-toggle"
-							onclick="togglePassword('currentPassword')"
+						<span class="password-toggle" onclick="togglePassword('Password')"
 							>👁</span
 						>
 					</div>
 				</div>
 				<button
 					type="submit"
-					class="btn btn-primary d-flex justify-content-center w-100"
+					class="cursor-small btn btn-main hover-style-two button--stroke tw-py-405 d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2 w-100"
 				>
 					Login
 				</button>

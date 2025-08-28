@@ -9338,7 +9338,7 @@ input[type="number"] {
 
 .scheme3 {
 	height: 100vh;
-	background: linear-gradient(135deg, #065f46 0%, #10b981 100%);
+	background: #02a200;
 }
 
 .login-form {
@@ -9352,7 +9352,11 @@ input[type="number"] {
 	width: 360px;
 	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
-
+.login-form a {
+	padding: 10px 10px;
+	display: flex;
+	align-items: center;
+}
 .input-field {
 	width: 100%;
 	padding: 12px;
@@ -9404,7 +9408,7 @@ input[type="number"] {
 	color: #333;
 }
 .scheme3 {
-	--accent-color: #10b981;
+	--accent-color: #02a200;
 }
 
 .selected-scheme {
@@ -10283,7 +10287,9 @@ racking-section {
 .tracking-input::placeholder {
 	color: #9ca3af;
 }
-
+.common-tab {
+	border-radius: 10px;
+}
 .track-btn {
 	background: #02a105;
 	color: white;
@@ -10554,3 +10560,23 @@ input:focus {
 	display: flex;
 	align-items: center;
 }
+
+.banner-four-area {
+	height: 100vh;
+}
+.banner-four-content {
+	height: 100vh;
+}
+.quote {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.marketplace{
+	height: 100px;
+}
+/*
+.rectangle-shape-one {
+	clip-path: polygon(10% 0, 80% 0, 100% 100%, 10% 100%);
+} */
