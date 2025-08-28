@@ -7122,9 +7122,9 @@ input[type="number"] {
 
 @media (min-width: 992px) {
 	.header-inner {
-		margin-bottom: -51px;
+		/* margin-bottom: -51px; */
 		z-index: 3;
-		position: relative;
+		/* position: relative; */
 	}
 }
 
@@ -10564,8 +10564,11 @@ input:focus {
 .banner-four-area {
 	height: 100vh;
 }
-.banner-four-content {
+.banner-four-height {
 	height: 100vh;
+}
+.banner-four-content {
+	height: 100%;
 }
 .quote {
 	display: flex;
@@ -10573,7 +10576,7 @@ input:focus {
 	gap: 5px;
 }
 
-.marketplace{
+.marketplace {
 	height: 100px;
 }
 /*
