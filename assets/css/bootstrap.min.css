@@ -4185,7 +4185,7 @@ fieldset:disabled .btn {
 }
 
 .nav-pills .nav-link {
-    border-radius: var(--bs-nav-pills-border-radius)
+    border-radius: 10px
 }
 
 .nav-pills .nav-link.active,

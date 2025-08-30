@@ -92,36 +92,23 @@
 		<div class="cursor"></div>
 		<span class="dot"></span>
 		<!-- Custom Cursor End -->
-		<!-- Modal -->
-		<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+		<div class="modal-overlay" id="profileModalOverlay" onclick="closeModal(event, 'profileModalOverlay')">
 			<div class="modal-content" onclick="event.stopPropagation()">
 				<div class="modal-header">
 					<h3 class="modal-title">Profile Settings</h3>
-					<button class="close-btn" onclick="closeModal()" title="Close">
-						✕
-					</button>
+					<button class="close-btn" onclick="closeModal(null, 'profileModalOverlay')" title="Close">✕</button>
 				</div>
-				<div class="success-message" id="successMessage">
+				<div class="success-message" id="profileSuccessMessage">
 					Password updated successfully!
 				</div>
 				<form id="profileForm">
 					<div class="form-group">
 						<label class="form-label" for="email">Email Address</label>
-						<input
-							type="email"
-							id="email"
-							class="form-input"
-							value="user@example.com"
-							disabled
-						/>
-						<div class="disabled-notice">
-							Email cannot be changed for security reasons
-						</div>
+						<input type="email" id="email" class="form-input" value="user@example.com" disabled />
+						<div class="disabled-notice">Email cannot be changed for security reasons</div>
 					</div>
 					<div class="form-group">
-						<label class="form-label" for="currentPassword"
-							>Current Password</label
-						>
+						<label class="form-label" for="currentPassword">Current Password</label>
 						<div class="password-container">
 							<input
 								type="password"
@@ -130,11 +117,7 @@
 								placeholder="Enter current password"
 								required
 							/>
-							<span
-								class="password-toggle"
-								onclick="togglePassword('currentPassword')"
-								>👁</span
-							>
+							<span class="password-toggle" onclick="togglePassword('currentPassword')">👁</span>
 						</div>
 					</div>
 					<div class="form-group">
@@ -147,17 +130,11 @@
 								placeholder="Enter new password"
 								required
 							/>
-							<span
-								class="password-toggle"
-								onclick="togglePassword('newPassword')"
-								>👁</span
-							>
+							<span class="password-toggle" onclick="togglePassword('newPassword')">👁</span>
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="form-label" for="confirmPassword"
-							>Confirm New Password</label
-						>
+						<label class="form-label" for="confirmPassword">Confirm New Password</label>
 						<div class="password-container">
 							<input
 								type="password"
@@ -166,28 +143,59 @@
 								placeholder="Confirm new password"
 								required
 							/>
-							<span
-								class="password-toggle"
-								onclick="togglePassword('confirmPassword')"
-								>👁</span
-							>
+							<span class="password-toggle" onclick="togglePassword('confirmPassword')">👁</span>
 						</div>
 					</div>
 					<div class="modal-actions">
-						<button
-							type="button"
-							class="btn btn-secondary"
-							onclick="closeModal()"
-						>
-							Cancel
-						</button>
-						<button type="submit" class="btn btn-primary">
-							Update Password
-						</button>
+						<button type="submit" class="w-100 btn btn-primary">Update Password</button>
 					</div>
 				</form>
 			</div>
 		</div>
+
+		<!-- Login Modal -->
+		<div class="modal-overlay" id="loginModalOverlay" onclick="closeModal(event, 'loginModalOverlay')">
+			<div class="modal-content" onclick="event.stopPropagation()">
+				<div class="modal-header">
+					<h3 class="modal-title">Login</h3>
+					<button class="close-btn" onclick="closeModal(null, 'loginModalOverlay')" title="Close">✕</button>
+				</div>
+				<div class="success-message" id="loginSuccessMessage">
+					Login successful!
+				</div>
+				<form id="loginForm">
+					<div class="form-group">
+						<label class="form-label" for="loginUsername">Username</label>
+						<input
+							type="text"
+							id="loginUsername"
+							class="form-input"
+							placeholder="Enter your username"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="loginPassword">Password</label>
+						<div class="password-container">
+							<input
+								type="password"
+								id="loginPassword"
+								class="form-input"
+								placeholder="Enter your password"
+								required
+							/>
+							<span class="password-toggle" onclick="togglePassword('loginPassword')">👁</span>
+						</div>
+					</div>
+					<div class="modal-actions">
+						<button type="submit" class="w-100 btn btn-primary">Login</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Header (update the profile menu) -->
+
 		<!-- ==================== Mobile Menu Start Here ==================== -->
 		<div
 			class="mobile-menu d-lg-none d-block scroll-sm position-fixed bg-white tw-w-300-px tw-h-screen overflow-y-auto tw-p-6 tw-z-999 tw--translate-x-full tw-pb-68"
@@ -320,102 +328,48 @@
 				<nav class="header-inner bg-white d-flex justify-content-between">
 					<div class="d-flex align-items-center">
 						<!-- Logo Start -->
-						<div
-							class="logo-mask-bg cursor-big position-relative d-lg-flex d-none z-1 tw-w-156-px d-flex justify-content-center align-items-center"
-						>
+						<div class="logo-mask-bg cursor-big position-relative d-lg-flex d-none z-1 tw-w-156-px d-flex justify-content-center align-items-center">
 							<a href="index.html">
-								<img
-									src="assets/images/logo/amulLogo.png"
-									alt="Logo"
-									class="max-w-82-px"
-								/>
+								<img src="assets/images/logo/amulLogo.png" alt="Logo" class="max-w-82-px" />
 							</a>
 						</div>
 						<div class="position-relative d-lg-none d-inline-block z-1">
 							<a href="index.html" class="cursor-big">
-								<img
-									src="assets/images/logo/amulLogo.png"
-									alt="Logo"
-									class="max-w-82-px"
-								/>
+								<img src="assets/images/logo/amulLogo.png" alt="Logo" class="max-w-82-px" />
 							</a>
 						</div>
-						<!-- Logo End  -->
-						<!-- Menu Start  -->
+						<!-- Logo End -->
+						<!-- Menu Start -->
 						<div class="header-menu d-lg-block d-none ps-108-px">
-							<!-- Nav menu Start -->
-							<ul
-								class="nav-menu cursor-small d-lg-flex align-items-center xl-tw-gap-12 tw-gap-4"
-							>
+							<ul class="nav-menu cursor-small d-lg-flex align-items-center xl-tw-gap-12 tw-gap-4">
 								<li class="nav-menu__item position-relative activePage">
-									<a
-										href="index.html"
-										class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
-										>Baş sahypa</a
-									>
+									<a href="index.html" class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100">Baş sahypa</a>
 								</li>
 								<li class="nav-menu__item position-relative">
-									<a
-										href="about.html"
-										class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
-										>Biz barada</a
-									>
+									<a href="about.html" class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100">Biz barada</a>
 								</li>
 								<li class="nav-menu__item position-relative">
-									<a
-										href="service.html"
-										class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
-										>Hyzmatlarymyz</a
-									>
+									<a href="service.html" class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100">Hyzmatlarymyz</a>
 								</li>
-								<!-- <li class="nav-menu__item">
-                           <a
-                           	href="about.html"
-                           	class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
-                           	>Amul logistics nähili işleýär</a
-                           >
-                           </li> -->
 								<li class="nav-menu__item position-relative">
-									<a
-										href="ourClient.html"
-										class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
-										>Gadagan edilen ýük</a
-									>
+									<a href="ourClient.html" class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100">Gadagan edilen ýük</a>
 								</li>
 								<li class="nav-menu__item">
-									<a
-										href="contact.html"
-										class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
-										>Habarlaşmak</a
-									>
+									<a href="contact.html" class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100">Habarlaşmak</a>
 								</li>
 							</ul>
-							<!-- Nav menu End  -->
 						</div>
-						<!-- Menu End  -->
+						<!-- Menu End -->
 					</div>
 					<!-- Header Right start -->
 					<div class="header-four-right d-flex gap-xxl-5 gap-3">
-						<div
-							class="d-flex align-items-center xl-tw-gap-7 tw-gap-5 flex-shrink-0"
-						>
+						<div class="d-flex align-items-center xl-tw-gap-7 tw-gap-5 flex-shrink-0">
 							<!-- Language Start -->
-							<div
-								class="cursor-small position-relative group-item hover-mt-0 xxsm-d-block d-none"
-							>
+							<div class="cursor-small position-relative group-item hover-mt-0 xxsm-d-block d-none">
 								<div class="d-flex align-items-center tw-gap-2">
-									<a
-										href="javascript:void(0)"
-										class="selected-text text-black py-lg-4 d-flex align-items-center gap-2"
-									>
-										<span
-											class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle common-shadow d-flex justify-content-center align-items-center"
-										>
-											<img
-												src="assets/images/thumbs/flag1.png"
-												alt=""
-												class="w-100 h-100 object-fit-cover rounded-circle"
-											/>
+									<a href="javascript:void(0)" class="selected-text text-black py-lg-4 d-flex align-items-center gap-2">
+										<span class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle common-shadow d-flex justify-content-center align-items-center">
+											<img src="assets/images/thumbs/flag1.png" alt="" class="w-100 h-100 object-fit-cover rounded-circle" />
 										</span>
 										English
 									</a>
@@ -423,56 +377,27 @@
 										<i class="ph-bold ph-caret-down"></i>
 									</span>
 								</div>
-								<ul
-									class="lang-dropdown tw-max-h-300-px overflow-y-auto scroll-sm bg-white common-shadow tw-px-4 tw-py-3 position-absolute tw-end-0 top-100 min-w-max tw-rounded-lg d-flex flex-column tw-gap-3 tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1 tw-duration-200 group-hover-item-mt-0 tw-mt-4 tw-z-99"
-								>
+								<ul class="lang-dropdown tw-max-h-300-px overflow-y-auto scroll-sm bg-white common-shadow tw-px-4 tw-py-3 position-absolute tw-end-0 top-100 min-w-max tw-rounded-lg d-flex flex-column tw-gap-3 tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1 tw-duration-200 group-hover-item-mt-0 tw-mt-4 tw-z-99">
 									<li>
-										<a
-											href="javascript:void(0)"
-											class="text-black d-flex align-items-center gap-2 hover-text-main-600 active--translate-y-1 tw-duration-150"
-										>
-											<span
-												class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle d-flex justify-content-center align-items-center"
-											>
-												<img
-													src="assets/images/thumbs/flag1.png"
-													alt=""
-													class="w-100 h-100 object-fit-cover rounded-circle"
-												/>
+										<a href="javascript:void(0)" class="text-black d-flex align-items-center gap-2 hover-text-main-600 active--translate-y-1 tw-duration-150">
+											<span class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle d-flex justify-content-center align-items-center">
+												<img src="assets/images/thumbs/flag1.png" alt="" class="w-100 h-100 object-fit-cover rounded-circle" />
 											</span>
 											English
 										</a>
 									</li>
 									<li>
-										<a
-											href="javascript:void(0)"
-											class="text-black d-flex align-items-center gap-2 hover-text-main-600 active--translate-y-1 tw-duration-150"
-										>
-											<span
-												class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle d-flex justify-content-center align-items-center"
-											>
-												<img
-													src="assets/images/thumbs/flag2.png"
-													alt=""
-													class="w-100 h-100 object-fit-cover rounded-circle"
-												/>
+										<a href="javascript:void(0)" class="text-black d-flex align-items-center gap-2 hover-text-main-600 active--translate-y-1 tw-duration-150">
+											<span class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle d-flex justify-content-center align-items-center">
+												<img src="assets/images/thumbs/flag2.png" alt="" class="w-100 h-100 object-fit-cover rounded-circle" />
 											</span>
 											Turkmen
 										</a>
 									</li>
 									<li>
-										<a
-											href="javascript:void(0)"
-											class="text-black d-flex align-items-center gap-2 hover-text-main-600 active--translate-y-1 tw-duration-150"
-										>
-											<span
-												class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle d-flex justify-content-center align-items-center"
-											>
-												<img
-													src="assets/images/thumbs/flag3.png"
-													alt=""
-													class="w-100 h-100 object-fit-cover rounded-circle"
-												/>
+										<a href="javascript:void(0)" class="text-black d-flex align-items-center gap-2 hover-text-main-600 active--translate-y-1 tw-duration-150">
+											<span class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle d-flex justify-content-center align-items-center">
+												<img src="assets/images/thumbs/flag3.png" alt="" class="w-100 h-100 object-fit-cover rounded-circle" />
 											</span>
 											Russia
 										</a>
@@ -483,26 +408,19 @@
 							<!-- Line Start -->
 							<span class="line h-100"></span>
 							<div class="d-flex align-items-center tw-gap-2 user">
-								<div
-									class="action selected-text text-black py-lg-4 d-flex align-items-center gap-2"
-								>
-									<div
-										class="profile tw-w-30-px tw-h-30-px border border-white border-2 rounded-circle common-shadow d-flex justify-content-center align-items-center"
-									>
-										<i
-											class="ph ph-user w-100 h-100 d-flex justify-content-center align-items-center"
-										></i>
+								<div class="action selected-text text-black py-lg-4 d-flex align-items-center gap-2">
+									<div class="profile tw-w-30-px tw-h-30-px border border-white border-2 rounded-circle common-shadow d-flex justify-content-center align-items-center">
+										<i class="ph ph-user w-100 h-100 d-flex justify-content-center align-items-center"></i>
 									</div>
 									<div class="menu common-shadow">
-										<!-- <h3>Someone Famous<br/><span>Website Designer</span></h3> -->
 										<ul>
 											<li>
 												<i class="ph ph-user"></i>
-												<a onclick="openModal()">My Profile</a>
+												<a onclick="openProfileModal()">My Profile</a>
 											</li>
 											<li>
 												<i class="ph ph-sign-in"></i>
-												<a href="login.html">Login</a>
+												<a onclick="openLoginModal()">Login</a>
 											</li>
 											<li>
 												<i class="ph ph-sign-out"></i>
@@ -512,345 +430,85 @@
 									</div>
 								</div>
 							</div>
-							<button
-								type="button"
-								class="toggle-mobileMenu leading-none d-lg-none text-main-two-600 tw-text-9"
-							>
+							<button type="button" class="toggle-mobileMenu leading-none d-lg-none text-main-two-600 tw-text-9">
 								<i class="ph ph-list"></i>
 							</button>
 						</div>
 					</div>
-					<!-- Header Right End  -->
+					<!-- Header Right End -->
 				</nav>
 			</div>
 		</header>
 		<!-- ==================== Header End Here ==================== -->
 		<!-- ============================ Banner section start ======================================= -->
-		<section class="banner-four-area position-relative overflow-hidden">
-			<div class="banner-four-wrapper position-relative">
-				<div class="swiper-container banner-four-active">
-					<div class="swiper-wrapper">
-						<!-- slide item 1 -->
-						<div class="swiper-slide">
-							<div
-								class="banner-four-height d-flex align-items-center justify-content-center"
-							>
-								<div
-									class="banner-four-bg position-absolute w-100 h-100 top-0 start-0 scale-100 bg-img"
-									data-background-image="assets/images/thumbs/banner-four-bg2.jpg"
-								></div>
-								<div class="container">
-									<div class="row">
-										<div class="col-xl-9 col-lg-8 col-md-11">
-											<div class="banner-four-content">
-												<div
-													class="banner-four-title-box tw--translate-y-150 position-relative z-3 opacity-0 tw-mb-8"
-												>
-													<h2
-														class="banner-four-title text-white splitTextStyleOne cursor-big tw-text-md tw-mb-15"
-													>
-														Hytaýdan ýük eltip bermek
-													</h2>
-													<p
-														class="banner-four-paragraph text-white tw-text-lg line-clamp-3 max-w-612-px"
-													>
-														Hytaýdan Türkmenistana ýük daşamagyň ähli görnüşleri
-													</p>
-													<br />
-													<div class="row">
-														<div
-															class="col-sm-6 tw-mb-7"
-															data-aos="fade-up"
-															data-aos-duration="1000"
-															data-aos-delay="200"
-														>
-															<div
-																class="animation-item d-flex align-items-center tw-gap-6"
-															>
-																<span class="cursor-big animate__heartBeat">
-																	<img
-																		src="assets/images/icons/transport-way-icon1.svg"
-																		alt=""
-																	/>
-																</span>
-																<h6 class="text-white cursor-big">
-																	Hil taýdan berk gaplama
-																</h6>
-															</div>
-														</div>
-														<div
-															class="col-sm-6 tw-mb-7"
-															data-aos="fade-up"
-															data-aos-duration="1000"
-															data-aos-delay="400"
-														>
-															<div
-																class="animation-item d-flex align-items-center tw-gap-6"
-															>
-																<span class="cursor-big animate__heartBeat">
-																	<img
-																		src="assets/images/icons/service-three-icon1.svg"
-																		alt=""
-																	/>
-																</span>
-																<h6 class="text-white cursor-big">
-																	AVIA: 7-10 gün
-																</h6>
-															</div>
-														</div>
-														<div
-															class="col-sm-6 tw-mb-7"
-															data-aos="fade-up"
-															data-aos-duration="1000"
-															data-aos-delay="400"
-														>
-															<div
-																class="animation-item d-flex align-items-center tw-gap-6"
-															>
-																<span class="cursor-big animate__heartBeat">
-																	<img
-																		src="assets/images/icons/transport-way-icon3.svg"
-																		alt=""
-																	/>
-																</span>
-																<h6 class="text-white cursor-big">
-																	Hytaý döwletinden eltip bermek
-																</h6>
-															</div>
-														</div>
-														<div
-															class="col-sm-6 tw-mb-7"
-															data-aos="fade-up"
-															data-aos-duration="1000"
-															data-aos-delay="400"
-														>
-															<div
-																class="animation-item d-flex align-items-center tw-gap-6"
-															>
-																<span class="cursor-big animate__heartBeat">
-																	<img
-																		src="assets/images/icons/tranport-way-icon1.svg"
-																		alt=""
-																	/>
-																</span>
-																<h6 class="text-white cursor-big">
-																	Fiziki şahslar bilen işleýäris
-																</h6>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div
-													class="banner-four-btn-box tw-translate-y-150-px opacity-0 d-inline-flex justify-content-center tw-mt-11"
-												>
-													<a
-														href="service.html"
-														class="cursor-small btn btn-main hover-style-two button--stroke tw-py-405 d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2"
-														data-block="button"
-													>
-														<span class="button__flair"></span>
-														<span class="button__label">
-															Explore The Services</span
-														>
-														<span
-															class="tw-w-7 tw-h-7 bg-white text-main-600 tw-text-sm tw-rounded d-flex justify-content-center align-items-center position-relative group-hover-bg-main-600 group-hover-text-white tw-duration-500"
-														>
-															<i class="ph-bold ph-check"></i>
-														</span>
-													</a>
-													<a
-														href="contact.html"
-														class="cursor-small d-inline-flex align-items-center tw-gap-2 tw-ms-5 text-white fw-semibold hover-text-main-600 group active--translate-y-2"
-														data-aos="fade-up"
-														data-aos-duration="1000"
-														data-aos-delay="400"
-													>
-														Contact Us
-														<span
-															class="text-main-600 d-flex group-hover-text-white tw-duration-200 tw-text-base"
-														>
-															<i class="ph-fill ph-caret-circle-right"></i>
-														</span>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+		<section class="hero">
+			<div class="particles"></div>
 
-						<!-- slide item 2 -->
-						<div class="swiper-slide">
-							<div
-								class="banner-four-height d-flex align-items-center justify-content-center"
-							>
-								<div
-									class="banner-four-bg position-absolute w-100 h-100 top-0 start-0 scale-100 bg-img"
-									data-background-image="assets/images/thumbs/banner-four-bg1.png"
-								></div>
-								<div class="container">
-									<div class="row">
-										<div class="col-xl-8 col-lg-8 col-md-11">
-											<div class="banner-four-content">
-												<div
-													class="banner-four-title-box tw--translate-y-150 position-relative z-3 opacity-0 tw-mb-8"
-												>
-													<h2
-														class="banner-four-title text-white splitTextStyleOne cursor-big tw-text-md tw-mb-15"
-													>
-														“AMUL logistics” ygtybarlylygyň kepilligi!
-													</h2>
-													<p
-														class="banner-four-paragraph text-white tw-text-lg line-clamp-3 max-w-612-px"
-													>
-														Kiçi göwrümdaki (taobao we pinduoduo) yükleriniz hem
-														biziň sklatlarymyza ugradyp bilersiniz
-													</p>
-													<br />
-													<div class="row">
-														<div
-															class="col-sm-6 tw-mb-7"
-															data-aos="fade-up"
-															data-aos-duration="1000"
-															data-aos-delay="200"
-														>
-															<div
-																class="animation-item d-flex align-items-center tw-gap-6"
-															>
-																<span class="cursor-big animate__heartBeat">
-																	<img
-																		src="assets/images/icons/transport-way-icon4.svg"
-																		alt=""
-																	/>
-																</span>
-																<h6 class="text-white cursor-big">
-																	Resmi kargo eltip bermek
-																</h6>
-															</div>
-														</div>
-														<div
-															class="col-sm-6 tw-mb-7"
-															data-aos="fade-up"
-															data-aos-duration="1000"
-															data-aos-delay="400"
-														>
-															<div
-																class="animation-item d-flex align-items-center tw-gap-6"
-															>
-																<span class="cursor-big animate__heartBeat">
-																	<img
-																		src="assets/images/icons/service-three-icon3.svg"
-																		alt=""
-																	/>
-																</span>
-																<h6 class="text-white cursor-big">
-																	Umumy we utgaşdyrylan ýükler deňiz
-																</h6>
-															</div>
-														</div>
+			<div class="heroContainer">
+				<div class="content">
+				<h2 class="splitTextStyleOne text-main-two-600 cursor-big tw-mb-9">
+					Amul logistik
+				</h2>
+				<p class="cursor-small text-neutral-900 text-main-two-600">
+					Size Hytaý halk respublikasyndan Türkmenistan döwletimize kiçi we uly göwrümli ýükleriňizi çalt we amatly bahadan  logistic hyzmatyny hödürleýär
+				</p>
 
-														<div
-															class="col-sm-6 tw-mb-7"
-															data-aos="fade-up"
-															data-aos-duration="1000"
-															data-aos-delay="400"
-														>
-															<div
-																class="animation-item d-flex align-items-center tw-gap-6"
-															>
-																<span class="cursor-big animate__heartBeat">
-																	<img
-																		src="assets/images/icons/tranport-way-icon1.svg"
-																		alt=""
-																	/>
-																</span>
-																<h6 class="text-white cursor-big">
-																	Fiziki şahslar bilen işleýäris
-																</h6>
-															</div>
-														</div>
-														<div
-															class="col-sm-6 tw-mb-7"
-															data-aos="fade-up"
-															data-aos-duration="1000"
-															data-aos-delay="400"
-														>
-															<div
-																class="animation-item d-flex align-items-center tw-gap-6"
-															>
-																<span class="cursor-big animate__heartBeat">
-																	<img
-																		src="assets/images/icons/tranport-way-icon2.svg"
-																		alt=""
-																	/>
-																</span>
-																<h6 class="text-white cursor-big">
-																	Öýüňize eltip bermek
-																</h6>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div
-													class="banner-four-btn-box tw-translate-y-150-px opacity-0 d-inline-flex justify-content-center tw-mt-11"
-												>
-													<a
-														href="service.html"
-														class="cursor-small btn btn-main hover-style-two button--stroke tw-py-405 d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2"
-														data-block="button"
-													>
-														<span class="button__flair"></span>
-														<span class="button__label">
-															Explore The Services</span
-														>
-														<span
-															class="tw-w-7 tw-h-7 bg-white text-main-600 tw-text-sm tw-rounded d-flex justify-content-center align-items-center position-relative group-hover-bg-main-600 group-hover-text-white tw-duration-500"
-														>
-															<i class="ph-bold ph-check"></i>
-														</span>
-													</a>
-													<a
-														href="contact.html"
-														class="cursor-small d-inline-flex align-items-center tw-gap-2 tw-ms-5 text-white fw-semibold hover-text-main-600 group active--translate-y-2"
-														data-aos="fade-up"
-														data-aos-duration="1000"
-														data-aos-delay="400"
-													>
-														Contact Us
-														<span
-															class="text-main-600 d-flex group-hover-text-white tw-duration-200 tw-text-base"
-														>
-															<i class="ph-fill ph-caret-circle-right"></i>
-														</span>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+
+				<div class="buttons">
+							<a href="service.html" class="cursor-small btn btn-main hover-style-two button--stroke tw-py-405 d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2" data-block="button">
+								<span class="button__flair"></span>
+								<span class="button__label"> Hyzmatlarymyz</span>
+								<span class="tw-w-7 tw-h-7 bg-white text-main-600 tw-text-sm tw-rounded d-flex justify-content-center align-items-center position-relative group-hover-bg-main-600 group-hover-text-white tw-duration-500">
+										<i class="ph-bold ph-check"></i>
+								</span>
+						</a>
+							<a href="about.html" class="cursor-small d-inline-flex align-items-center tw-gap-2 ml-20 text-black fw-semibold hover-text-main-600 group active--translate-y-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+								Kontakt
+								<span class="text-main-600 d-flex group-hover-text-white tw-duration-200 tw-text-base">
+										<i class="ph-fill ph-caret-circle-right"></i>
+								</span>
+						</a>
 				</div>
-				<div class="banner-four-arrow-box">
-					<button
-						class="banner-slider-prev"
-						tabindex="0"
-						aria-label="Previous slide"
-					>
-						<i class="ph ph-arrow-left"></i>
-					</button>
-					<button
-						class="banner-slider-next"
-						tabindex="0"
-						aria-label="Next slide"
-					>
-						<i class="ph ph-arrow-right"></i>
-					</button>
+			</div>
+
+			<div class="visual-section">
+
+					<div class="stats">
+							<div class="stat-item">
+									<div class="stat-number"><img
+										src="assets/images/icons/counter-three-icon2.svg"
+										alt=""
+									/></div>
+									<div class="stat-label text-main-two-600">Resminamaly kargo eltip bermek</div>
+							</div>
+							<div class="stat-item">
+									<div class="stat-number"><img src="assets/images/icons/features-icon3.svg" alt="" /></div>
+									<div class="stat-label text-main-two-600">2 günde ekspress howa arkaly eltip bermek</div>
+							</div>
+							<div class="stat-item">
+									<div class="stat-number"><img src="assets/images/icons/features-icon4.svg" alt="" /></div>
+									<div class="stat-label text-main-two-600">Umumy we jemlenen ýükleriň deňiz arkaly eltilmegi</div>
+							</div>
+							<div class="stat-item">
+									<div class="stat-number"><img src="assets/images/icons/features-icon1.svg" alt="" /></div>
+									<div class="stat-label text-main-two-600">Mugt saklamak we birleşdirmek</div>
+							</div>
+							<div class="stat-item">
+									<div class="stat-number"><img src="assets/images/icons/features-icon2.svg" alt="" /></div>
+									<div class="stat-label text-main-two-600">15 ýyllyk iş tejribesi</div>
+							</div>
+							<div class="stat-item">
+									<div class="stat-number"><img
+										src="assets/images/icons/key-features-icon2.svg"
+										alt=""
+									/></div>
+									<div class="stat-label text-main-two-600">Marketpleýsler üçin fulfılment</div>
+							</div>
+					</div>
 				</div>
 			</div>
 		</section>
+
 		<!-- ============================ Banner section End ======================================= -->
 		<!-- ======================================== request-quote-area section start ===================================== -->
 		<section
@@ -1140,22 +798,17 @@
 			</div>
 		</section>
 		<!-- ======================================== request-quote-area section end ===================================== -->
-		<section class="about py-140 position-relative max-lg-overflow-hidden">
+		<section class="about position-relative max-lg-overflow-hidden">
 			<img
 				src="assets/images/shapes/about-plane.png"
 				alt=""
 				class="cursor-big about-plane position-absolute tw-start-0 top-50"
 			/>
-			<img
-				src="assets/images/thumbs/truck-head.png"
-				alt=""
-				class="truck-head cursor-big position-absolute tw-end-0 d-xxl-block d-none"
-			/>
 
 			<div class="container">
 				<div class="row gy-5 flex-wrap-reverse">
 					<div class="col-lg-5 pe-xl-5">
-						<div class="position-relative tw-pb-11 h-100">
+						<div class="position-relative h-100">
 							<div
 								class="position-relative"
 								data-aos="zoom-in"
@@ -1167,44 +820,6 @@
 									alt=""
 									class="w-100 h-100 object-fit-cover"
 								/>
-								<span
-									class="cursor-big tw-w-75-px tw-h-75-px bg-main-600 d-flex justify-content-center align-items-center rounded-circle position-absolute tw-end-0 bottom-0 tw-me-305 tw-mb-305 d-lg-flex d-none"
-								>
-									<img src="assets/images/icons/play-bar.svg" alt="" />
-								</span>
-							</div>
-
-							<div
-								class="positioned-image bg-white cursor-big common-shadow-four rounded-circle d-flex justify-content-center align-items-center position-absolute top-0 tw-start-0 tw-p-9"
-								data-aos="zoom-in"
-								data-aos-duration="1000"
-								data-aos-delay="200"
-							>
-								<img src="assets/images/thumbs/glob-track.png" alt="" />
-							</div>
-
-							<div
-								class="tw-p-10 tw-pe-130-px tw--translate-x-30-px bg-main-600 position-absolute tw-start-0 bottom-0 tw--ms-30-px"
-								data-aos="zoom-in"
-								data-aos-duration="1000"
-								data-aos-delay="200"
-							>
-								<h1 class="text-white tw-mb-4 cursor-big">5+</h1>
-								<div class="d-flex flex-column tw-gap-1 align-items-start">
-									<span class="text-white fw-medium cursor-small"
-										>Ýyldan bäri</span
-									>
-									<img src="assets/images/shapes/line-shape.png" alt="" />
-								</div>
-								<div
-									class="cursor-small before-border position-relative tw-p-205 bg-white d-inline-flex align-items-start tw-gap-1 position-absolute top-0 tw-end-0 tw-mt-205 tw-me-205 z-1"
-								>
-									<span class="tw-text-xl fw-semibold text-main-600">4.9</span>
-									<span
-										class="tw-text-xl fw-semibold text-main-600 d-flex tw--translate-y-4-px"
-										><i class="ph-fill ph-star"></i
-									></span>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -1271,105 +886,6 @@
 									</div>
 								</div>
 							</div>
-							<span
-								class="tw-my-7 border-bottom border-neutral-100 d-block"
-							></span>
-							<div class="tw-mt-9">
-								<div class="row gy-4">
-									<div
-										class="col-xl-3 col-lg-3 col-sm-3 col-6"
-										data-aos="fade-up"
-										data-aos-duration="1000"
-										data-aos-delay="300"
-									>
-										<div class="team-item group group-item">
-											<div
-												class="marketplace position-relative tw-rounded-32-px tw-rounded-bl-0 overflow-hidden"
-											>
-												<a
-													href="transportCargo.html"
-													class="marketplace-img w-100 h-100"
-												>
-													<img
-														src="assets/images/marketplace/pinduo.webp"
-														alt=""
-														class="w-100 h-100 object-fit-cover"
-													/>
-												</a>
-											</div>
-										</div>
-									</div>
-									<div
-										class="col-xl-3 col-lg-3 col-sm-3 col-6"
-										data-aos="fade-up"
-										data-aos-duration="1000"
-										data-aos-delay="300"
-									>
-										<div class="team-item group group-item">
-											<div
-												class="marketplace position-relative tw-rounded-32-px tw-rounded-bl-0 overflow-hidden"
-											>
-												<a
-													href="portCargo.html"
-													class="marketplace-img w-100 h-100"
-												>
-													<img
-														src="assets/images/marketplace/poizon.webp"
-														alt=""
-														class="w-100 h-100 object-fit-cover"
-													/>
-												</a>
-											</div>
-										</div>
-									</div>
-									<div
-										class="col-xl-3 col-lg-3 col-sm-3 col-6"
-										data-aos="fade-up"
-										data-aos-duration="1000"
-										data-aos-delay="300"
-									>
-										<div class="team-item group group-item">
-											<div
-												class="marketplace position-relative bg-bg-color tw-rounded-32-px tw-rounded-bl-0 overflow-hidden"
-											>
-												<a
-													href="avioCargo.html"
-													class="marketplace-img w-100 h-100"
-												>
-													<img
-														src="assets/images/marketplace/1968.webp"
-														alt=""
-														class="w-100 h-100 object-fit-cover"
-													/>
-												</a>
-											</div>
-										</div>
-									</div>
-									<div
-										class="col-xl-3 col-lg-3 col-sm-3 col-6"
-										data-aos="fade-up"
-										data-aos-duration="1000"
-										data-aos-delay="300"
-									>
-										<div class="team-item group group-item">
-											<div
-												class="marketplace position-relative tw-rounded-32-px tw-rounded-bl-0 overflow-hidden"
-											>
-												<a
-													href="portCargo.html"
-													class="marketplace-img w-100 h-100"
-												>
-													<img
-														src="assets/images/marketplace/taobao.webp"
-														alt=""
-														class="w-100 h-100 object-fit-cover"
-													/>
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -1377,6 +893,98 @@
 		</section>
 
 		<!-- ============================== service Section Start ================================= -->
+		<section
+			class="py-60 bg-img"
+			data-background-image="assets/images/shapes/pricing-bg.png"
+		>
+			<div class="container">
+				<div class="d-flex justify-content-center tw-mb-7">
+					<div class="tw-mt-9">
+						<div class="row gy-4">
+							<div
+								class="col-xl-3 col-lg-3 col-sm-6 col-6"
+								data-aos="fade-up"
+								data-aos-duration="1000"
+								data-aos-delay="300"
+							>
+								<div class="team-item group group-item">
+									<div
+										class="marketplace position-relative tw-rounded-32-px tw-rounded-bl-0 overflow-hidden"
+									>
+										<a href="transportCargo.html" class="marketplace-img w-100 h-100">
+											<img
+												src="assets/images/marketplace/pinduo.webp"
+												alt=""
+												class="w-100 h-100 object-fit-cover"
+											/>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div
+								class="col-xl-3 col-lg-3 col-sm-6 col-6"
+								data-aos="fade-up"
+								data-aos-duration="1000"
+								data-aos-delay="300"
+							>
+								<div class="team-item group group-item">
+									<div
+										class="marketplace position-relative tw-rounded-32-px tw-rounded-bl-0 overflow-hidden"
+									>
+										<a href="portCargo.html" class="marketplace-img w-100 h-100">
+											<img
+												src="assets/images/marketplace/poizon.webp"
+												alt=""
+												class="w-100 h-100 object-fit-cover"
+											/>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div
+								class="col-xl-3 col-lg-3 col-sm-6 col-6"
+								data-aos="fade-up"
+								data-aos-duration="1000"
+								data-aos-delay="300"
+							>
+								<div class="team-item group group-item">
+									<div
+										class="marketplace position-relative bg-bg-color tw-rounded-32-px tw-rounded-bl-0 overflow-hidden"
+									>
+										<a href="avioCargo.html" class="marketplace-img w-100 h-100">
+											<img
+												src="assets/images/marketplace/1968.webp"
+												alt=""
+												class="w-100 h-100 object-fit-cover"
+											/>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div
+								class="col-xl-3 col-lg-3 col-sm-6 col-6"
+								data-aos="fade-up"
+								data-aos-duration="1000"
+								data-aos-delay="300"
+							>
+								<div class="team-item group group-item">
+									<div
+										class="marketplace position-relative tw-rounded-32-px tw-rounded-bl-0 overflow-hidden"
+									>
+										<a href="portCargo.html" class="marketplace-img w-100 h-100">
+											<img
+												src="assets/images/marketplace/taobao.webp"
+												alt=""
+												class="w-100 h-100 object-fit-cover"
+											/>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
 		<section class="section-cargo-delivery">
 			<div class="container justify-content-center">
@@ -1712,496 +1320,152 @@
 			</div>
 		</section>
 
-		<section class="service pb-140 position-relative half-bg-white bg-neutral">
-			<img
-				src="assets/images/shapes/pattern-bg.png"
-				alt=""
-				class="position-absolute bottom-0 tw-start-0 w-100 h-50"
-			/>
+	 <!-- ============================== service Section Start ================================= -->
+    <section class="service pb-140 position-relative half-bg-white bg-neutral">
+        <img src="assets/images/shapes/pattern-bg.png" alt="" class="position-absolute bottom-0 tw-start-0 w-100 h-50">
 
-			<div class="tw-container-1540-px mx-auto tw-px-4">
-				<div class="bg-main-two-600 tw-rounded-2xl position-relative z-1">
-					<img
-						src="assets/images/thumbs/service-bg-img.png"
-						alt=""
-						class="position-absolute tw-end-0 bottom-0 z-n1"
-					/>
+        <div class="tw-container-1540-px mx-auto tw-px-4">
+            <div class="bg-main-two-600 tw-rounded-2xl position-relative z-1">
+                <img src="assets/images/thumbs/service-bg-img.png" alt="" class="position-absolute tw-end-0 bottom-0 z-n1">
 
-					<div class="container">
-						<div class="row gy-4 align-items-center">
-							<div
-								class="col-xl-5"
-								data-aos="zoom-in"
-								data-aos-duration="1000"
-								data-aos-delay="200"
-							>
-								<div
-									class="bg-neutral-50 px-lg-5 tw-px-6 tw-pt-76-px tw-pb-15 rectangle-shape"
-								>
-									<ul
-										class="common-tab nav nav-pills d-flex flex-column tw-gap-8"
-										id="pills-tab"
-										role="tablist"
-									>
-										<li class="nav-item" role="presentation">
-											<button
-												class="nav-link cursor-big tw-text-xl animation-item text-main-two-600 hover-text-main-600 active-scale-094 tw-duration-300 fw-semibold tw-px-8 tw-py-4 tw-rounded-lg bg-white w-100 active"
-												id="pills-air-transportation-tab"
-												data-bs-toggle="pill"
-												data-bs-target="#pills-air-transportation"
-												type="button"
-												role="tab"
-												aria-controls="pills-air-transportation"
-												aria-selected="true"
-											>
-												<span
-													class="d-flex align-items-center gap-xxl-5 tw-gap-6 text-start"
-												>
-													<img
-														src="assets/images/icons/service-icon1.svg"
-														alt=""
-														class="d-sm-flex d-none animate__swing"
-													/>
-													<span>Port Transporty</span>
-												</span>
-											</button>
-										</li>
-										<li class="nav-item" role="presentation">
-											<button
-												class="nav-link cursor-big tw-text-xl animation-item text-main-two-600 hover-text-main-600 active-scale-094 tw-duration-300 fw-semibold tw-px-8 tw-py-4 tw-rounded-lg bg-white w-100"
-												id="pills-traini-transport-tab"
-												data-bs-toggle="pill"
-												data-bs-target="#pills-traini-transport"
-												type="button"
-												role="tab"
-												aria-controls="pills-traini-transport"
-												aria-selected="false"
-											>
-												<span
-													class="d-flex align-items-center gap-xxl-5 tw-gap-6 text-start"
-												>
-													<img
-														src="assets/images/icons/service-icon5.svg"
-														alt=""
-														class="d-sm-flex d-none animate__swing"
-													/>
-													<span>Gara ýol Transporty</span>
-												</span>
-											</button>
-										</li>
-										<li class="nav-item" role="presentation">
-											<button
-												class="nav-link cursor-big tw-text-xl animation-item text-main-two-600 hover-text-main-600 active-scale-094 tw-duration-300 fw-semibold tw-px-8 tw-py-4 tw-rounded-lg bg-white w-100"
-												id="pills-cargoShipFrieght-tab"
-												data-bs-toggle="pill"
-												data-bs-target="#pills-cargoShipFrieght"
-												type="button"
-												role="tab"
-												aria-controls="pills-cargoShipFrieght"
-												aria-selected="false"
-											>
-												<span
-													class="d-flex align-items-center gap-xxl-5 tw-gap-6 text-start"
-												>
-													<img
-														src="assets/images/icons/service-icon3.svg"
-														alt=""
-														class="d-sm-flex d-none animate__swing"
-													/>
-													<span>Howa Transporty</span>
-												</span>
-											</button>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-xl-7 ps-xl-5">
-								<div class="tab-content py-120" id="pills-tabContent">
-									<div
-										class="tab-pane fade show active"
-										id="pills-air-transportation"
-										role="tabpanel"
-										aria-labelledby="pills-air-transportation-tab"
-										tabindex="0"
-									>
-										<div class="">
-											<p
-												class="bg-main-two-900 tw-py-8 tw-pe-8 tw-ps-14 tw-text-lg text-white fw-semibold border-start border-main-600 border-5 tw-mb-11 cursor-small"
-												data-aos="fade-up"
-												data-aos-duration="1000"
-												data-aos-delay="200"
-											>
-												Salowmaleýkim Hormatly ildeşler! 🇹🇲 AMUL logistics 🇨🇳
-												Size Hytaý halk respublikasyndan Türkmenistan
-												döwletimize kiçi we uly göwrümli ýükleriňizi çalt we
-												amatly bahadan logistic hyzmatyny hödürleýär
-											</p>
-											<div
-												class="d-flex justify-content-center flex-wrap tw-gap-7"
-											>
-												<div
-													class="bg-main-two-900 tw-py-8 tw-pe-8 tw-ps-14 tw-text-lg border-start border-main-600 border-5 tw-mb-11 cursor-small"
-													data-aos="fade-up"
-													data-aos-duration="1000"
-													data-aos-delay="200"
-												>
-													<p class="text-white fw-semibold">
-														Guangzhou we Yiwudan Aşgabada Gara ýol  20/25 gün
-													</p>
-													<div class="d-flex flex-wrap tw-gap-10">
-														<ul>
-															<li
-																class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-																data-aos="fade-up"
-																data-aos-duration="1000"
-																data-aos-delay="200"
-															>
-																<span class="text-white d-flex"
-																	><i class="ph-bold ph-check"></i
-																></span>
-																<span class="text-white fw-medium"
-																	>200-300 kg-çenli <br />
-																	1m3  / 180$</span
-																>
-															</li>
-															<li
-																class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-																data-aos="fade-up"
-																data-aos-duration="1000"
-																data-aos-delay="200"
-															>
-																<span class="text-white d-flex"
-																	><i class="ph-bold ph-check"></i
-																></span>
-																<span class="text-white fw-medium"
-																	>150 kg-çenli <br />
-																	1m3  / 175$</span
-																>
-															</li>
-														</ul>
-														<ul>
-															<li
-																class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-																data-aos="fade-up"
-																data-aos-duration="1000"
-																data-aos-delay="200"
-															>
-																<span class="text-white d-flex"
-																	><i class="ph-bold ph-check"></i
-																></span>
-																<span class="text-white fw-medium"
-																	>150 kg-çenli <br />
-																	1m3  / 135$</span
-																>
-															</li>
-															<li
-																class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-																data-aos="fade-up"
-																data-aos-duration="1000"
-																data-aos-delay="200"
-															>
-																<span class="text-white d-flex"
-																	><i class="ph-bold ph-check"></i
-																></span>
-																<span class="text-white fw-medium"
-																	>150-200 kg-çenli <br />
-																	1m3/ 145$
-																</span>
-															</li>
-														</ul>
+                <div class="container">
+                    <div class="row gy-4 align-items-center">
+                        <div class="col-xl-5" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+													<div class="bg-neutral-50 px-lg-5 tw-px-6 tw-pt-76-px tw-pb-15 rectangle-shape">
+															<ul class="common-tab nav nav-pills d-flex flex-column tw-gap-8" id="pills-tab" role="tablist">
+																	<li class="nav-item" role="presentation">
+																			<button class="nav-link cursor-big tw-text-xl animation-item text-main-two-600 hover-text-main-600 active-scale-094 tw-duration-300 fw-semibold tw-px-8 tw-py-4 tw-rounded-lg bg-white w-100 active" id="pills-air-transportation-tab" data-bs-toggle="pill"
+																					data-bs-target="#pills-air-transportation" type="button" role="tab" aria-controls="pills-air-transportation" aria-selected="true">
+																	<span class="d-flex align-items-center gap-xxl-5 tw-gap-6 text-start">
+																			<img src="assets/images/icons/service-icon1.svg" alt="" class="d-sm-flex d-none animate__swing">
+																			<span>Port transporty</span>
+																	</span>
+																</button>
+																	</li>
+																	<li class="nav-item" role="presentation">
+																			<button class="nav-link cursor-big tw-text-xl animation-item text-main-two-600 hover-text-main-600 active-scale-094 tw-duration-300 fw-semibold tw-px-8 tw-py-4 tw-rounded-lg bg-white w-100" id="pills-traini-transport-tab" data-bs-toggle="pill" data-bs-target="#pills-traini-transport"
+																					type="button" role="tab" aria-controls="pills-traini-transport" aria-selected="false">
+																	<span class="d-flex align-items-center gap-xxl-5 tw-gap-6 text-start">
+																			<img src="assets/images/icons/service-icon5.svg" alt="" class="d-sm-flex d-none animate__swing">
+																			<span>Gara ýol transporty</span>
+																	</span>
+																</button>
+																	</li>
+																	<li class="nav-item" role="presentation">
+																			<button class="nav-link cursor-big tw-text-xl animation-item text-main-two-600 hover-text-main-600 active-scale-094 tw-duration-300 fw-semibold tw-px-8 tw-py-4 tw-rounded-lg bg-white w-100" id="pills-cargoShipFrieght-tab" data-bs-toggle="pill" data-bs-target="#pills-cargoShipFrieght"
+																					type="button" role="tab" aria-controls="pills-cargoShipFrieght" aria-selected="false">
+																	<span class="d-flex align-items-center gap-xxl-5 tw-gap-6 text-start">
+																			<img src="assets/images/icons/service-icon3.svg" alt="" class="d-sm-flex d-none animate__swing">
+																			<span>Howa ýol transporty</span>
+																	</span>
+																</button>
+																	</li>
+															</ul>
 													</div>
-												</div>
-												<div
-													class="bg-main-two-900 tw-py-8 tw-pe-8 tw-ps-14 tw-text-lg border-start border-main-600 border-5 tw-mb-11 cursor-small"
-													data-aos="fade-up"
-													data-aos-duration="1000"
-													data-aos-delay="200"
-												>
-													<p class="text-white fw-semibold">
-														Guangzhou we Yiwudan Aşgabada Gara ýol  20/25 gün
-													</p>
-													<div class="d-flex flex-wrap tw-gap-10">
-														<ul>
-															<li
-																class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-																data-aos="fade-up"
-																data-aos-duration="1000"
-																data-aos-delay="200"
-															>
-																<span class="text-white d-flex"
-																	><i class="ph-bold ph-check"></i
-																></span>
-																<span class="text-white fw-medium"
-																	>200-300 kg-çenli <br />
-																	1m3  / 180$</span
-																>
-															</li>
-															<li
-																class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-																data-aos="fade-up"
-																data-aos-duration="1000"
-																data-aos-delay="200"
-															>
-																<span class="text-white d-flex"
-																	><i class="ph-bold ph-check"></i
-																></span>
-																<span class="text-white fw-medium"
-																	>150 kg-çenli <br />
-																	1m3  / 175$</span
-																>
-															</li>
-														</ul>
-														<ul>
-															<li
-																class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-																data-aos="fade-up"
-																data-aos-duration="1000"
-																data-aos-delay="200"
-															>
-																<span class="text-white d-flex"
-																	><i class="ph-bold ph-check"></i
-																></span>
-																<span class="text-white fw-medium"
-																	>150 kg-çenli <br />
-																	1m3  / 135$</span
-																>
-															</li>
-															<li
-																class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-																data-aos="fade-up"
-																data-aos-duration="1000"
-																data-aos-delay="200"
-															>
-																<span class="text-white d-flex"
-																	><i class="ph-bold ph-check"></i
-																></span>
-																<span class="text-white fw-medium"
-																	>150-200 kg-çenli <br />
-																	1m3/ 145$
-																</span>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div
-										class="tab-pane fade"
-										id="pills-traini-transport"
-										role="tabpanel"
-										aria-labelledby="pills-traini-transport-tab"
-										tabindex="0"
-									>
-										<div class="">
-											<p
-												class="bg-main-two-900 tw-py-8 tw-pe-8 tw-ps-14 tw-text-lg text-white fw-semibold border-start border-main-600 border-5 tw-mb-11 cursor-small"
-												data-aos="fade-up"
-												data-aos-duration="1000"
-												data-aos-delay="200"
-											>
-												Salowmaleýkim Hormatly ildeşler! 🇹🇲 AMUL logistics 🇨🇳
-												Size Hytaý halk respublikasyndan Türkmenistan
-												döwletimize kiçi we uly göwrümli ýükleriňizi çalt we
-												amatly bahadan logistic hyzmatyny hödürleýär
-											</p>
-											<div
-												class="d-flex justify-content-center flex-wrap tw-gap-7"
-											>
-												<div
-													class="bg-main-two-900 tw-py-8 tw-pe-8 tw-ps-14 tw-text-lg border-start border-main-600 border-5 tw-mb-11 cursor-small"
-													data-aos="fade-up"
-													data-aos-duration="1000"
-													data-aos-delay="200"
-												>
-													<p class="text-white fw-semibold">
-														Guangzhou we Yiwudan Aşgabada Gara ýol  20/25 gün
-													</p>
-													<div class="d-flex flex-wrap tw-gap-10">
-														<ul>
-															<li
-																class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-																data-aos="fade-up"
-																data-aos-duration="1000"
-																data-aos-delay="200"
-															>
-																<span class="text-white d-flex"
-																	><i class="ph-bold ph-check"></i
-																></span>
-																<span class="text-white fw-medium"
-																	>200-300 kg-çenli <br />
-																	1m3  / 180$</span
-																>
-															</li>
-															<li
-																class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-																data-aos="fade-up"
-																data-aos-duration="1000"
-																data-aos-delay="200"
-															>
-																<span class="text-white d-flex"
-																	><i class="ph-bold ph-check"></i
-																></span>
-																<span class="text-white fw-medium"
-																	>150 kg-çenli <br />
-																	1m3  / 175$</span
-																>
-															</li>
-														</ul>
-														<ul>
-															<li
-																class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-																data-aos="fade-up"
-																data-aos-duration="1000"
-																data-aos-delay="200"
-															>
-																<span class="text-white d-flex"
-																	><i class="ph-bold ph-check"></i
-																></span>
-																<span class="text-white fw-medium"
-																	>150 kg-çenli <br />
-																	1m3  / 135$</span
-																>
-															</li>
-															<li
-																class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-																data-aos="fade-up"
-																data-aos-duration="1000"
-																data-aos-delay="200"
-															>
-																<span class="text-white d-flex"
-																	><i class="ph-bold ph-check"></i
-																></span>
-																<span class="text-white fw-medium"
-																	>150-200 kg-çenli <br />
-																	1m3/ 145$
-																</span>
-															</li>
-														</ul>
-													</div>
-												</div>
-												<div
-													class="bg-main-two-900 tw-py-8 tw-pe-8 tw-ps-14 tw-text-lg border-start border-main-600 border-5 tw-mb-11 cursor-small"
-													data-aos="fade-up"
-													data-aos-duration="1000"
-													data-aos-delay="200"
-												>
-													<p class="text-white fw-semibold">
-														Guangzhou we Yiwudan Aşgabada Gara ýol  20/25 gün
-													</p>
-													<div class="d-flex flex-wrap tw-gap-10">
-														<ul>
-															<li
-																class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-																data-aos="fade-up"
-																data-aos-duration="1000"
-																data-aos-delay="200"
-															>
-																<span class="text-white d-flex"
-																	><i class="ph-bold ph-check"></i
-																></span>
-																<span class="text-white fw-medium"
-																	>200-300 kg-çenli <br />
-																	1m3  / 180$</span
-																>
-															</li>
-															<li
-																class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-																data-aos="fade-up"
-																data-aos-duration="1000"
-																data-aos-delay="200"
-															>
-																<span class="text-white d-flex"
-																	><i class="ph-bold ph-check"></i
-																></span>
-																<span class="text-white fw-medium"
-																	>150 kg-çenli <br />
-																	1m3  / 175$</span
-																>
-															</li>
-														</ul>
-														<ul>
-															<li
-																class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-																data-aos="fade-up"
-																data-aos-duration="1000"
-																data-aos-delay="200"
-															>
-																<span class="text-white d-flex"
-																	><i class="ph-bold ph-check"></i
-																></span>
-																<span class="text-white fw-medium"
-																	>150 kg-çenli <br />
-																	1m3  / 135$</span
-																>
-															</li>
-															<li
-																class="d-flex align-items-center tw-gap-4 aos-init aos-animate"
-																data-aos="fade-up"
-																data-aos-duration="1000"
-																data-aos-delay="200"
-															>
-																<span class="text-white d-flex"
-																	><i class="ph-bold ph-check"></i
-																></span>
-																<span class="text-white fw-medium"
-																	>150-200 kg-çenli <br />
-																	1m3/ 145$
-																</span>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div
-										class="tab-pane fade"
-										id="pills-cargoShipFrieght"
-										role="tabpanel"
-										aria-labelledby="pills-cargoShipFrieght-tab"
-										tabindex="0"
-									>
-										<div class="">
-											<p
-												class="bg-main-two-900 tw-py-8 tw-pe-8 tw-ps-14 tw-text-lg text-white fw-semibold border-start border-main-600 border-5 tw-mb-11 cursor-small"
-												data-aos="fade-up"
-												data-aos-duration="1000"
-												data-aos-delay="200"
-											>
-												“Hormatly Watandaşlar “AMUL logistics” 🇨🇳 Pekin-Aşgabat
-												🇹🇲 aralygynda siziň ýükleriniňizi ✈️ AVIA/Express 🚀
-												görnüşinde Çalt, Amatly we iň esasysy Ygtybarly ugradyp
-												bermek hyzmatyny hödürleýär. Şeýle hem 🇹🇲Aşgabat-Pekin🇨🇳
-												aralykda islendik ölçegdäki ýükleriňizi hem getirip
-												bermäge ýardam ederis.
-											</p>
-											<div
-												class="d-flex justify-content-center flex-wrap tw-gap-7"
-											>
-												<div
-													class="bg-main-two-900 tw-py-8 tw-pe-8 tw-ps-14 tw-text-lg border-start border-main-600 border-5 tw-mb-11 cursor-small"
-													data-aos="fade-up"
-													data-aos-duration="1000"
-													data-aos-delay="200"
-												>
-													<p class="text-white fw-semibold">
-														AVIA: 7-10 gün 7$/kg
-													</p>
-													<p class="text-white fw-semibold">
-														Express: 4-7 gün 9$/kg
-													</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+                        </div>
+                        <div class="col-xl-7 ps-xl-5">
+                            <div class="tab-content py-120" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-air-transportation" role="tabpanel" aria-labelledby="pills-air-transportation-tab" tabindex="0">
+                                    <div class="">
+                                        <p class="bg-main-two-900 tw-py-8 tw-pe-8 tw-ps-14 tw-text-lg text-white fw-semibold border-start border-main-600 border-5 tw-mb-11 cursor-small" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"> Salowmaleýkim Hormatly ildeşler!
+																				🇹🇲 AMUL logistics 🇨🇳
+																				Size Hytaý halk respublikasyndan Türkmenistan döwletimize kiçi we uly göwrümli ýükleriňizi çalt we amatly bahadan  logistic hyzmatyny hödürleýär</p>
+                                        <div class="d-flex align-items-center position-relative max-w-620-px" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                                            <span class="tw-w-90-px tw-h-90-px bg-white rounded-circle d-flex justify-content-center align-items-center position-absolute top-50 tw--translate-y-50 z-2 tw-start-48">
+                                            <img src="assets/images/icons/service-icon5.svg" alt="">
+                                        </span>
+                                            <div class="tw--me-32-px d-sm-flex d-none position-relative">
+                                                <img src="assets/images/thumbs/service-img.png" alt="">
+                                            </div>
+                                            <div class="bg-main-600 tw-h-280-px d-flex justify-content-center align-items-center tw-pe-6 tw-ps-8 position-relative z-1 rectangle-shape-two max-w-286-px w-100">
+                                                <ul class="cursor-small d-flex flex-column tw-gap-2">
+                                                    <li class="d-flex align-items-center tw-gap-4 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                                                        <span class="text-white d-flex"><i class="ph-bold ph-check"></i></span>
+                                                        <span class="text-white fw-medium">Tiz eltip bermek</span>
+                                                    </li>
+                                                    <li class="d-flex align-items-center tw-gap-4 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                                                        <span class="text-white d-flex"><i class="ph-bold ph-check"></i></span>
+                                                        <span class="text-white fw-medium">100% Gorag</span>
+                                                    </li>
+                                                    <li class="d-flex align-items-center tw-gap-4 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                                                        <span class="text-white d-flex"><i class="ph-bold ph-check"></i></span>
+                                                        <span class="text-white fw-medium">Amatly baha</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-traini-transport" role="tabpanel" aria-labelledby="pills-traini-transport-tab" tabindex="0">
+                                    <div class="">
+                                        <p class="bg-main-two-900 tw-py-8 tw-pe-8 tw-ps-14 tw-text-lg text-white fw-semibold border-start border-main-600 border-5 tw-mb-11 cursor-small" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">“Hormatly Watandaşlar “AMUL logistics” 🇨🇳 Pekin-Aşgabat 🇹🇲  aralygynda  siziň ýükleriniňizi ✈️ AVIA/Express 🚀 görnüşinde Çalt, Amatly we iň esasysy Ygtybarly ugradyp bermek hyzmatyny hödürleýär. Şeýle hem 🇹🇲Aşgabat-Pekin🇨🇳 aralykda islendik ölçegdäki ýükleriňizi hem getirip bermäge ýardam ederis.</p>
+                                        <div class="d-flex align-items-center position-relative max-w-620-px" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                                            <span class="tw-w-90-px tw-h-90-px bg-white rounded-circle d-flex justify-content-center align-items-center position-absolute top-50 tw--translate-y-50 z-2 tw-start-48">
+                                            <img src="assets/images/icons/service-icon5.svg" alt="">
+                                        </span>
+                                            <div class="tw--me-32-px position-relative">
+                                                <img src="assets/images/thumbs/service-img.png" alt="">
+                                            </div>
+                                            <div class="bg-main-600 tw-h-280-px d-flex justify-content-center align-items-center tw-pe-6 tw-ps-8 position-relative z-1 rectangle-shape-two max-w-286-px w-100">
+                                                <ul class="cursor-small d-flex flex-column tw-gap-2">
+                                                     <li class="d-flex align-items-center tw-gap-4 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                                                        <span class="text-white d-flex"><i class="ph-bold ph-check"></i></span>
+                                                        <span class="text-white fw-medium">Tiz eltip bermek</span>
+                                                    </li>
+                                                    <li class="d-flex align-items-center tw-gap-4 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                                                        <span class="text-white d-flex"><i class="ph-bold ph-check"></i></span>
+                                                        <span class="text-white fw-medium">100% Gorag</span>
+                                                    </li>
+                                                    <li class="d-flex align-items-center tw-gap-4 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                                                        <span class="text-white d-flex"><i class="ph-bold ph-check"></i></span>
+                                                        <span class="text-white fw-medium">Amatly baha</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-cargoShipFrieght" role="tabpanel" aria-labelledby="pills-cargoShipFrieght-tab" tabindex="0">
+                                    <div class="">
+                                        <p class="bg-main-two-900 tw-py-8 tw-pe-8 tw-ps-14 tw-text-lg text-white fw-semibold border-start border-main-600 border-5 tw-mb-11 cursor-small" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">“Hormatly Watandaşlar “AMUL logistics” 🇨🇳 Pekin-Aşgabat 🇹🇲  aralygynda  siziň ýükleriniňizi ✈️ AVIA/Express 🚀 görnüşinde Çalt, Amatly we iň esasysy Ygtybarly ugradyp bermek hyzmatyny hödürleýär. Şeýle hem 🇹🇲Aşgabat-Pekin🇨🇳 aralykda islendik ölçegdäki ýükleriňizi hem getirip bermäge ýardam ederis.</p>
+                                        <div class="d-flex align-items-center position-relative max-w-620-px" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                                            <span class="tw-w-90-px tw-h-90-px bg-white rounded-circle d-flex justify-content-center align-items-center position-absolute top-50 tw--translate-y-50 z-2 tw-start-48">
+                                            <img src="assets/images/icons/service-icon5.svg" alt="">
+                                        </span>
+                                            <div class="tw--me-32-px position-relative">
+                                                <img src="assets/images/thumbs/service-img.png" alt="">
+                                            </div>
+                                            <div class="bg-main-600 tw-h-280-px d-flex justify-content-center align-items-center tw-pe-6 tw-ps-8 position-relative z-1 rectangle-shape-two max-w-286-px w-100">
+                                                <ul class="cursor-small d-flex flex-column tw-gap-2">
+                                                     <li class="d-flex align-items-center tw-gap-4 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                                                        <span class="text-white d-flex"><i class="ph-bold ph-check"></i></span>
+                                                        <span class="text-white fw-medium">Tiz eltip bermek</span>
+                                                    </li>
+                                                    <li class="d-flex align-items-center tw-gap-4 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                                                        <span class="text-white d-flex"><i class="ph-bold ph-check"></i></span>
+                                                        <span class="text-white fw-medium">100% Gorag</span>
+                                                    </li>
+                                                    <li class="d-flex align-items-center tw-gap-4 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                                                        <span class="text-white d-flex"><i class="ph-bold ph-check"></i></span>
+                                                        <span class="text-white fw-medium">Amatly baha</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============================== service Section End ================================= -->
 
 		<!-- ================================= Projects section start ===================================== -->
 		<section
@@ -2464,7 +1728,230 @@
 		</section>
 		<!-- ============================ Get in touch section end =============================== -->
 		<!-- ==================== Footer Start Here ==================== -->
-		<footer class="footer position-relative z-1 mt-auto">
+		<footer
+			class="footer bg-main-two-600 position-relative z-1 mt-auto tw-pt-76-px"
+		>
+			<img
+				src="assets/images/thumbs/truck-light.png"
+				alt=""
+				class="position-absolute bottom-0 tw-start-0 z-n1 d-lg-block d-none"
+			/>
+
+			<div class="container">
+				<div class="tw-pb-84-px">
+					<div
+						class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-5 gy-5"
+					>
+						<div
+							class="col"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="200"
+						>
+							<a href="index.html" class="footer-logo cursor-big">
+								<img src="assets/images/logo/amulLogo.png" alt=""
+							/></a>
+							<p class="text-neutral-100 tw-mt-10 cursor-small">
+								“AMUL logistics” ygtybarlylygyň kepilligi!
+							</p>
+							<div class="tw-mt-9">
+								<ul class="cursor-small d-flex align-items-center tw-gap-3">
+									<li>
+										<a
+											href="https://www.facebook.com"
+											class="tw-w-11 tw-h-11 border border-neutral-1100 rounded-circle text-white tw-text-xl d-flex justify-content-center align-items-center hover-bg-main-600 hover-text-white hover-border-main-600 active-scale-09 tw-duration-200"
+										>
+											<i class="ph ph-facebook-logo"></i>
+										</a>
+									</li>
+									<li>
+										<a
+											href="https://www.twitter.com"
+											class="tw-w-11 tw-h-11 border border-neutral-1100 rounded-circle text-white tw-text-xl d-flex justify-content-center align-items-center hover-bg-main-600 hover-text-white hover-border-main-600 active-scale-09 tw-duration-200"
+										>
+											<i class="ph ph-x-logo"></i>
+										</a>
+									</li>
+									<li>
+										<a
+											href="https://www.instagram.com"
+											class="tw-w-11 tw-h-11 border border-neutral-1100 rounded-circle text-white tw-text-xl d-flex justify-content-center align-items-center hover-bg-main-600 hover-text-white hover-border-main-600 active-scale-09 tw-duration-200"
+										>
+											<i class="ph ph-instagram-logo"></i>
+										</a>
+									</li>
+									<li>
+										<a
+											href="https://www.youtube.com"
+											class="tw-w-11 tw-h-11 border border-neutral-1100 rounded-circle text-white tw-text-xl d-flex justify-content-center align-items-center hover-bg-main-600 hover-text-white hover-border-main-600 active-scale-09 tw-duration-200"
+										>
+											<i class="ph ph-youtube-logo"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div
+							class="col"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="300"
+						>
+							<h5 class="text-white tw-mb-6 cursor-big splitTextStyleTwo">
+								Menýu
+							</h5>
+							<ul class="d-flex flex-column tw-gap-6">
+								<li>
+									<a
+										href="index.html"
+										class="hover-arrow cursor-small position-relative text-neutral-500 hover-text-main-600 fw-semibold"
+										>Baş sahypa</a
+									>
+								</li>
+								<li>
+									<a
+										href="about.html"
+										class="hover-arrow cursor-small position-relative text-neutral-500 hover-text-main-600 fw-semibold"
+										>Biz barada</a
+									>
+								</li>
+								<li>
+									<a
+										href="service.html"
+										class="hover-arrow cursor-small position-relative text-neutral-500 hover-text-main-600 fw-semibold"
+										>Hyzmatlarymyz</a
+									>
+								</li>
+								<li>
+									<a
+										href="ourClient.html"
+										class="hover-arrow cursor-small position-relative text-neutral-500 hover-text-main-600 fw-semibold"
+										>Gadagan edilen ýük</a
+									>
+								</li>
+								<li>
+									<a
+										href="contact.html"
+										class="hover-arrow cursor-small position-relative text-neutral-500 hover-text-main-600 fw-semibold"
+										>Habarlaşmak</a
+									>
+								</li>
+
+							</ul>
+						</div>
+						<div
+							class="col"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="400"
+						>
+							<h5 class="text-white tw-mb-6 cursor-big splitTextStyleTwo">
+								Akaunt
+							</h5>
+							<ul class="d-flex flex-column tw-gap-6">
+								<li>
+									<a
+										href="login.html"
+										class="hover-arrow cursor-small position-relative text-neutral-500 hover-text-main-600 fw-semibold"
+										>Iceri gir</a
+									>
+								</li>
+								<li>
+									<a
+										href="contact.html"
+										class="hover-arrow cursor-small position-relative text-neutral-500 hover-text-main-600 fw-semibold"
+										>Habarlaşmak</a
+									>
+								</li>
+
+							</ul>
+						</div>
+						<div
+							class="col"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="500"
+						>
+							<h5 class="text-white tw-mb-6 cursor-big splitTextStyleTwo">
+								Bildiriş
+							</h5>
+							<div class="d-flex flex-column tw-gap-8">
+								<div class="d-flex align-items-center tw-gap-4">
+									<span
+										class="tw-w-70-px tw-h-70-px rounded-circle overflow-hidden flex-shrink-0"
+									>
+										<img
+											src="assets/images/thumbs/latest-post-img1.png"
+											alt=""
+											class="w-100 h-100 object-fit-cover"
+										/>
+									</span>
+									<div class="">
+										<h6 class="tw-mt-205">
+											<a
+												href="blog-details.html"
+												class="cursor-big tw-text-base text-white hover-text-main-600 line-clamp-2"
+											>
+												AVIA: 7-10 gün 7$/kg
+											</a>
+										</h6>
+									</div>
+								</div>
+								<div class="d-flex align-items-center tw-gap-4">
+									<span
+										class="tw-w-70-px tw-h-70-px rounded-circle overflow-hidden flex-shrink-0"
+									>
+										<img
+											src="assets/images/thumbs/latest-post-img2.png"
+											alt=""
+											class="w-100 h-100 object-fit-cover"
+										/>
+									</span>
+									<div class="">
+										<h6 class="tw-mt-205">
+											<a
+												href="blog-details.html"
+												class="cursor-big tw-text-base text-white hover-text-main-600 line-clamp-2"
+											>
+												Express: 4-7 gün 9$/kg
+											</a>
+										</h6>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div
+							class="col"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="600"
+						>
+							<div class="d-flex flex-column tw-gap-9">
+								<div class="">
+									<h5
+										class="cursor-big text-white tw-mb-6 cursor-big splitTextStyleTwo"
+									>
+										Adres:
+									</h5>
+									<p class="cursor-small text-neutral-600">
+										Ashgabat Parahat 7/1 office number
+									</p>
+								</div>
+								<div class="">
+									<h5
+										class="cursor-big text-white tw-mb-6 cursor-big splitTextStyleTwo"
+									>
+										Habarlaşmak:
+									</h5>
+									<p class="cursor-small text-neutral-600">+99363306161</p>
+									<p class="cursor-small text-neutral-600">+99362702242</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="container">
 				<!-- bottom Footer -->
 				<div
@@ -2475,39 +1962,19 @@
 							class="d-flex align-items-center justify-content-between tw-gap-6 flex-wrap"
 						>
 							<div class="mb-0">
-								<a href="index.html" class="cursor-big tw-h-75-px">
-									<img
-										src="assets/images/logo/amulLogo.png"
-										class="h-100"
-										alt=""
+								<a href="index.html" class="footer-logo cursor-big">
+									<img src="assets/images/logo/amulLogo.png" alt=""
 								/></a>
 							</div>
-							<p class="text--black text-line-1 fw-normal cursor-small">
+							<p class="text--white text-line-1 fw-normal cursor-small">
 								&copy; 2025
 								<a
-									href="#"
+									href="index.html"
 									class="text-main-600 hover--translate-y-1 fw-bold hover-underline hover-text-main-600 cursor-big"
-									>Amul</a
+									>Amul Logistik</a
 								>
-								- Logistic Service. All rights reserved.
+								-Logistic Service. All rights reserved.
 							</p>
-							<div class="d-flex align-items-center tw-gap-6">
-								<a
-									href="javascript:void(0)"
-									class="fw-semibold text--black hover-underline cursor-small hover--translate-y-1"
-									>Company</a
-								>
-								<a
-									href="javascript:void(0)"
-									class="fw-semibold text--black hover-underline cursor-small hover--translate-y-1"
-									>Support</a
-								>
-								<a
-									href="javascript:void(0)"
-									class="fw-semibold text--black hover-underline cursor-small hover--translate-y-1"
-									>Privacy</a
-								>
-							</div>
 						</div>
 					</div>
 				</div>

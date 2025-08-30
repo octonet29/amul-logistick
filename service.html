@@ -86,19 +86,25 @@
 		<!-- Custom Cursor End -->
 
 		<!-- Modal -->
-		<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+		<div
+			class="modal-overlay"
+			id="profileModalOverlay"
+			onclick="closeModal(event, 'profileModalOverlay')"
+		>
 			<div class="modal-content" onclick="event.stopPropagation()">
 				<div class="modal-header">
 					<h3 class="modal-title">Profile Settings</h3>
-					<button class="close-btn" onclick="closeModal()" title="Close">
+					<button
+						class="close-btn"
+						onclick="closeModal(null, 'profileModalOverlay')"
+						title="Close"
+					>
 						✕
 					</button>
 				</div>
-
-				<div class="success-message" id="successMessage">
+				<div class="success-message" id="profileSuccessMessage">
 					Password updated successfully!
 				</div>
-
 				<form id="profileForm">
 					<div class="form-group">
 						<label class="form-label" for="email">Email Address</label>
@@ -113,7 +119,6 @@
 							Email cannot be changed for security reasons
 						</div>
 					</div>
-
 					<div class="form-group">
 						<label class="form-label" for="currentPassword"
 							>Current Password</label
@@ -133,7 +138,6 @@
 							>
 						</div>
 					</div>
-
 					<div class="form-group">
 						<label class="form-label" for="newPassword">New Password</label>
 						<div class="password-container">
@@ -151,7 +155,6 @@
 							>
 						</div>
 					</div>
-
 					<div class="form-group">
 						<label class="form-label" for="confirmPassword"
 							>Confirm New Password</label
@@ -171,22 +174,72 @@
 							>
 						</div>
 					</div>
-
 					<div class="modal-actions">
-						<button
-							type="button"
-							class="btn btn-secondary"
-							onclick="closeModal()"
-						>
-							Cancel
-						</button>
-						<button type="submit" class="btn btn-primary">
+						<button type="submit" class="w-100 btn btn-primary">
 							Update Password
 						</button>
 					</div>
 				</form>
 			</div>
 		</div>
+
+		<!-- Login Modal -->
+		<div
+			class="modal-overlay"
+			id="loginModalOverlay"
+			onclick="closeModal(event, 'loginModalOverlay')"
+		>
+			<div class="modal-content" onclick="event.stopPropagation()">
+				<div class="modal-header">
+					<h3 class="modal-title">Login</h3>
+					<button
+						class="close-btn"
+						onclick="closeModal(null, 'loginModalOverlay')"
+						title="Close"
+					>
+						✕
+					</button>
+				</div>
+				<div class="success-message" id="loginSuccessMessage">
+					Login successful!
+				</div>
+				<form id="loginForm">
+					<div class="form-group">
+						<label class="form-label" for="loginUsername">Username</label>
+						<input
+							type="text"
+							id="loginUsername"
+							class="form-input"
+							placeholder="Enter your username"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="loginPassword">Password</label>
+						<div class="password-container">
+							<input
+								type="password"
+								id="loginPassword"
+								class="form-input"
+								placeholder="Enter your password"
+								required
+							/>
+							<span
+								class="password-toggle"
+								onclick="togglePassword('loginPassword')"
+								>👁</span
+							>
+						</div>
+					</div>
+					<div class="modal-actions">
+						<button type="submit" class="w-100 btn btn-primary">Login</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Header (update the profile menu) -->
+
 		<!-- ==================== Mobile Menu Start Here ==================== -->
 		<div
 			class="mobile-menu d-lg-none d-block scroll-sm position-fixed bg-white tw-w-300-px tw-h-screen overflow-y-auto tw-p-6 tw-z-999 tw--translate-x-full tw-pb-68"
@@ -197,7 +250,6 @@
 			>
 				<i class="ph ph-x"></i>
 			</button>
-
 			<div class="mobile-menu__inner">
 				<a href="index.html" class="mobile-menu__logo">
 					<img src="assets/images/logo/amulLogo.png" alt="Logo" />
@@ -205,7 +257,7 @@
 				<div class="mobile-menu__menu">
 					<!-- Nav menu Start -->
 					<ul
-						class="nav-menu cursor-small d-lg-flex align-items-center nav-menu--mobile d-block tw-mt-8"
+						class="nav-menu cursor-small d-lg-flex gap-2 align-items-center nav-menu--mobile d-block tw-mt-8"
 					>
 						<li class="nav-menu__item position-relative activePage">
 							<a
@@ -229,12 +281,12 @@
 							>
 						</li>
 						<!-- <li class="nav-menu__item">
-							<a
-								href="about.html"
-								class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
-								>Amul logistics nähili işleýär</a
-							>
-						</li> -->
+                     <a
+                     	href="about.html"
+                     	class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
+                     	>Amul logistics nähili işleýär</a
+                     >
+                     </li> -->
 						<li class="nav-menu__item position-relative">
 							<a
 								href="ourClient.html"
@@ -255,7 +307,6 @@
 			</div>
 		</div>
 		<!-- ==================== Mobile Menu End Here ==================== -->
-
 		<!-- ============================ Header Top Start ==================================== -->
 		<div
 			class="bg-neutral-50 position-relative z-1 d-sm-block d-none header-top-bg"
@@ -314,10 +365,10 @@
 			</div>
 		</div>
 		<!-- ============================ Header Top End ==================================== -->
-
 		<!-- ==================== Header Start Here ==================== -->
+
 		<header class="header bg-white transition-all">
-			<div class="tw-container-1742-px pe-lg-0 pe-3 tw-ms-auto">
+			<div class="w-100 pe-lg-0 pe-3 tw-ms-auto">
 				<nav class="header-inner bg-white d-flex justify-content-between">
 					<div class="d-flex align-items-center">
 						<!-- Logo Start -->
@@ -341,11 +392,9 @@
 								/>
 							</a>
 						</div>
-						<!-- Logo End  -->
-
-						<!-- Menu Start  -->
+						<!-- Logo End -->
+						<!-- Menu Start -->
 						<div class="header-menu d-lg-block d-none ps-108-px">
-							<!-- Nav menu Start -->
 							<ul
 								class="nav-menu cursor-small d-lg-flex align-items-center xl-tw-gap-12 tw-gap-4"
 							>
@@ -370,13 +419,6 @@
 										>Hyzmatlarymyz</a
 									>
 								</li>
-								<!-- <li class="nav-menu__item">
-									<a
-										href="about.html"
-										class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
-										>Amul logistics nähili işleýär</a
-									>
-								</li> -->
 								<li class="nav-menu__item position-relative">
 									<a
 										href="ourClient.html"
@@ -392,11 +434,9 @@
 									>
 								</li>
 							</ul>
-							<!-- Nav menu End  -->
 						</div>
-						<!-- Menu End  -->
+						<!-- Menu End -->
 					</div>
-
 					<!-- Header Right start -->
 					<div class="header-four-right d-flex gap-xxl-5 gap-3">
 						<div
@@ -483,7 +523,6 @@
 								</ul>
 							</div>
 							<!-- Language End -->
-
 							<!-- Line Start -->
 							<span class="line h-100"></span>
 							<div class="d-flex align-items-center tw-gap-2 user">
@@ -497,16 +536,15 @@
 											class="ph ph-user w-100 h-100 d-flex justify-content-center align-items-center"
 										></i>
 									</div>
-									<div class="menu">
-										<!-- <h3>Someone Famous<br/><span>Website Designer</span></h3> -->
+									<div class="menu common-shadow">
 										<ul>
 											<li>
 												<i class="ph ph-user"></i>
-												<a onclick="openModal()">My Profile</a>
+												<a onclick="openProfileModal()">My Profile</a>
 											</li>
 											<li>
 												<i class="ph ph-sign-in"></i>
-												<a href="login.html">Login</a>
+												<a onclick="openLoginModal()">Login</a>
 											</li>
 											<li>
 												<i class="ph ph-sign-out"></i>
@@ -516,7 +554,6 @@
 									</div>
 								</div>
 							</div>
-
 							<button
 								type="button"
 								class="toggle-mobileMenu leading-none d-lg-none text-main-two-600 tw-text-9"
@@ -525,8 +562,7 @@
 							</button>
 						</div>
 					</div>
-
-					<!-- Header Right End  -->
+					<!-- Header Right End -->
 				</nav>
 			</div>
 		</header>
@@ -1141,7 +1177,228 @@
 		<!-- ================================= Services Two section End ==================================== -->
 
 		<!-- ==================== Footer Start Here ==================== -->
-		<footer class="footer position-relative z-1 mt-auto">
+		<footer
+			class="footer bg-main-two-600 position-relative z-1 mt-auto tw-pt-76-px"
+		>
+			<img
+				src="assets/images/thumbs/truck-light.png"
+				alt=""
+				class="position-absolute bottom-0 tw-start-0 z-n1 d-lg-block d-none"
+			/>
+
+			<div class="container">
+				<div class="tw-pb-84-px">
+					<div
+						class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-5 gy-5"
+					>
+						<div
+							class="col"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="200"
+						>
+							<a href="index.html" class="footer-logo cursor-big">
+								<img src="assets/images/logo/amulLogo.png" alt=""
+							/></a>
+							<p class="text-neutral-100 tw-mt-10 cursor-small">
+								“AMUL logistics” ygtybarlylygyň kepilligi!
+							</p>
+							<div class="tw-mt-9">
+								<ul class="cursor-small d-flex align-items-center tw-gap-3">
+									<li>
+										<a
+											href="https://www.facebook.com"
+											class="tw-w-11 tw-h-11 border border-neutral-1100 rounded-circle text-white tw-text-xl d-flex justify-content-center align-items-center hover-bg-main-600 hover-text-white hover-border-main-600 active-scale-09 tw-duration-200"
+										>
+											<i class="ph ph-facebook-logo"></i>
+										</a>
+									</li>
+									<li>
+										<a
+											href="https://www.twitter.com"
+											class="tw-w-11 tw-h-11 border border-neutral-1100 rounded-circle text-white tw-text-xl d-flex justify-content-center align-items-center hover-bg-main-600 hover-text-white hover-border-main-600 active-scale-09 tw-duration-200"
+										>
+											<i class="ph ph-x-logo"></i>
+										</a>
+									</li>
+									<li>
+										<a
+											href="https://www.instagram.com"
+											class="tw-w-11 tw-h-11 border border-neutral-1100 rounded-circle text-white tw-text-xl d-flex justify-content-center align-items-center hover-bg-main-600 hover-text-white hover-border-main-600 active-scale-09 tw-duration-200"
+										>
+											<i class="ph ph-instagram-logo"></i>
+										</a>
+									</li>
+									<li>
+										<a
+											href="https://www.youtube.com"
+											class="tw-w-11 tw-h-11 border border-neutral-1100 rounded-circle text-white tw-text-xl d-flex justify-content-center align-items-center hover-bg-main-600 hover-text-white hover-border-main-600 active-scale-09 tw-duration-200"
+										>
+											<i class="ph ph-youtube-logo"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div
+							class="col"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="300"
+						>
+							<h5 class="text-white tw-mb-6 cursor-big splitTextStyleTwo">
+								Menýu
+							</h5>
+							<ul class="d-flex flex-column tw-gap-6">
+								<li>
+									<a
+										href="index.html"
+										class="hover-arrow cursor-small position-relative text-neutral-500 hover-text-main-600 fw-semibold"
+										>Baş sahypa</a
+									>
+								</li>
+								<li>
+									<a
+										href="about.html"
+										class="hover-arrow cursor-small position-relative text-neutral-500 hover-text-main-600 fw-semibold"
+										>Biz barada</a
+									>
+								</li>
+								<li>
+									<a
+										href="service.html"
+										class="hover-arrow cursor-small position-relative text-neutral-500 hover-text-main-600 fw-semibold"
+										>Hyzmatlarymyz</a
+									>
+								</li>
+								<li>
+									<a
+										href="ourClient.html"
+										class="hover-arrow cursor-small position-relative text-neutral-500 hover-text-main-600 fw-semibold"
+										>Gadagan edilen ýük</a
+									>
+								</li>
+								<li>
+									<a
+										href="contact.html"
+										class="hover-arrow cursor-small position-relative text-neutral-500 hover-text-main-600 fw-semibold"
+										>Habarlaşmak</a
+									>
+								</li>
+							</ul>
+						</div>
+						<div
+							class="col"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="400"
+						>
+							<h5 class="text-white tw-mb-6 cursor-big splitTextStyleTwo">
+								Akaunt
+							</h5>
+							<ul class="d-flex flex-column tw-gap-6">
+								<li>
+									<a
+										href="login.html"
+										class="hover-arrow cursor-small position-relative text-neutral-500 hover-text-main-600 fw-semibold"
+										>Iceri gir</a
+									>
+								</li>
+								<li>
+									<a
+										href="contact.html"
+										class="hover-arrow cursor-small position-relative text-neutral-500 hover-text-main-600 fw-semibold"
+										>Habarlaşmak</a
+									>
+								</li>
+							</ul>
+						</div>
+						<div
+							class="col"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="500"
+						>
+							<h5 class="text-white tw-mb-6 cursor-big splitTextStyleTwo">
+								Bildiriş
+							</h5>
+							<div class="d-flex flex-column tw-gap-8">
+								<div class="d-flex align-items-center tw-gap-4">
+									<span
+										class="tw-w-70-px tw-h-70-px rounded-circle overflow-hidden flex-shrink-0"
+									>
+										<img
+											src="assets/images/thumbs/latest-post-img1.png"
+											alt=""
+											class="w-100 h-100 object-fit-cover"
+										/>
+									</span>
+									<div class="">
+										<h6 class="tw-mt-205">
+											<a
+												href="blog-details.html"
+												class="cursor-big tw-text-base text-white hover-text-main-600 line-clamp-2"
+											>
+												AVIA: 7-10 gün 7$/kg
+											</a>
+										</h6>
+									</div>
+								</div>
+								<div class="d-flex align-items-center tw-gap-4">
+									<span
+										class="tw-w-70-px tw-h-70-px rounded-circle overflow-hidden flex-shrink-0"
+									>
+										<img
+											src="assets/images/thumbs/latest-post-img2.png"
+											alt=""
+											class="w-100 h-100 object-fit-cover"
+										/>
+									</span>
+									<div class="">
+										<h6 class="tw-mt-205">
+											<a
+												href="blog-details.html"
+												class="cursor-big tw-text-base text-white hover-text-main-600 line-clamp-2"
+											>
+												Express: 4-7 gün 9$/kg
+											</a>
+										</h6>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div
+							class="col"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-delay="600"
+						>
+							<div class="d-flex flex-column tw-gap-9">
+								<div class="">
+									<h5
+										class="cursor-big text-white tw-mb-6 cursor-big splitTextStyleTwo"
+									>
+										Adres:
+									</h5>
+									<p class="cursor-small text-neutral-600">
+										Ashgabat Parahat 7/1 office number
+									</p>
+								</div>
+								<div class="">
+									<h5
+										class="cursor-big text-white tw-mb-6 cursor-big splitTextStyleTwo"
+									>
+										Habarlaşmak:
+									</h5>
+									<p class="cursor-small text-neutral-600">+99363306161</p>
+									<p class="cursor-small text-neutral-600">+99362702242</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="container">
 				<!-- bottom Footer -->
 				<div
@@ -1152,39 +1409,19 @@
 							class="d-flex align-items-center justify-content-between tw-gap-6 flex-wrap"
 						>
 							<div class="mb-0">
-								<a href="index.html" class="cursor-big tw-h-75-px">
-									<img
-										src="assets/images/logo/amulLogo.png"
-										class="h-100"
-										alt=""
+								<a href="index.html" class="footer-logo cursor-big">
+									<img src="assets/images/logo/amulLogo.png" alt=""
 								/></a>
 							</div>
-							<p class="text--black text-line-1 fw-normal cursor-small">
+							<p class="text--white text-line-1 fw-normal cursor-small">
 								&copy; 2025
 								<a
-									href="#"
+									href="index.html"
 									class="text-main-600 hover--translate-y-1 fw-bold hover-underline hover-text-main-600 cursor-big"
-									>Amul</a
+									>Amul Logistik</a
 								>
-								- Logistic Service. All rights reserved.
+								-Logistic Service. All rights reserved.
 							</p>
-							<div class="d-flex align-items-center tw-gap-6">
-								<a
-									href="javascript:void(0)"
-									class="fw-semibold text--black hover-underline cursor-small hover--translate-y-1"
-									>Company</a
-								>
-								<a
-									href="javascript:void(0)"
-									class="fw-semibold text--black hover-underline cursor-small hover--translate-y-1"
-									>Support</a
-								>
-								<a
-									href="javascript:void(0)"
-									class="fw-semibold text--black hover-underline cursor-small hover--translate-y-1"
-									>Privacy</a
-								>
-							</div>
 						</div>
 					</div>
 				</div>
