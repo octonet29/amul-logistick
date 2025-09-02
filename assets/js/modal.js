@@ -1,79 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-	const swiper = new Swiper(".swiper-container", {
-		// Basic settings
-		direction: "horizontal",
-		loop: true,
-		speed: 800,
-		effect: "fade",
-		fadeEffect: {
-			crossFade: true,
-		},
-
-		// Autoplay
-		autoplay: {
-			delay: 2000,
-			disableOnInteraction: false,
-			pauseOnMouseEnter: true,
-		},
-
-		// Navigation
-		navigation: {
-			nextEl: ".swiper-button-next",
-			prevEl: ".swiper-button-prev",
-		},
-
-		// Pagination
-		pagination: {
-			el: ".swiper-pagination",
-			clickable: true,
-			dynamicBullets: false,
-		},
-
-		// Scrollbar (Progress bar)
-		scrollbar: {
-			el: ".swiper-scrollbar",
-			draggable: true,
-		},
-
-		// Keyboard control
-		keyboard: {
-			enabled: true,
-			onlyInViewport: false,
-		},
-
-		// Breakpoints for responsive design
-		breakpoints: {
-			320: {
-				spaceBetween: 0,
-			},
-			768: {
-				spaceBetween: 0,
-			},
-			1024: {
-				spaceBetween: 0,
-			},
-		},
-
-		// Events
-		on: {
-			init: function () {
-				console.log("Swiper initialized")
-			},
-			slideChange: function () {
-				console.log("Slide changed to:", this.activeIndex)
-			},
-		},
-	})
-
-	// Button click handlers for all slides
-	document.querySelectorAll(".btn").forEach((btn) => {
-		btn.addEventListener("click", (e) => {
-			e.preventDefault()
-			const text = btn.textContent.trim()
-			alert(`Функция "${text}" будет доступна после интеграции с системой`)
-		})
-	})
-})
 // Open modals
 function openProfileModal() {
 	const modal = document.getElementById("profileModalOverlay")
@@ -515,4 +439,80 @@ document.addEventListener("mouseenter", function () {
 			gsap.to(trail, { visibility: "visible", duration: 0.3 })
 		})
 	}
+})
+document.addEventListener("DOMContentLoaded", function () {
+	const swiper = new Swiper(".banner-swiper", {
+		// Basic settings
+		direction: "horizontal",
+		loop: true,
+		speed: 800,
+		effect: "fade",
+		fadeEffect: {
+			crossFade: true,
+		},
+
+		// Autoplay
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+			pauseOnMouseEnter: true,
+		},
+
+		// Navigation
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+
+		// Pagination
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+			dynamicBullets: false,
+		},
+
+		// Scrollbar (Progress bar)
+		scrollbar: {
+			el: ".swiper-scrollbar",
+			draggable: true,
+		},
+
+		// Keyboard control
+		keyboard: {
+			enabled: true,
+			onlyInViewport: false,
+		},
+
+		// Breakpoints for responsive design
+		breakpoints: {
+			320: {
+				spaceBetween: 0,
+			},
+			768: {
+				spaceBetween: 0,
+			},
+			1024: {
+				spaceBetween: 0,
+			},
+		},
+
+		// Events
+		on: {
+			init: function () {
+				console.log("Swiper initialized")
+			},
+			slideChange: function () {
+				console.log("Slide changed to:", this.activeIndex)
+			},
+		},
+	})
+
+	// Button click handlers for all slides
+	document.querySelectorAll(".btn").forEach((btn) => {
+		btn.addEventListener("click", (e) => {
+			e.preventDefault()
+			const text = btn.textContent.trim()
+			alert(`Функция "${text}" будет доступна после интеграции с системой`)
+		})
+	})
 })
