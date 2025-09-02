@@ -7485,24 +7485,8 @@ input[type="number"] {
 }
 
 /* ================================= Clip Path Css End =============================== */
-
-.logo-mask-bg::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 150px;
-	background-color: var(--main-600);
-	mask-image: url("../images/shapes/logo-shape.png");
-	mask-size: contain;
-	mask-repeat: no-repeat;
-	mask-position: center;
-	-webkit-mask-image: url("../images/shapes/logo-shape.png");
-	-webkit-mask-size: cover;
-	-webkit-mask-repeat: no-repeat;
-	-webkit-mask-position: center;
-	z-index: -1;
+.logo-mask-bg {
+	padding-right: 10px;
 }
 
 .ps-108-px {
@@ -10774,9 +10758,8 @@ input:focus {
 }
 
 .heroContainer {
-	max-width: 1400px;
+	min-height: 100vh;
 	width: 100%;
-	margin: 30px auto;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 80px;
