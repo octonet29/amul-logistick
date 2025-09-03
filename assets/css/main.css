@@ -7377,7 +7377,7 @@ input[type="number"] {
 .header-top-bg::before {
 	position: absolute;
 	content: "";
-	width: 13%;
+	width: 28%;
 	height: 100%;
 	inset-inline-end: 0;
 	inset-block-start: 0;
@@ -7385,6 +7385,18 @@ input[type="number"] {
 	z-index: -1;
 }
 
+@media screen and (max-width: 1700px) {
+	.header-top-bg::before {
+		position: absolute;
+		content: "";
+		width: 22%;
+		height: 100%;
+		inset-inline-end: 0;
+		inset-block-start: 0;
+		background-color: var(--main-600);
+		z-index: -1;
+	}
+}
 @media screen and (max-width: 991px) {
 	.header-top-bg::before {
 		display: none;
@@ -10414,6 +10426,13 @@ racking-section {
 	margin-bottom: 20px;
 }
 
+.form-row-quantity {
+	display: grid;
+	grid-template-columns:  1fr;
+	gap: 15px;
+	margin-bottom: 20px;
+}
+
 label {
 	display: block;
 	margin-bottom: 8px;
@@ -10756,9 +10775,10 @@ input:focus {
 .slide-4 {
 	background: linear-gradient(135deg, #e0ededbd 0%, #deebeb 100%);
 }
-
-.heroContainer {
+.headBanner {
 	min-height: 100vh;
+}
+.heroContainer {
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -10931,6 +10951,11 @@ input:focus {
 	.visual-section {
 		text-align: center;
 	}
+	.visual-slide {
+		position: absolute;
+		top: 0;
+		z-index: -1;
+	}
 }
 
 @media (max-width: 768px) {
@@ -10978,6 +11003,11 @@ input:focus {
 		font-size: 1.1rem;
 		padding: 1rem 1.5rem;
 	}
+	.visual-slide {
+		position: absolute;
+		top: 0;
+		z-index: -1;
+	}
 }
 
 @media (max-width: 480px) {
@@ -11015,6 +11045,11 @@ input:focus {
 
 	.buttons {
 		justify-content: center;
+	}
+	.visual-slide {
+		position: absolute;
+		top: 0;
+		z-index: -1;
 	}
 }
 /* Floating particles */
