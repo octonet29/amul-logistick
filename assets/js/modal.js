@@ -508,11 +508,11 @@ document.addEventListener("DOMContentLoaded", function () {
 	})
 
 	// Button click handlers for all slides
-	document.querySelectorAll(".btn").forEach((btn) => {
-		btn.addEventListener("click", (e) => {
-			e.preventDefault()
-			const text = btn.textContent.trim()
-			alert(`Функция "${text}" будет доступна после интеграции с системой`)
-		})
-	})
+	// document.querySelectorAll(".btn").forEach((btn) => {
+	// 	btn.addEventListener("click", (e) => {
+	// 		e.preventDefault()
+	// 		const text = btn.textContent.trim()
+	// 		alert(`Функция "${text}" будет доступна после интеграции с системой`)
+	// 	})
+	// })
 })
