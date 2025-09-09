@@ -9857,6 +9857,7 @@ input[type="number"] {
 
 .user {
 	padding-right: 20px;
+	position: relative;
 }
 
 .our-clients {
@@ -10766,10 +10767,14 @@ input:focus {
 
 .slide-2 {
 	background: linear-gradient(135deg, #e0ededbd 0%, #deebeb 100%);
+	display: flex;
+	justify-content: center;
 }
 
 .slide-3 {
 	background: linear-gradient(135deg, #e0ededbd 0%, #deebeb 100%);
+	display: flex;
+	justify-content: center;
 }
 
 .slide-4 {
@@ -10862,7 +10867,7 @@ input:focus {
 	text-align: center;
 	color: white;
 	/* From https://css.glass */
-	background: rgba(255, 255, 255, 0.2);
+	background: #fff;
 	border-radius: 16px;
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	backdrop-filter: blur(5px);
@@ -11082,19 +11087,16 @@ input:focus {
 /* ==========================================================================
    BANNER SWIPER SECTION - ОСНОВНЫЕ ИСПРАВЛЕНИЯ
    ========================================================================== */
-.swiper-container.banner-swiper {
-	height: calc(100vh - var(--header-top-height) - var(--header-main-height));
-	width: 100%;
-	overflow: hidden;
-	position: relative;
+.heroBannerSwiper {
+	height: calc(
+		100vh - var(--header-top-height) - var(--header-main-height)
+	) !important;
+	width: 100% !important;
 }
 
-.swiper-slide {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.heroBannerSwiperWrapper {
+	height: 100% !important;
+	width: 100% !important;
 }
 
 /* КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ: Hero container */
@@ -11177,9 +11179,10 @@ input:focus {
 	align-items: center;
 	text-align: center;
 	padding: 0.5rem;
-	background: rgba(16, 185, 129, 0.05);
+	background: #fff;
 	border-radius: 6px;
 	min-width: 0;
+	box-shadow: 0 0 5px #02a105;
 }
 
 .stat-number img {
@@ -11211,7 +11214,7 @@ input:focus {
 .slide-image img {
 	width: 100%;
 	height: auto;
-	max-height: 50vh;
+	/* max-height: 50vh; */
 	object-fit: contain;
 }
 
@@ -11252,7 +11255,7 @@ input:focus {
 		display: none;
 	}
 
-	.swiper-container.banner-swiper {
+	.heroBannerSwiper {
 		height: calc(100vh - var(--header-main-height));
 	}
 	.headBar {
