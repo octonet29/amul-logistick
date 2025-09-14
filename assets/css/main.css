@@ -10619,11 +10619,15 @@ input:focus {
 	gap: 5px;
 }
 .footer-logo {
-	width: 100px;
-	height: 100px;
+	width: 70%;
 }
 .marketplace {
 	height: 130px;
+}
+.footer-logo-col {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 /*
 .rectangle-shape-one {
