@@ -10025,7 +10025,7 @@ input[type="number"] {
 
 .price-cargo .col:nth-child(3) .card::after {
 	content: "";
-	background-image: url(../images/price/ship.png);
+	background-image: url(../images/price/truck.png);
 	width: clamp(
 		180px,
 		180px + (220 - 180) * (100vw - 1200px) / (1280 - 1200),
