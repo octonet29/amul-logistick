@@ -273,14 +273,14 @@
 		// ================================= Project slider Start =========================
 		var projectSlider = new Swiper(".project-slider", {
 			slidesPerView: 4,
-			loop: false,
 			spaceBetween: 30,
 			grabCursor: true,
 			speed: 1500,
-			// autoplay: {
-			// 	delay: 2500,
-			// 	disableOnInteraction: false,
-			// },
+			loop: true,
+			autoplay: {
+				delay: 2500,
+				disableOnInteraction: false,
+			},
 			pagination: {
 				el: ".project-pagination",
 				clickable: true,

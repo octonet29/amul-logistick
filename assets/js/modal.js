@@ -452,11 +452,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		},
 
 		// Autoplay
-		autoplay: {
-			delay: 5000,
-			disableOnInteraction: false,
-			pauseOnMouseEnter: true,
-		},
+		// autoplay: {
+		// 	delay: 5000,
+		// 	disableOnInteraction: false,
+		// 	pauseOnMouseEnter: true,
+		// },
 
 		// Navigation
 		navigation: {
