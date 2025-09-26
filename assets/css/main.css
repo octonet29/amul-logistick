@@ -10624,6 +10624,9 @@ input:focus {
 	justify-content: center;
 	align-items: center;
 }
+.footer-track {
+	height: -webkit-fill-available;
+}
 /*
 .rectangle-shape-one {
 	clip-path: polygon(10% 0, 80% 0, 100% 100%, 10% 100%);
@@ -11362,5 +11365,9 @@ input:focus {
 	}
 	.heroContainer .content {
 		max-height: 100%;
+	}
+
+	.action .menu.active {
+		top: 70px;
 	}
 }
