@@ -11359,7 +11359,16 @@ input:focus {
 	.heroContainer .content {
 		max-height: 100%;
 	}
-
+	.mobileServiceText{
+		padding: 0.375rem 0!important;
+	}
+.mobileService{
+		height:50px;
+		width:50px
+	}
+	.mobileService img{
+		height:50%
+	}
 	.action .menu.active {
 		top: 70px;
 	}
