@@ -1,0 +1,270 @@
+/* === Base container === */
+.cargo-tracker-section {
+	padding: 80px 20px;
+	background-color: #fff;
+	font-family: "Inter", sans-serif;
+}
+
+.cargo-tracker-container {
+	max-width: 900px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+/* === Title and text === */
+.cargo-tracker-title {
+	font-size: 2rem;
+	font-weight: 700;
+	color: #1a1a1a;
+	margin-bottom: 10px;
+}
+
+.cargo-tracker-description {
+	color: #666;
+	max-width: 650px;
+	margin: 0 auto 50px;
+	font-size: 1rem;
+}
+
+/* === Progress tracker === */
+.cargo-tracker-progress {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 60px auto;
+	max-width: 700px;
+}
+
+/* Connecting line behind all circles */
+.cargo-tracker-progress::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	height: 3px;
+	background-color: #ccc;
+	transform: translateY(-50%);
+	z-index: 1;
+}
+
+/* Active portion of line */
+.cargo-tracker-progress::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	height: 3px;
+	background-color: #6d28d9;
+	transform: translateY(-50%);
+	z-index: 2;
+	width: 45%; /* длина активной части (примерно до 2 этапа) */
+}
+
+/* === Each step === */
+.cargo-tracker-step {
+	position: relative;
+	z-index: 3;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	width: 25%;
+}
+
+.cargo-tracker-step .circle {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #ccc;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 600;
+	font-size: 1rem;
+	z-index: 3;
+}
+
+.cargo-tracker-step.active .circle {
+	background-color: #6d28d9;
+}
+
+.cargo-tracker-step .label {
+	font-size: 0.9rem;
+	color: #555;
+	margin-top: 10px;
+	line-height: 1.4;
+	max-width: 150px;
+}
+
+.cargo-tracker-step.active .label {
+	color: #6d28d9;
+}
+
+/* === Cargo details === */
+.cargo-tracker-details {
+	text-align: left;
+	background: #fafafa;
+	border: 1px solid #eee;
+	border-radius: 12px;
+	padding: 30px;
+}
+
+.cargo-tracker-details h3 {
+	font-size: 1.5rem;
+	color: #1a1a1a;
+	margin-bottom: 25px;
+	font-weight: 700;
+}
+
+.cargo-tracker-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 20px;
+}
+
+.cargo-tracker-item h4 {
+	font-size: 0.95rem;
+	color: #777;
+	margin-bottom: 4px;
+	font-weight: 500;
+}
+
+.cargo-tracker-item p {
+	font-size: 1.1rem;
+	color: #000;
+	font-weight: 600;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+	.cargo-tracker-progress {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.cargo-tracker-progress::before,
+	.cargo-tracker-progress::after {
+		width: 3px;
+		height: 80%;
+		left: 50%;
+		top: 10%;
+		transform: translateX(-50%);
+	}
+
+	.cargo-tracker-step {
+		flex-direction: row;
+		width: 100%;
+		justify-content: flex-start;
+		text-align: left;
+		margin-bottom: 25px;
+	}
+
+	.cargo-tracker-step .label {
+		margin-left: 15px;
+		margin-top: 0;
+	}
+}
+
+.cargo-tracking {
+	background: #fff;
+	padding: 60px 20px;
+	font-family: "Inter", sans-serif;
+}
+
+.cargo-container {
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.cargo-code {
+	font-size: 18px;
+	color: #222;
+	margin-bottom: 50px;
+}
+
+.cargo-code span {
+	font-weight: 600;
+	margin-left: 8px;
+}
+
+/* === PROGRESS BAR === */
+.cargo-steps {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.cargo-steps .progress-line {
+	position: absolute;
+	top: 20px;
+	left: 0;
+	right: 0;
+	height: 3px;
+	background: #e5e5e5;
+	z-index: 1;
+}
+
+.cargo-steps::before {
+	content: "";
+	position: absolute;
+	top: 20px;
+	left: 0;
+	width: 50%;
+	height: 3px;
+	background: #6d28d9;
+	z-index: 2;
+}
+
+/* === STEP === */
+.step {
+	position: relative;
+	z-index: 3;
+	text-align: center;
+	flex: 1;
+}
+
+.circle {
+	width: 40px;
+	height: 40px;
+	border: 5px solid #d9d9d9;
+	border-radius: 50%;
+	background: #fff;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.step.completed .circle {
+	background: #6d28d9;
+	border-color: #6d28d9;
+}
+
+.step.active .circle {
+	border-color: #6d28d9;
+}
+
+.check {
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.step p {
+	margin-top: 12px;
+	font-size: 14px;
+	color: #555;
+	max-width: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 1.4;
+}
+
+.step.active p {
+	color: #6d28d9;
+}

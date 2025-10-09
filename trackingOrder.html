@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="  Amul Logistick" />
+		<meta name="keywords" content="  Amul Logistick" />
+		<meta name="robots" content="INDEX,FOLLOW" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Title -->
+		<title>Amul Logistick</title>
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="assets/images/logo/favicon.ico" />
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		<!-- Stoshi font -->
+		<link rel="stylesheet" href="assets/css/satoshi.css" />
+		<!-- swiper Slider -->
+		<link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+		<!-- AOS -->
+		<link rel="stylesheet" href="assets/css/aos.css" />
+		<!-- Circle Progress -->
+		<link rel="stylesheet" href="assets/css/animated-radial-progress.css" />
+		<!-- magnific -->
+		<link rel="stylesheet" href="assets/css/magnific-popup.css" />
+		<!-- Main css -->
+
+		<link rel="stylesheet" href="assets/css/tracking.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+
+	<body>
+		<!--==================== Preloader Start ====================-->
+		<div
+			class="preloader loader bg-white tw-h-screen justify-content-center align-items-center tw-z-999 position-fixed top-0 tw-start-0 w-100 h-100"
+		>
+			<svg
+				class="svg-calLoader"
+				xmlns="http://www.w3.org/2000/svg"
+				width="230"
+				height="230"
+			>
+				<path
+					class="cal-loader__path"
+					d="M86.429 40c63.616-20.04 101.511 25.08 107.265 61.93 6.487 41.54-18.593 76.99-50.6 87.643-59.46 19.791-101.262-23.577-107.142-62.616C29.398 83.441 59.945 48.343 86.43 40z"
+					fill="none"
+					stroke="#02a200"
+					stroke-width="4"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-dasharray="10 10 10 10 10 10 10 432"
+					stroke-dashoffset="77"
+				/>
+				<path
+					class="cal-loader__plane"
+					d="M141.493 37.93c-1.087-.927-2.942-2.002-4.32-2.501-2.259-.824-3.252-.955-9.293-1.172-4.017-.146-5.197-.23-5.47-.37-.766-.407-1.526-1.448-7.114-9.773-4.8-7.145-5.344-7.914-6.327-8.976-1.214-1.306-1.396-1.378-3.79-1.473-1.036-.04-2-.043-2.153-.002-.353.1-.87.586-1 .952-.139.399-.076.71.431 2.22.241.72 1.029 3.386 1.742 5.918 1.644 5.844 2.378 8.343 2.863 9.705.206.601.33 1.1.275 1.125-.24.097-10.56 1.066-11.014 1.032a3.532 3.532 0 0 1-1.002-.276l-.487-.246-2.044-2.613c-2.234-2.87-2.228-2.864-3.35-3.309-.717-.287-2.82-.386-3.276-.163-.457.237-.727.644-.737 1.152-.018.39.167.805 1.916 4.373 1.06 2.166 1.964 4.083 1.998 4.27.04.179.004.521-.076.75-.093.228-1.109 2.064-2.269 4.088-1.921 3.34-2.11 3.711-2.123 4.107-.008.25.061.557.168.725.328.512.72.644 1.966.676 1.32.029 2.352-.236 3.05-.762.222-.171 1.275-1.313 2.412-2.611 1.918-2.185 2.048-2.32 2.45-2.505.241-.111.601-.232.82-.271.267-.058 2.213.201 5.912.8 3.036.48 5.525.894 5.518.914 0 .026-.121.306-.27.638-.54 1.198-1.515 3.842-3.35 9.021-1.029 2.913-2.107 5.897-2.4 6.62-.703 1.748-.725 1.833-.594 2.286.137.46.45.833.872 1.012.41.177 3.823.24 4.37.085.852-.25 1.44-.688 2.312-1.724 1.166-1.39 3.169-3.948 6.771-8.661 5.8-7.583 6.561-8.49 7.387-8.702.233-.065 2.828-.056 5.784.011 5.827.138 6.64.09 8.62-.5 2.24-.67 4.035-1.65 5.517-3.016 1.136-1.054 1.135-1.014.207-1.962-.357-.38-.767-.777-.902-.893z"
+					class="cal-loader__plane"
+					fill="#02a200"
+				/>
+			</svg>
+		</div>
+		<!--==================== Preloader End ====================-->
+
+		<!--==================== Overlay Start ====================-->
+		<div class="overlay"></div>
+		<!--==================== Overlay End ====================-->
+
+		<!--==================== Sidebar Overlay End ====================-->
+		<div class="side-overlay"></div>
+		<!--==================== Sidebar Overlay End ====================-->
+
+		<!-- ==================== Scroll to Top End Here ==================== -->
+		<div class="progress-wrap cursor-big">
+			<svg
+				class="progress-circle svg-content"
+				width="100%"
+				height="100%"
+				viewBox="-1 -1 102 102"
+			>
+				<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+			</svg>
+		</div>
+		<!-- ==================== Scroll to Top End Here ==================== -->
+
+		<!-- Custom Cursor Start -->
+		<!-- <div class="cursor"></div>
+		<span class="dot"></span> -->
+		<!-- Custom Cursor End -->
+
+		<!-- Modal -->
+		<div
+			class="modal-overlay"
+			id="profileModalOverlay"
+			onclick="closeModal(event, 'profileModalOverlay')"
+		>
+			<div class="modal-content" onclick="event.stopPropagation()">
+				<div class="modal-header">
+					<h3 class="modal-title">Profile Settings</h3>
+					<button
+						class="close-btn"
+						onclick="closeModal(null, 'profileModalOverlay')"
+						title="Close"
+					>
+						✕
+					</button>
+				</div>
+				<div class="success-message" id="profileSuccessMessage">
+					Password updated successfully!
+				</div>
+				<form id="profileForm">
+					<div class="form-group">
+						<label class="form-label" for="email">Email Address</label>
+						<input
+							type="email"
+							id="email"
+							class="form-input"
+							value="user@example.com"
+							disabled
+						/>
+						<div class="disabled-notice">
+							Email cannot be changed for security reasons
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="currentPassword"
+							>Current Password</label
+						>
+						<div class="password-container">
+							<input
+								type="password"
+								id="currentPassword"
+								class="form-input"
+								placeholder="Enter current password"
+								required
+							/>
+							<span
+								class="password-toggle"
+								onclick="togglePassword('currentPassword')"
+								>👁</span
+							>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="newPassword">New Password</label>
+						<div class="password-container">
+							<input
+								type="password"
+								id="newPassword"
+								class="form-input"
+								placeholder="Enter new password"
+								required
+							/>
+							<span
+								class="password-toggle"
+								onclick="togglePassword('newPassword')"
+								>👁</span
+							>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="confirmPassword"
+							>Confirm New Password</label
+						>
+						<div class="password-container">
+							<input
+								type="password"
+								id="confirmPassword"
+								class="form-input"
+								placeholder="Confirm new password"
+								required
+							/>
+							<span
+								class="password-toggle"
+								onclick="togglePassword('confirmPassword')"
+								>👁</span
+							>
+						</div>
+					</div>
+					<div class="modal-actions">
+						<button type="submit" class="w-100 btn btn-primary">
+							Update Password
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Login Modal -->
+		<div
+			class="modal-overlay"
+			id="loginModalOverlay"
+			onclick="closeModal(event, 'loginModalOverlay')"
+		>
+			<div class="modal-content" onclick="event.stopPropagation()">
+				<div class="modal-header">
+					<h3 class="modal-title">Login</h3>
+					<button
+						class="close-btn"
+						onclick="closeModal(null, 'loginModalOverlay')"
+						title="Close"
+					>
+						✕
+					</button>
+				</div>
+				<div class="success-message" id="loginSuccessMessage">
+					Login successful!
+				</div>
+				<form id="loginForm">
+					<div class="form-group">
+						<label class="form-label" for="loginUsername">Username</label>
+						<input
+							type="text"
+							id="loginUsername"
+							class="form-input"
+							placeholder="Enter your username"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label class="form-label" for="loginPassword">Password</label>
+						<div class="password-container">
+							<input
+								type="password"
+								id="loginPassword"
+								class="form-input"
+								placeholder="Enter your password"
+								required
+							/>
+							<span
+								class="password-toggle"
+								onclick="togglePassword('loginPassword')"
+								>👁</span
+							>
+						</div>
+					</div>
+					<div class="modal-actions">
+						<button type="submit" class="w-100 btn btn-primary">Login</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Header (update the profile menu) -->
+
+		<!-- ==================== Mobile Menu Start Here ==================== -->
+		<div
+			class="mobile-menu d-lg-none d-block scroll-sm position-fixed bg-white tw-w-300-px tw-h-screen overflow-y-auto tw-p-6 tw-z-999 tw--translate-x-full tw-pb-68"
+		>
+			<button
+				type="button"
+				class="close-button position-absolute tw-end-0 top-0 tw-me-2 tw-mt-2 tw-w-605 tw-h-605 rounded-circle d-flex justify-content-center align-items-center text-main-two-600 bg-neutral-200 hover-bg-main-two-600 hover-text-white"
+			>
+				<i class="ph ph-x"></i>
+			</button>
+			<div class="mobile-menu__inner">
+				<a href="index.html" class="mobile-menu__logo">
+					<img src="assets/images/logo/amulLogo.png" alt="Logo" />
+				</a>
+				<div class="mobile-menu__menu">
+					<!-- Nav menu Start -->
+					<ul
+						class="nav-menu cursor-small d-lg-flex gap-2 align-items-center nav-menu--mobile d-block tw-mt-8"
+					>
+						<li class="nav-menu__item position-relative activePage">
+							<a
+								href="index.html"
+								class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
+								>Baş sahypa</a
+							>
+						</li>
+						<li class="nav-menu__item position-relative">
+							<a
+								href="about.html"
+								class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
+								>Biz barada</a
+							>
+						</li>
+						<li class="nav-menu__item position-relative">
+							<a
+								href="service.html"
+								class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
+								>Hyzmatlarymyz</a
+							>
+						</li>
+						<!-- <li class="nav-menu__item">
+                     <a
+                     	href="about.html"
+                     	class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
+                     	>Amul logistics nähili işleýär</a
+                     >
+                     </li> -->
+						<li class="nav-menu__item position-relative">
+							<a
+								href="ourClient.html"
+								class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
+								>Gadagan edilen ýük</a
+							>
+						</li>
+						<li class="nav-menu__item">
+							<a
+								href="contact.html"
+								class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
+								>Habarlaşmak</a
+							>
+						</li>
+					</ul>
+					<!-- Nav menu End  -->
+				</div>
+			</div>
+		</div>
+		<!-- ==================== Mobile Menu End Here ==================== -->
+		<!-- ============================ Header Top Start ==================================== -->
+		<div
+			class="bg-neutral-50 position-relative z-1 d-sm-block d-none header-top-bg"
+		>
+			<div class="container">
+				<div class="d-flex align-items-center justify-content-between tw-gap-6">
+					<div class="d-flex align-items-center tw-gap-6">
+						<div
+							class="cursor-small d-flex align-items-center tw-gap-2 tw-py-205"
+						>
+							<span class="text-main-600 d-flex"
+								><i class="ph-bold ph-phone"></i
+							></span>
+							<span class="text-black xl-tw-text-sm tw-text-xs fw-medium"
+								>+99362702242</span
+							>
+						</div>
+						<div
+							class="cursor-small d-flex align-items-center tw-gap-2 tw-py-205"
+						>
+							<span class="text-main-600 d-flex"
+								><i class="ph-bold ph-phone"></i
+							></span>
+							<a
+								href="phone:+99363306161"
+								class="text-black xl-tw-text-sm tw-text-xs fw-medium hover--translate-x-05 hover-text-main-600 tw-transition-all"
+								>+99363306161</a
+							>
+						</div>
+					</div>
+					<div class="d-md-flex d-none align-items-center tw-gap-6">
+						<div
+							class="cursor-small d-flex align-items-center tw-gap-2 tw-py-205"
+						>
+							<span class="text-main-600 d-flex"
+								><i class="ph-bold ph-envelope"></i
+							></span>
+							<a
+								href="mailto:contact@gmail.com"
+								class="text-black xl-tw-text-sm tw-text-xs fw-medium hover--translate-x-05 hover-text-main-600 tw-transition-all"
+								>contact@gmail.com</a
+							>
+						</div>
+						<div
+							class="cursor-small d-lg-flex d-none align-items-center tw-py-205 tw-gap-6 tw-ps-10 clip-path position-relative"
+						>
+							<span class="text-white d-flex"
+								><i class="ph-bold ph-map-trifold"></i
+							></span>
+							<span class="text-white xl-tw-text-sm tw-text-xs fw-medium"
+								>Ashgabat Parahat 7/1 office
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ============================ Header Top End ==================================== -->
+		<!-- ==================== Header Start Here ==================== -->
+
+		<header class="header bg-white transition-all">
+			<div class="container">
+				<div class="w-100 pe-lg-0 pe-3 tw-ms-auto">
+					<nav class="header-inner bg-white d-flex justify-content-between">
+						<div class="d-flex align-items-center">
+							<!-- Logo Start -->
+							<div
+								class="logo-mask-bg cursor-big position-relative d-lg-flex d-none z-1 d-flex justify-content-center align-items-center"
+							>
+								<a href="index.html">
+									<img
+										src="assets/images/logo/amulLogo.png"
+										alt="Logo"
+										class="max-w-82-px"
+									/>
+								</a>
+							</div>
+							<div class="position-relative d-lg-none d-inline-block z-1">
+								<a href="index.html" class="cursor-big">
+									<img
+										src="assets/images/logo/amulLogo.png"
+										alt="Logo"
+										class="max-w-82-px"
+									/>
+								</a>
+							</div>
+							<!-- Logo End -->
+							<!-- Menu Start -->
+							<div class="header-menu d-lg-block d-none">
+								<ul
+									class="nav-menu cursor-small d-lg-flex align-items-center xl-tw-gap-12 tw-gap-4"
+								>
+									<li class="nav-menu__item position-relative activePage">
+										<a
+											href="index.html"
+											class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
+											>Baş sahypa</a
+										>
+									</li>
+									<li class="nav-menu__item position-relative">
+										<a
+											href="about.html"
+											class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
+											>Biz barada</a
+										>
+									</li>
+									<li class="nav-menu__item position-relative">
+										<a
+											href="service.html"
+											class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
+											>Hyzmatlarymyz</a
+										>
+									</li>
+									<li class="nav-menu__item position-relative">
+										<a
+											href="ourClient.html"
+											class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
+											>Gadagan edilen ýük</a
+										>
+									</li>
+									<li class="nav-menu__item">
+										<a
+											href="contact.html"
+											class="nav-menu__link hover--translate-y-1 text-main-two-600 tw-py-9 fw-medium w-100"
+											>Habarlaşmak</a
+										>
+									</li>
+								</ul>
+							</div>
+							<!-- Menu End -->
+						</div>
+						<!-- Header Right start -->
+						<div class="header-four-right d-flex gap-xxl-5 gap-3">
+							<div
+								class="d-flex align-items-center xl-tw-gap-7 tw-gap-5 flex-shrink-0"
+							>
+								<!-- Language Start -->
+								<span class="line h-100"></span>
+
+								<div
+									class="cursor-small position-relative group-item hover-mt-0 xxsm-d-block d-none"
+								>
+									<div class="d-flex align-items-center tw-gap-2">
+										<a
+											href="javascript:void(0)"
+											class="selected-text text-black py-lg-4 d-flex align-items-center gap-2"
+										>
+											<span
+												class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle common-shadow d-flex justify-content-center align-items-center"
+											>
+												<img
+													src="assets/images/thumbs/flag1.png"
+													alt=""
+													class="w-100 h-100 object-fit-cover rounded-circle"
+												/>
+											</span>
+										</a>
+									</div>
+									<ul
+										class="lang-dropdown tw-max-h-300-px overflow-y-auto scroll-sm bg-white common-shadow tw-px-4 tw-py-3 position-absolute tw-end-0 top-100 min-w-max tw-rounded-lg d-flex flex-column tw-gap-3 tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1 tw-duration-200 group-hover-item-mt-0 tw-mt-4 tw-z-99"
+									>
+										<li>
+											<a
+												href="javascript:void(0)"
+												class="text-black d-flex align-items-center gap-2 hover-text-main-600 active--translate-y-1 tw-duration-150"
+											>
+												<span
+													class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle d-flex justify-content-center align-items-center"
+												>
+													<img
+														src="assets/images/thumbs/flag1.png"
+														alt=""
+														class="w-100 h-100 object-fit-cover rounded-circle"
+													/>
+												</span>
+												English
+											</a>
+										</li>
+										<li>
+											<a
+												href="javascript:void(0)"
+												class="text-black d-flex align-items-center gap-2 hover-text-main-600 active--translate-y-1 tw-duration-150"
+											>
+												<span
+													class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle d-flex justify-content-center align-items-center"
+												>
+													<img
+														src="assets/images/thumbs/flag2.png"
+														alt=""
+														class="w-100 h-100 object-fit-cover rounded-circle"
+													/>
+												</span>
+												Turkmen
+											</a>
+										</li>
+										<li>
+											<a
+												href="javascript:void(0)"
+												class="text-black d-flex align-items-center gap-2 hover-text-main-600 active--translate-y-1 tw-duration-150"
+											>
+												<span
+													class="tw-w-25-px tw-h-25-px border border-white border-2 rounded-circle d-flex justify-content-center align-items-center"
+												>
+													<img
+														src="assets/images/thumbs/flag3.png"
+														alt=""
+														class="w-100 h-100 object-fit-cover rounded-circle"
+													/>
+												</span>
+												Russia
+											</a>
+										</li>
+									</ul>
+								</div>
+								<!-- Language End -->
+								<!-- Line Start -->
+								<div class="d-flex align-items-center tw-gap-2 user">
+									<div
+										class="action selected-text text-black py-lg-4 d-flex align-items-center gap-2"
+									>
+										<div
+											class="profile tw-w-30-px tw-h-30-px border border-white border-2 rounded-circle common-shadow d-flex justify-content-center align-items-center"
+										>
+											<i
+												class="ph ph-user w-100 h-100 d-flex justify-content-center align-items-center"
+											></i>
+										</div>
+										<div class="menu common-shadow">
+											<ul>
+												<li>
+													<i class="ph ph-user"></i>
+													<a onclick="openProfileModal()">My Profile</a>
+												</li>
+												<li>
+													<i class="ph ph-sign-in"></i>
+													<a onclick="openLoginModal()">Login</a>
+												</li>
+												<li>
+													<i class="ph ph-sign-out"></i>
+													<a href="#">Logout</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<button
+									type="button"
+									class="toggle-mobileMenu leading-none d-lg-none text-main-two-600 tw-text-9"
+								>
+									<i class="ph ph-list"></i>
+								</button>
+							</div>
+						</div>
+						<!-- Header Right End -->
+					</nav>
+				</div>
+			</div>
+		</header>
+		<!-- ==================== Header End Here ==================== -->
+
+		<section class="cargo-tracker-section">
+			<div class="cargo-tracker-container">
+				<h2 class="cargo-tracker-title">Kargony yzarlamak</h2>
+				<p class="cargo-tracker-description">
+					Kargony yzarlamak hyzmaty — müşderilere öz sargytlarynyň hereketini we
+					ýagdaýyny yzarlamaga mümkinçilik berýän hyzmatdyr.
+				</p>
+
+				<!-- Progress steps -->
+				<section class="cargo-tracking">
+					<div class="cargo-container">
+						<h2 class="cargo-code">Kargo kody: <span>TEYEWR415366</span></h2>
+
+						<div class="cargo-steps">
+							<div class="step completed">
+								<div class="circle">
+									<span class="check">✔</span>
+								</div>
+								<p>Ýük döredildi</p>
+							</div>
+							<div class="step active">
+								<div class="circle"></div>
+								<p>Marydaky nokatda kabul edildi</p>
+							</div>
+							<div class="step">
+								<div class="circle"></div>
+								<p>Balkandaky nokada ugradyldy</p>
+							</div>
+							<div class="step">
+								<div class="circle"></div>
+								<p>Eltip berildi</p>
+							</div>
+							<div class="progress-line"></div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Cargo details -->
+				<div class="cargo-tracker-details">
+					<h3>Kargo maglumatlary</h3>
+					<div class="cargo-tracker-grid">
+						<div class="cargo-tracker-item">
+							<h4>Ugradyjynyň ady</h4>
+							<p>Aman Amanow</p>
+						</div>
+						<div class="cargo-tracker-item">
+							<h4>Kabul edijiniň maglumatlary</h4>
+							<p>Meret Meredow</p>
+						</div>
+						<div class="cargo-tracker-item">
+							<h4>Kargo görnüşi</h4>
+							<p>Dokument</p>
+						</div>
+						<div class="cargo-tracker-item">
+							<h4>Hyzmat görnüşi</h4>
+							<p>Standart kargo</p>
+						</div>
+						<div class="cargo-tracker-item">
+							<h4>Eltip berilmäge garaşylýan wagt</h4>
+							<p><strong>24.05.2024 | 15:05</strong></p>
+						</div>
+						<div class="cargo-tracker-item">
+							<h4>Agramy</h4>
+							<p>12.00 kg</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ==================== Footer Start Here ==================== -->
+		<footer class="footer bg-main-two-600 position-relative z-1 mt-auto pt-60">
+			<img
+				src="assets/images/thumbs/truck-light.png"
+				alt=""
+				class="footer-track position-absolute bottom-0 tw-start-0 z-n1 d-lg-block d-none"
+			/>
+
+			<div class="container">
+				<div
+					class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 gy-5 tw-pb-5"
+				>
+					<div
+						class="col footer-logo-col"
+						data-aos="fade-up"
+						data-aos-duration="1000"
+						data-aos-delay="200"
+					>
+						<a href="index.html" class="footer-logo cursor-big">
+							<img src="assets/images/logo/footer-logo.png" alt=""
+						/></a>
+						<div class="tw-mt-9"></div>
+					</div>
+					<div
+						class="col"
+						data-aos="fade-up"
+						data-aos-duration="1000"
+						data-aos-delay="200"
+					>
+						<h5
+							class="cursor-big text-white tw-mb-5 cursor-big splitTextStyleTwo"
+						>
+							Amul Logistik
+						</h5>
+
+						<p class="text-neutral-100 cursor-small">
+							Ygtybarlylygyň kepilligi!
+						</p>
+
+						<ul
+							class="cursor-small social-footer d-flex align-items-center tw-gap-3"
+						>
+							<li>
+								<a
+									href="https://www.facebook.com"
+									class="tw-w-11 tw-h-11 text-white tw-text-xl d-flex align-items-center hover-bg-main-600 hover-text-white active-scale-09 tw-duration-200"
+								>
+									<img src="assets/images/icons/fb.svg" />
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://www.twitter.com"
+									class="tw-w-11 tw-h-11 text-white tw-text-xl d-flex align-items-center hover-bg-main-600 hover-text-white active-scale-09 tw-duration-200"
+								>
+									<img src="assets/images/icons/tw.svg" />
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://www.telegram.com"
+									class="tw-w-11 tw-h-11 text-white tw-text-xl d-flex align-items-center hover-bg-main-600 hover-text-white active-scale-09 tw-duration-200"
+								>
+									<img src="assets/images/icons/tg.svg" />
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://www.youtube.com"
+									class="tw-w-11 tw-h-11 text-white tw-text-xl d-flex align-items-center hover-bg-main-600 hover-text-white active-scale-09 tw-duration-200"
+								>
+									<img src="assets/images/icons/wh.svg" />
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div
+						class="col"
+						data-aos="fade-up"
+						data-aos-duration="1000"
+						data-aos-delay="200"
+					>
+						<h5
+							class="cursor-big text-white tw-mb-5 cursor-big splitTextStyleTwo"
+						>
+							Telefon belgilerimiz :
+						</h5>
+						<p class="cursor-small text-neutral-600">+99363306161</p>
+						<p class="cursor-small text-neutral-600">+99362702242</p>
+					</div>
+					<div
+						class="col"
+						data-aos="fade-up"
+						data-aos-duration="1000"
+						data-aos-delay="200"
+					>
+						<h5
+							class="cursor-big text-white tw-mb-5 cursor-big splitTextStyleTwo"
+						>
+							Salgymyz:
+						</h5>
+
+						<p class="cursor-small text-neutral-600">
+							Ashgabat Parahat 7/1 office number
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<!-- bottom Footer -->
+				<div
+					class="border-top border-dashed border-neutral-1100 border-0 tw-py-8"
+				>
+					<div class="container container-two">
+						<div
+							class="d-flex align-items-center justify-content-center tw-gap-6 flex-wrap"
+						>
+							<p class="text--white text-line-1 fw-normal cursor-small">
+								&copy; 2025
+								<a
+									href="index.html"
+									class="text-main-600 hover--translate-y-1 fw-bold hover-underline hover-text-main-600 cursor-big"
+									>Amul Logistik</a
+								>
+								-Logistic Service. All rights reserved.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- ==================== Footer End Here ==================== -->
+
+		<!-- Jquery js -->
+		<script src="assets/js/jquery-3.7.1.min.js"></script>
+		<!-- phosphor Js -->
+		<script src="assets/js/phosphor-icon.js"></script>
+		<!-- Bootstrap Bundle Js -->
+		<script src="assets/js/boostrap.bundle.min.js"></script>
+		<!-- swiper slider Js -->
+		<script src="assets/js/swiper-bundle.min.js"></script>
+		<!-- Split Text -->
+		<script src="assets/js/SplitText.min.js"></script>
+		<!-- Scroll Trigger -->
+		<script src="assets/js/ScrollTrigger.min.js"></script>
+		<!-- Gsap js -->
+		<script src="assets/js/gsap.min.js"></script>
+		<!-- custom gsap -->
+		<script src="assets/js/custom-gsap.js"></script>
+		<!-- aos -->
+		<script src="assets/js/aos.js"></script>
+		<!-- Circle Progress bar -->
+		<script src="assets/js/animated-radial-progress.js"></script>
+		<!-- counter up -->
+		<script src="assets/js/counterup.min.js"></script>
+		<!-- magnific popup -->
+		<script src="assets/js/magnific-popup.min.js"></script>
+		<!-- marquee -->
+		<script src="assets/js/jquery.marquee.min.js"></script>
+		<script src="assets/js/modal.js"></script>
+		<!-- main js -->
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/modal.js"></script>
+	</body>
+</html>
